@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/fomo-factory/static/css/main.52125ff4.css",
-    "main.js": "/fomo-factory/static/js/main.371c62dd.js",
+    "main.css": "/fomo-factory/static/css/main.758a8b9e.css",
+    "main.js": "/fomo-factory/static/js/main.538bf723.js",
     "static/js/453.727daab6.chunk.js": "/fomo-factory/static/js/453.727daab6.chunk.js",
     "static/media/graph.png": "/fomo-factory/static/media/graph.d2d7566d9443c6f21ec8.png",
     "static/media/3.png": "/fomo-factory/static/media/3.eb44ece1ce5df7b0c784.png",
@@ -11,12 +11,12 @@
     "static/media/2.png": "/fomo-factory/static/media/2.d2b1d7509bfac187c0d1.png",
     "static/media/1.png": "/fomo-factory/static/media/1.b07ce2585737c98634fb.png",
     "index.html": "/fomo-factory/index.html",
-    "main.52125ff4.css.map": "/fomo-factory/static/css/main.52125ff4.css.map",
-    "main.371c62dd.js.map": "/fomo-factory/static/js/main.371c62dd.js.map",
+    "main.758a8b9e.css.map": "/fomo-factory/static/css/main.758a8b9e.css.map",
+    "main.538bf723.js.map": "/fomo-factory/static/js/main.538bf723.js.map",
     "453.727daab6.chunk.js.map": "/fomo-factory/static/js/453.727daab6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52125ff4.css",
-    "static/js/main.371c62dd.js"
+    "static/css/main.758a8b9e.css",
+    "static/js/main.538bf723.js"
   ]
 }
