@@ -1,0 +1,138 @@
+@import "../../../assets/styles/app";
+
+.notifications {
+  position: relative;
+  width: 48px;
+  height: 48px;
+
+  .refWrapper {
+    width: 48px;
+    height: 48px;
+
+    .btn {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      border-right: 1px solid $color_lines;
+      border-bottom: 1px solid $color_lines;
+
+      &_light {
+        border-color: $color_light_version_lines;
+      }
+
+      &_hasNew {
+        &::before {
+          display: block;
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 6px;
+          height: 6px;
+          background: $color_main;
+        }
+      }
+
+    }
+  }
+
+  .dropdown {
+    z-index: 999;
+    background-color: $color_bg_and_text;
+    border: 1px solid $color_lines;
+    position: fixed;
+    top: 48px;
+    left: 0;
+    width: 100%;
+
+    @include desktop {
+      position: absolute;
+      top: auto;
+      width: 360px;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      transform: translateY(100%);
+    }
+
+    .dropdownHeader {
+      height: 40px;
+      padding: 0 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $color_lines;
+
+      p {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main_100;
+      }
+
+      button {
+        @include button;
+
+        span {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          text-align: right;
+          color: $color_main;
+        }
+      }
+    }
+
+    .dropdownBody {
+      padding: 0 12px;
+      max-height: 320px;
+      overflow-y: auto;
+
+      .item {
+        padding: 12px 0;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color_lines;
+        }
+
+        .itemHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .left {
+            display: flex;
+            align-items: center;
+
+            p {
+              margin-left: 8px;
+              font-weight: 700;
+              font-size: 12px;
+              line-height: 140%;
+              text-transform: uppercase;
+              color: $color_body_50;
+            }
+          }
+
+          & > p {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_body_50;
+          }
+        }
+
+        .description {
+          margin-top: 12px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+        }
+      }
+    }
+  }
+
+
+}

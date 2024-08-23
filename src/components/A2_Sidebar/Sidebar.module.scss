@@ -1,0 +1,129 @@
+@import "../../assets/styles/app";
+
+.sidebar {
+  @include onlyDesktop(flex);
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 48px;
+  flex-shrink: 0;
+  border-right: 1px solid $color_lines;
+
+  .favorites {
+    padding-top: 8px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+
+    .singles {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 32px;
+        height: 32px;
+
+        &:not(:first-child) {
+          margin-top: 8px;
+        }
+      }
+    }
+
+
+  }
+
+  .links {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+    padding-bottom: 8px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px;
+      width: 32px;
+      background: $color_lines;
+    }
+
+    .link {
+      border: 1px solid $color_lines;
+      background-color: transparent;
+      width: 32px;
+      height: 32px;
+      transition: 0.3s;
+
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+
+      svg {
+        path {
+          transition: 0.3s;
+        }
+      }
+
+      &_selected {
+        background-color: $color_main;
+
+        svg {
+          path {
+            fill-opacity: 1;
+            fill: #09090A;
+          }
+        }
+      }
+    }
+
+
+  }
+
+
+  .socialLinks {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+    padding-bottom: 8px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px;
+      width: 32px;
+      background: $color_lines;
+    }
+
+    .link {
+      @include centerRow;
+      width: 32px;
+      height: 32px;
+      border: 1px solid $color_lines;
+      background-color: transparent;
+      transition: 0.3s;
+
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+
+      &:hover {
+        background-color: #222;
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

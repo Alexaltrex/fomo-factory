@@ -1,0 +1,109 @@
+@import "../../assets/styles/app";
+
+.tokenPageUnconfirmed {
+
+  .mobileContent {
+    @include onlyMobile();
+
+    .mobileTabs {
+      height: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      border-bottom: 1px solid $color_lines;
+
+      .tab {
+        @include button;
+        @include centerRow;
+        position: relative;
+
+        &:not(:first-child) {
+          &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 1px;
+            height: 24px;
+            background-color: $color_lines;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+          }
+        }
+
+        span {
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_body_50;
+          transition: 0.3s;
+        }
+
+        &_selected {
+          span {
+            color: $color_main;
+          }
+
+        }
+      }
+    }
+  }
+
+  .desktopContent {
+    @include onlyDesktop(flex);
+    position: relative;
+    height: 100%;
+
+    .desktopContentLeft {
+      width: calc(100vw - 48px - 318px);
+      border-right: 1px solid $color_lines;
+      position: relative;
+
+      .hideBtn {
+        @include button;
+        @include centerColumn;
+        position: absolute;
+        width: 16px;
+        height: 40px;
+        background-color: $color_bg_and_text;
+        border: 1px solid $color_lines;
+        border-left: 1px solid $color_bg_and_text;
+        top: 8px;
+        right: 0;
+        transform: translateX(100%);
+        z-index: 100;
+        transition: 0.3s;
+      }
+    }
+
+    .desktopContentRight {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 318px;
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    &_hide {
+
+      .desktopContentLeft {
+        width: calc(100vw - 48px);
+
+        .hideBtn {
+          transform: translateX(0);
+          border-left: 1px solid $color_lines;
+
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .desktopContentRight {
+        transform: translateX(100%);
+      }
+    }
+
+  }
+}

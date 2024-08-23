@@ -1,0 +1,62 @@
+@import "../../../assets/styles/app";
+
+.buttonCustom {
+  @include button;
+  @include centerRow;
+  transition: 0.3s;
+
+  span {
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  &_outlined_dark {
+    background-color: transparent;
+
+    span {
+      color: $color_main;
+    }
+
+    &:hover {
+      @include desktop {
+        background-color: #222;
+      }
+    }
+  }
+
+  &_outlined_dark_mouseDown {
+    background-color: #222;
+
+    span {
+      color: rgba(211, 249, 50, 0.6);
+    }
+  }
+
+  &_contained_dark {
+    background-color: $color_main_10;
+
+    span {
+      color: $color_main;
+    }
+
+    &:hover {
+      @include desktop {
+        background: rgba(211, 249, 50, 0.2);
+      }
+    }
+
+  }
+
+  &_contained_dark_mouseDown {
+    background: rgba(211, 249, 50, 0.2);
+
+    span {
+      color: rgba(211, 249, 50, 0.6);
+    }
+  }
+
+
+}

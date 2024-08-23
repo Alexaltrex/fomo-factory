@@ -1,0 +1,219 @@
+@import "../../assets/styles/app";
+
+.menu {
+  @include onlyMobile();
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  width: 100%;
+  top: 48px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $color_bg_and_text;
+  transform: translateX(-100%);
+  transition: 0.3s;
+
+  &_show {
+    transform: translateX(0%);
+  }
+
+  .menuMain {
+    flex-grow: 1;
+    padding: 0 8px;
+    //height: calc(100vh - 2 * 48px);
+
+    .section {
+      padding: 12px 0;
+
+      &:first-child {
+        //max-height: calc(100vh - 2 * 48px - 125px - 205px);
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color_lines;
+      }
+
+      .sectionTitle {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main_100;
+      }
+
+      .favorites {
+
+        .list {
+          max-height: calc(100vh - 2 * 48px - 125px - 205px - 56px);
+          overflow: auto;
+          margin-top: 12px;
+
+          .item {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+            &:not(:first-child) {
+              margin-top: 8px;
+            }
+
+            img {
+              display: block;
+              width: 32px;
+              height: 32px;
+            }
+
+            p {
+              margin-left: 12px;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              text-transform: uppercase;
+              color: $color_body_50;
+            }
+          }
+        }
+
+        .addBtn {
+          @include button;
+          margin-top: 8px;
+          display: flex;
+          align-items: center;
+
+
+          .icon {
+            @include centerRow;
+            border: 1px solid $color_lines;
+            width: 32px;
+            height: 32px;
+
+
+          }
+
+          p {
+            margin-left: 12px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            text-transform: uppercase;
+            color:$color_body_50;
+          }
+        }
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+
+        .link {
+          @include button;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+
+          &:not(:first-child) {
+            margin-top: 8px;
+          }
+
+          .icon {
+            @include centerRow;
+            width: 32px;
+            height: 32px;
+            border: 1px solid $color_lines;
+
+            svg {
+              width: 16px;
+              height: 16px;
+
+              path {
+                fill: #FFF;
+                fill-opacity: 0.5;
+              }
+            }
+          }
+
+          p {
+            margin-left: 12px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            text-transform: uppercase;
+            color: $color_body_50;
+          }
+
+
+        }
+      }
+
+      .socialLinks {
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+
+        .socialLink {
+          @include centerRow;
+          width: 32px;
+          height: 32px;
+          border: 1px solid $color_lines;
+          background-color: transparent;
+          transition: 0.3s;
+
+          &:not(:first-child) {
+            margin-top: 8px;
+          }
+
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+
+
+    }
+
+
+  }
+
+  .menuBottom {
+    flex-shrink: 0;
+    height: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid $color_lines;
+
+    .link {
+      @include centerRow;
+      position: relative;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_body_50;
+      text-decoration: none;
+
+      &:not(:last-child) {
+        &::after {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0;
+          content: "";
+          display: block;
+          width: 1px;
+          height: 32px;
+          background-color: $color_lines;
+        }
+      }
+
+
+    }
+
+  }
+
+  &_light {
+    background-color: $color_bg_and_text;
+  }
+
+}

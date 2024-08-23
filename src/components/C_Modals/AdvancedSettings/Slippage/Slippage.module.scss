@@ -1,0 +1,97 @@
+@import "../../../../assets/styles/app";
+
+.slippage {
+
+  .header {
+    height: 48px;
+    padding-left: 12px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $color_lines;
+
+    p {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_main_100;
+    }
+
+    .openBtn {
+      border: 1px solid $color_lines;
+      width: 32px;
+      height: 32px;
+
+      svg {
+        transform: rotate(90deg);
+        transition: 0.3s;
+      }
+
+      &_open {
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+
+  }
+
+  .description {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: $color_body_50;
+    padding: 12px 12px 24px;
+    border-bottom: 1px solid $color_lines;
+  }
+
+  .form {
+    height: 36px;
+    display: flex;
+    border-bottom: 1px solid $color_lines;
+
+    .fieldWrapper {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+
+      input {
+        background: none;
+        border: none;
+        outline: none;
+        flex-grow: 1;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_main_100;
+
+        &::placeholder {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        -moz-appearance: textfield;
+      }
+    }
+
+    .submitBtn {
+      flex-shrink: 0;
+      height: 36px;
+      width: 36px;
+      border-left: 1px solid $color_lines;
+      border-bottom: 1px solid $color_lines;
+    }
+  }
+}

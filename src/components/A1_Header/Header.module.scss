@@ -1,0 +1,189 @@
+@import "../../assets/styles/app";
+
+.header {
+  flex-shrink: 0;
+  height: 48px;
+  transition: 0.3s;
+  border-bottom: 1px solid $color_lines;
+  display: flex;
+
+  .logo {
+    @include onlyDesktop(flex);
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    transition: 0.3s;
+    border-right: 1px solid $color_lines;
+
+    svg {
+      path {
+        transition: 0.3s;
+      }
+    }
+
+
+  }
+
+  .menuBtn {
+    @include onlyMobile(flex);
+    width: 48px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .backToList {
+    @include onlyDesktop(flex);
+    align-items: center;
+    padding: 0 12px;
+    background-color: transparent;
+    transition: 0.3s;
+
+    svg path {
+      transition: 0.3s;
+    }
+
+    span {
+      margin-left: 8px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      text-align: center;
+      color: $color_body_50;
+      transition: 0.3s;
+    }
+
+    //&:hover {
+    //  @include desktop {
+    //    background-color: #222;
+    //  }
+    //}
+  }
+
+  .live {
+    @include onlyDesktop(flex);
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0 12px 0 16px;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $color_red;
+    }
+
+    p {
+      margin-left: 8px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_red;
+    }
+
+    &_active {
+      .dot {
+        background-color: $color_main;
+      }
+
+      p {
+        color: $color_main;
+      }
+    }
+
+  }
+
+  .searchMobile {
+    @include onlyMobile(flex);
+
+    &_searchPage {
+      flex-grow: 1;
+    }
+
+    .searchIconButton, .backToHomeBtn {
+      width: 48px;
+      height: 100%;
+      border-right: 1px solid $color_lines;
+    }
+  }
+
+  .searchDesktop {
+    @include onlyDesktop();
+    flex-grow: 1;
+
+  }
+
+  .bellBtn {
+    position: relative;
+    width: 48px;
+
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 6px;
+      height: 6px;
+      background: $color_main;
+    }
+  }
+
+  .connectWalletBtn {
+    @include onlyDesktop(flex);
+    width: 160px;
+    transition: 0.3s;
+  }
+
+  .createNewCoinBtn {
+    flex-grow: 1;
+    width: 160px;
+    transition: 0.3s;
+
+
+    @include desktop {
+      flex-grow: unset;
+    }
+  }
+
+  .borderRight {
+    border-right: 1px solid $color_lines;
+  }
+
+
+  &_light {
+    border-bottom-color: $color_light_version_lines;
+
+    .logo {
+      border-right-color: $color_light_version_lines;
+
+      svg path {
+        fill: #09090A;
+      }
+    }
+
+    .backToList {
+
+      svg {
+        path {
+          fill: #6C7583;
+          fill-opacity: 1;
+        }
+      }
+
+      span {
+        color: $color_light_version_gray;
+      }
+
+
+    }
+
+
+    .borderRight {
+      border-color: $color_light_version_lines;
+    }
+
+  }
+
+}

@@ -1,0 +1,527 @@
+@import "../../assets/styles/app";
+
+.searchPage {
+
+  .tableMobile {
+    @include onlyMobile();
+    height: calc(100vh - 48px);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .inner {
+      display: flex;
+      width: 100%;
+
+      .left, .right {
+        width: 50%;
+      }
+
+      .left {
+        border-right: 1px solid $color_lines;
+
+        .tableHeader {
+          display: flex;
+          height: 40px;
+          border-bottom: 1px solid $color_lines;
+
+          p {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_body_50;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 12px;
+          }
+        }
+
+        .tableBody {
+
+          .row {
+            display: flex;
+            height: 60px;
+            border-bottom: 1px solid $color_lines;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 12px;
+
+            .addToFavoriteBtn {
+              @include button;
+              @include centerRow;
+              width: 12px;
+              height: 12px;
+            }
+
+            img {
+              display: block;
+              width: 32px;
+              height: 32px;
+              margin-left: 12px;
+            }
+
+            .info {
+              margin-left: 8px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+
+              .infoTop {
+                display: flex;
+                align-items: center;
+
+                p {
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 140%;
+                  color: $color_main_100;
+                }
+
+                & > svg {
+                  width: 12px;
+                  height: 12px;
+                  margin-left: 4px;
+                }
+
+                a {
+                  @include centerRow;
+                  width: 12px;
+                  height: 12px;
+                  margin-left: 4px;
+                }
+              }
+
+              & > p {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 140%;
+                color: $color_body_50;
+              }
+            }
+
+          }
+        }
+      }
+
+      .right {
+        overflow-x: auto;
+
+        .rightInner {
+          width: 495px;
+
+          .tableHeader {
+            display: flex;
+            height: 40px;
+            border-bottom: 1px solid $color_lines;
+
+            p {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              color: $color_body_50;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+
+              &:nth-child(1) {
+                width: 150px;
+              }
+
+              &:nth-child(2) {
+                width: 240px;
+              }
+
+              &:nth-child(3) {
+                width: 105px;
+              }
+            }
+          }
+
+          .tableBody {
+
+            .row {
+              display: flex;
+              height: 60px;
+              border-bottom: 1px solid $color_lines;
+
+              & > div {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:not(:last-child) {
+                  position: relative;
+
+                  &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                    height: 20px;
+                    width: 1px;
+                    background-color: $color_lines;
+                  }
+                }
+
+                &:nth-child(1) {
+                  width: 150px;
+                }
+
+                &:nth-child(2) {
+                  width: 240px;
+                }
+
+                &:nth-child(3) {
+                  width: 105px;
+                }
+
+              }
+
+              .confirmedStatusCell {
+
+                .status {
+                  display: flex;
+                  align-items: center;
+                  padding: 2px 4px;
+                  border: 1px solid rgba(255, 61, 0, 0.08);
+                  background: rgba(255, 61, 0, 0.08);
+
+                  & > div {
+                    width: 6px;
+                    height: 6px;
+                    background-color: $color_red;
+                  }
+
+                  span {
+                    margin-left: 6px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 140%;
+                    text-transform: uppercase;
+                    color: $color_red;
+                  }
+
+
+                  &_confirmed {
+                    border: 1px solid rgba(173, 231, 84, 0.08);
+                    background: rgba(173, 231, 84, 0.08);
+
+                    & > div {
+                      background-color: $color_green;
+                    }
+
+                    span {
+                      color: $color_green;
+                    }
+                  }
+                }
+              }
+
+              .statisticsCell {
+                .statisticsItem {
+                  display: flex;
+                  align-items: center;
+
+                  &:not(:first-child) {
+                    margin-left: 24px;
+                  }
+
+                  svg {
+                    path {
+                      fill: #FFF;
+                      fill-opacity: 0.5;
+                    }
+                  }
+
+                  span {
+                    margin-left: 4px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 140%;
+                    color: $color_body_50;
+                  }
+                }
+              }
+
+              .priceCell {
+
+                svg {
+                  path {
+                    fill: $color_main;
+                  }
+                }
+
+                span {
+                  margin-left: 4px;
+                  font-weight: 700;
+                  font-size: 12px;
+                  line-height: 140%;
+                  text-transform: uppercase;
+                  text-align: right;
+                  color: $color_main;
+                }
+              }
+
+            }
+          }
+        }
+
+
+
+      }
+    }
+
+
+
+
+
+  }
+
+
+  .tableDesktop {
+    @include onlyDesktop();
+    width: 824px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 1px solid $color_lines;
+    border-right: 1px solid $color_lines;
+
+    .tableHeader {
+      display: flex;
+      height: 40px;
+      border-bottom: 1px solid $color_lines;
+
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:nth-child(1) {
+          justify-content: flex-start;
+          padding-left: 12px;
+          width: 28%;
+        }
+
+        &:nth-child(2) {
+          width: 24%;
+        }
+
+        &:nth-child(3) {
+          width: 29%;
+        }
+
+        &:nth-child(4) {
+          width: 19%;
+        }
+
+
+      }
+    }
+
+    .tableBody {
+      max-height: calc(100vh - 48px - 40px);
+      overflow: auto;
+
+      .row {
+        display: flex;
+        height: 60px;
+        border-bottom: 1px solid $color_lines;
+
+        & > div {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:not(:last-child) {
+            position: relative;
+
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 0;
+              height: 20px;
+              width: 1px;
+              background-color: $color_lines;
+            }
+          }
+
+          &:nth-child(1) {
+            width: 28%;
+            justify-content: flex-start;
+            padding-left: 12px;
+          }
+
+          &:nth-child(2) {
+            width: 24%;
+          }
+
+          &:nth-child(3) {
+            width: 29%;
+          }
+
+          &:nth-child(4) {
+            width: 19%;
+          }
+
+        }
+
+        .infoCell {
+
+          .addToFavoriteBtn {
+            @include button;
+            @include centerRow;
+            width: 12px;
+            height: 12px;
+          }
+
+          img {
+            display: block;
+            width: 32px;
+            height: 32px;
+            margin-left: 12px;
+          }
+
+          .info {
+            margin-left: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .infoTop {
+              display: flex;
+              align-items: center;
+
+              p {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 140%;
+                color: $color_main_100;
+              }
+
+              & > svg {
+                width: 12px;
+                height: 12px;
+                margin-left: 4px;
+              }
+
+              a {
+                @include centerRow;
+                width: 12px;
+                height: 12px;
+                margin-left: 4px;
+              }
+            }
+
+            & > p {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              color: $color_body_50;
+            }
+          }
+
+        }
+
+        .confirmedStatusCell {
+
+          .status {
+            display: flex;
+            align-items: center;
+            padding: 2px 4px;
+            border: 1px solid rgba(255, 61, 0, 0.08);
+            background: rgba(255, 61, 0, 0.08);
+
+            & > div {
+              width: 6px;
+              height: 6px;
+              background-color: $color_red;
+            }
+
+            span {
+              margin-left: 6px;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              text-transform: uppercase;
+              color: $color_red;
+            }
+
+
+            &_confirmed {
+              border: 1px solid rgba(173, 231, 84, 0.08);
+              background: rgba(173, 231, 84, 0.08);
+
+              & > div {
+                background-color: $color_green;
+              }
+
+              span {
+                color: $color_green;
+              }
+            }
+          }
+        }
+
+        .statisticsCell {
+          .statisticsItem {
+            display: flex;
+            align-items: center;
+
+            &:not(:first-child) {
+              margin-left: 24px;
+            }
+
+            svg {
+              path {
+                fill: #FFF;
+                fill-opacity: 0.5;
+              }
+            }
+
+            span {
+              margin-left: 4px;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              color: $color_body_50;
+            }
+          }
+        }
+
+        .priceCell {
+
+          svg {
+            path {
+              fill: $color_main;
+            }
+          }
+
+          span {
+            margin-left: 4px;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 140%;
+            text-transform: uppercase;
+            text-align: right;
+            color: $color_main;
+          }
+        }
+
+      }
+    }
+
+
+  }
+}

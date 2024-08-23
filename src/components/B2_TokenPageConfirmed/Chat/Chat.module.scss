@@ -1,0 +1,318 @@
+@import "../../../assets/styles/app";
+
+.chat {
+  background-color: $color_bg_and_text;
+
+  @include desktop {
+    border-top: 1px solid $color_lines;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .title {
+    @include onlyMobile(flex);
+    align-items: center;
+    height: 36px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_main_100;
+    border-bottom: 1px solid $color_lines;
+  }
+
+  .header {
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color_lines;
+    position: relative;
+
+    .headerLeft {
+      display: flex;
+
+      p {
+        @include centerRow;
+        height: 100%;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        border-right: 1px solid $color_lines;
+
+        &:nth-child(1) {
+          width: 62px;
+          color: $color_main;
+        }
+
+        &:nth-child(2) {
+          width: 84px;
+          color: $color_body_50;
+        }
+      }
+    }
+
+    .headerRight {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      border-left: 1px solid $color_lines;
+
+      span {
+        margin-left: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        text-align: center;
+        color: $color_body_50;
+      }
+
+      .icon {
+        height: 20px;
+        padding: 0 10px;
+        border-left: 1px solid $color_lines;
+        margin-left: 10px;
+      }
+    }
+
+    .expandBtn {
+      @include button;
+      @include centerRow;
+      @include onlyDesktop();
+      position: absolute;
+      top: 0;
+      right: 8px;
+      transform: translateY(-100%);
+      height: 16px;
+      width: 40px;
+      border: 1px solid $color_lines;
+      border-bottom: 1px solid $color_bg_and_text;
+      background-color: $color_bg_and_text;
+
+      svg {
+        transform: rotate(-90deg);
+      }
+
+      &_expand {
+        bottom: 0;
+        top: auto;
+        transform: translateY(100%);
+        border-bottom: 1px solid $color_lines;
+        border-top: 1px solid $color_bg_and_text;
+
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .comments {
+    height: calc(100vh - 48px - 48px - 36px - 36px - 36px);
+    overflow-y: auto;
+
+    @include desktop {
+      height: calc(100vh - 48px - 486px - 36px - 36px);
+      transition: 0.3s;
+    }
+
+    .comment {
+      padding: 12px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color_lines;
+      }
+
+      .commentHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left {
+          display: flex;
+          align-items: center;
+
+          img {
+            display: block;
+            width: 32px;
+            height: 32px;
+          }
+
+          p {
+            margin-left: 8px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_main_100;
+          }
+
+
+        }
+
+        .moreBtn {
+          border: 1px solid $color_lines;
+          width: 24px;
+          height: 24px;
+        }
+
+      }
+
+      .text {
+        margin-top: 8px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+      }
+
+      .items {
+        margin-top: 16px;
+        display: flex;
+
+        .item {
+          @include centerRow;
+          border: 1px solid $color_lines;
+          width: 48px;
+          height: 24px;
+
+          &:not(:first-child) {
+            margin-left: 4px;
+          }
+
+          span {
+            margin-left: 6px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            text-align: center;
+            color: $color_main_100;
+          }
+        }
+      }
+
+      .itemsTime {
+        margin-top: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .left {
+          display: flex;
+
+          .item {
+            @include centerRow;
+            border: 1px solid $color_lines;
+            width: 48px;
+            height: 24px;
+
+            &:not(:first-child) {
+              margin-left: 4px;
+            }
+
+            span {
+              margin-left: 6px;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              text-align: center;
+              color: $color_main_100;
+            }
+
+            svg:nth-child(2) {
+              margin-left: 6px;
+            }
+          }
+        }
+
+        .time {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          text-align: right;
+          color: $color_body_50;
+        }
+      }
+    }
+
+  }
+
+  .form {
+    border-top: 1px solid $color_lines;
+    height: 36px;
+    display: flex;
+
+    .fieldWrapper {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      padding-right: 8px;
+
+      input {
+        flex-grow: 1;
+        background: none;
+        border: none;
+        outline: none;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_main_100;
+
+        &::placeholder {
+          color: $color_body_50;
+        }
+      }
+
+      .btn {
+        @include button;
+        @include centerRow;
+        border: 1px solid $color_lines;
+        width: 24px;
+        height: 24px;
+
+        &:not(:first-child) {
+          margin-left: 8px;
+        }
+
+        span {
+          font-weight: 700;
+          font-size: 10px;
+          text-align: center;
+          color: $color_body_50;
+        }
+      }
+
+
+    }
+
+    .submitBtn {
+      @include button;
+      @include centerRow;
+      flex-shrink: 0;
+      width: 62px;
+      border-left: 1px solid $color_lines;
+
+      span {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_body_50;
+      }
+    }
+
+  }
+
+  &_expand {
+
+    .comments {
+      @include desktop {
+        height: calc(100vh - 48px - 36px - 36px);
+      }
+    }
+  }
+
+}

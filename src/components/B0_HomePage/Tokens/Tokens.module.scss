@@ -1,0 +1,45 @@
+@import "../../../assets/styles/app";
+
+.tokens {
+
+  .confirmedListMobile {
+    height: calc(100vh - 48px - 140px - 36px - 36px - 36px);
+  }
+
+  .confirmedListDesktop {
+
+    & > div:nth-child(2) {
+      height: calc(100vh - 48px - 140px - 36px - 40px);
+    }
+
+  }
+
+  .confirmedGrid {
+    height: calc(100vh - 48px - 140px - 36px - 36px - 36px);
+
+    @include desktop {
+      height: calc(100vh - 48px - 140px - 36px);
+    }
+  }
+
+  .unconfirmedListMobile {
+    height: calc(100vh - 48px - 140px - 36px - 36px - 36px);
+  }
+
+  .unconfirmedListDesktop {
+
+    & > div:nth-child(2) {
+      height: calc(100vh - 48px - 140px - 36px - 40px);
+    }
+
+  }
+
+  .unconfirmedGrid {
+    height: calc(100vh - 48px - 140px - 36px - 36px - 36px);
+
+    @include desktop {
+      height: calc(100vh - 48px - 140px - 36px);
+    }
+  }
+
+}

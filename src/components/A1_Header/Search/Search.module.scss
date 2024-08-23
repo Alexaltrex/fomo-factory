@@ -1,0 +1,41 @@
+@import "../../../assets/styles/app";
+
+.search {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  border-right: 1px solid $color_lines;
+
+  input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: $color_main_100;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_body_50;
+    }
+
+  }
+
+  .btn {
+    //@include button;
+    //@include centerRow;
+    margin-left: 12px;
+    border: 1px solid $color_lines;
+    width: 32px;
+    height: 32px;
+  }
+
+}

@@ -1,0 +1,315 @@
+@import "../../../assets/styles/app";
+
+.pledgeUnpledge {
+
+  .header {
+    @include onlyMobile(flex);
+    align-items: center;
+    height: 36px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_main_100;
+    border-bottom: 1px solid $color_lines;
+  }
+
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid $color_lines;
+
+    .tab {
+      @include button;
+      @include centerRow;
+      height: 36px;
+
+      &:not(:first-child) {
+        border-left: 1px solid $color_lines;
+      }
+
+      span {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color_body_50;
+        transition: 0.3s;
+      }
+
+      &_selected {
+        span {
+          color: $color_main;
+        }
+      }
+    }
+  }
+
+  .toggleWrapper {
+    @include button;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+
+    .switcher {
+      position: relative;
+      width: 38px;
+      height: 20px;
+      border-radius: 999px;
+      border: 1px solid $color_lines;
+      transition: 0.3s;
+      margin: 0 12px;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        left: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        background-color: #FFF;
+        border-radius: 50%;
+        transition: 0.3s;
+      }
+    }
+
+    p {
+      margin-left: 12px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_body_50;
+    }
+
+    &_on {
+      .switcher {
+        &::after {
+          left: 22px;
+        }
+      }
+    }
+
+
+  }
+
+  .prices {
+    display: flex;
+    padding-left: 12px;
+
+    .btn {
+      @include button;
+      @include centerRow;
+      border: 1px solid $color_lines;
+      width: 58px;
+      height: 24px;
+      background-color: transparent;
+      transition: 0.3s;
+
+      &:not(:first-child) {
+        margin-left: 4px;
+      }
+
+      svg {
+        fill: #FFF;
+        fill-opacity: 0.5;
+        transition: 0.3s;
+      }
+
+      span {
+        margin-left: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_main_100;
+        transition: 0.3s;
+      }
+
+      &_selected {
+        background-color: $color_main_10;
+
+        svg {
+          path {
+            fill: $color_main;
+            fill-opacity: 1;
+          }
+        }
+
+        span {
+          color: $color_main;
+        }
+      }
+
+    }
+  }
+
+  .amount {
+    margin-top: 12px;
+    border-top: 1px solid $color_lines;
+    border-bottom: 1px solid $color_lines;
+    height: 48px;
+    display: flex;
+
+    .left {
+      flex-grow: 1;
+      padding-left: 12px;
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+      }
+
+    }
+
+    .maxBtn {
+      flex-shrink: 0;
+      width: 72px;
+    }
+  }
+
+  .tokenPrice {
+    padding: 8px 12px 24px;
+
+    span {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+
+      &:nth-child(1) {
+        color: $color_body_50;
+      }
+
+      &:nth-child(2) {
+        color: $color_main_100;
+      }
+    }
+  }
+
+  .quickBuyBtn {
+    @include button;
+    @include centerRow;
+    width: 100%;
+    height: 48px;
+    border: 1px solid $color_lines;
+    background: $color_main_10;
+    transition: 0.3s;
+
+    span {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      text-align: center;
+      color: $color_main;
+      transition: 0.3s;
+    }
+
+    svg {
+      margin-left: 8px;
+      margin-right: 4px;
+
+      path {
+        fill-opacity: 1;
+        fill: $color_main;
+        transition: 0.3s;
+      }
+    }
+
+    &:hover {
+      background-color: $color_main;
+
+      span {
+        color: $color_bg_and_text;
+      }
+
+      svg {
+        path {
+          fill: $color_bg_and_text;
+        }
+      }
+    }
+  }
+
+  & > .description {
+    padding: 12px 12px 24px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: $color_body_50;
+  }
+
+  .advancedSettingsBtn {
+    width: 100%;
+    height: 32px;
+    border-top: 1px solid $color_lines;
+    border-bottom: 1px solid $color_lines;
+  }
+
+  .giftSection {
+    padding: 12px 12px 24px;
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .topLeft {
+        display: flex;
+        align-items: center;
+
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+        }
+
+        svg {
+          margin-left: 4px;
+        }
+      }
+
+      .topRight {
+
+        span {
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          text-align: right;
+          color: $color_body_50;
+
+          &:nth-child(2) {
+            color: $color_main_100;
+          }
+        }
+
+
+      }
+    }
+
+    .description {
+      margin-top: 8px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_body_50;
+    }
+  }
+
+  .getTweetBtn {
+    width: 100%;
+    height: 32px;
+  }
+
+}

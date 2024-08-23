@@ -1,0 +1,334 @@
+@import "../../../../assets/styles/app";
+
+.confirmedListMobile {
+  @include onlyMobile();
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .inner {
+    display: flex;
+    width: 100%;
+
+    .left, .right {
+      width: 50%;
+    }
+
+    .left {
+      border-right: 1px solid $color_lines;
+
+      .tableHeader {
+        display: flex;
+        height: 40px;
+        border-bottom: 1px solid $color_lines;
+
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          padding-left: 12px;
+        }
+      }
+
+      .tableBody {
+
+        .row {
+          height: 56px;
+          display: flex;
+          align-items: center;
+          padding-left: 12px;
+          border-bottom: 1px solid $color_lines;
+
+          .addToFavoriteBtn {
+            @include button;
+            @include centerRow;
+            width: 12px;
+            height: 12px;
+          }
+
+          img {
+            display: block;
+            width: 32px;
+            height: 32px;
+            margin-left: 12px;
+          }
+
+          .info {
+            margin-left: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .infoTop {
+              display: flex;
+              align-items: center;
+
+              p {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 140%;
+                color: $color_main_100;
+              }
+
+              & > svg {
+                width: 12px;
+                height: 12px;
+                margin-left: 4px;
+              }
+
+              a {
+                @include centerRow;
+                width: 12px;
+                height: 12px;
+                margin-left: 4px;
+              }
+            }
+
+            & > p {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              color: $color_body_50;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      overflow-x: auto;
+
+      .rightInner {
+        width: 1070px;
+
+        .tableHeader {
+          display: flex;
+          height: 40px;
+          border-bottom: 1px solid $color_lines;
+
+          p {
+            @include centerRow;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_body_50;
+
+            &:nth-child(1) {
+              width: 95px;
+            }
+
+            &:nth-child(2) {
+              width: 265px;
+            }
+
+            &:nth-child(3) {
+              width: 160px;
+            }
+
+            &:nth-child(4) {
+              width: 144px;
+            }
+
+            &:nth-child(5) {
+              width: 173px;
+            }
+
+            &:nth-child(6) {
+              width: 80px;
+            }
+
+            &:nth-child(7) {
+              width: 150px;
+            }
+
+          }
+        }
+
+        .tableBody {
+
+          .row {
+            display: flex;
+            height: 56px;
+            border-bottom: 1px solid $color_lines;
+
+            & > div {
+              height: 100%;
+              @include centerRow;
+
+              &:not(:last-child) {
+                position: relative;
+
+                &::after {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  right: 0;
+                  height: 20px;
+                  width: 1px;
+                  background-color: $color_lines;
+                }
+              }
+
+              &:nth-child(1) {
+                width: 95px;
+              }
+
+              &:nth-child(2) {
+                width: 265px;
+              }
+
+              &:nth-child(3) {
+                width: 160px;
+              }
+
+              &:nth-child(4) {
+                width: 144px;
+              }
+
+              &:nth-child(5) {
+                width: 173px;
+              }
+
+              &:nth-child(6) {
+                width: 80px;
+              }
+
+              &:nth-child(7) {
+                width: 150px;
+              }
+
+            }
+
+            .created {
+              span {
+                margin-left: 4px;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 140%;
+                color: $color_body_50;
+              }
+            }
+
+            .followers {
+              .followerItem {
+                padding: 4px 8px;
+                border: 1px solid $color_lines;
+                display: flex;
+                align-items: center;
+
+                &:not(:first-child) {
+                  margin-left: 4px;
+                }
+
+                svg {
+                  width: 12px;
+                  height: 12px;
+                }
+
+                span {
+                  margin-left: 4px;
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 140%;
+                  text-align: center;
+                  color: $color_main_100;
+                }
+              }
+            }
+
+            .marketcap, .currentPrice {
+              svg {
+                width: 16px;
+                height: 16px;
+
+                path {
+                  fill: #FFF;
+                  fill-opacity: 0.5;
+                }
+              }
+
+              p {
+                margin-left: 4px;
+              }
+
+              span {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 140%;
+                color: $color_main_100;
+
+                &:nth-child(2) {
+                  color: $color_body_50;
+                }
+              }
+            }
+
+            .statistics {
+
+              .statisticsItem {
+                display: flex;
+                align-items: center;
+
+                &:not(:first-child) {
+                  margin-left: 24px;
+                }
+
+                svg {
+                  path {
+                    fill: #FFF;
+                    fill-opacity: 0.5;
+                  }
+                }
+
+                span {
+                  margin-left: 4px;
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 140%;
+                  color: $color_body_50;
+                }
+              }
+            }
+
+            .share {
+
+              .shareBtn {
+                width: 32px;
+                height: 32px;
+                border: 1px solid $color_lines;
+
+                svg {
+                  path {
+                    fill-opacity: 1;
+                  }
+                }
+              }
+
+            }
+
+            .buy {
+              padding-right: 12px;
+              justify-content: flex-end;
+
+              .buyBtn {
+                border: 1px solid $color_lines;
+                width: 113px;
+                height: 32px;
+              }
+
+            }
+
+          }
+        }
+
+      }
+
+    }
+  }
+
+}

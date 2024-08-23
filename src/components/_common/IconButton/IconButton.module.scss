@@ -1,0 +1,60 @@
+@import "../../../assets/styles/app";
+
+.iconButton {
+  @include button;
+  @include centerRow;
+  //background-color: transparent;
+  transition: 0.3s;
+
+  svg {
+    transition: 0.3s;
+
+    path {
+      transition: 0.3s;
+    }
+  }
+
+  &_dark {
+    background-color: $color_bg_and_text;
+
+    svg {
+      path {
+        fill: #FFF;
+        fill-opacity: 0.5;
+      }
+    }
+
+    &:hover {
+      @include desktop {
+        background-color: $color_white_3;
+      }
+    }
+  }
+
+  &_dark_mouseDown, &_dark_mouseDown:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+
+  }
+
+  &_light {
+    background-color: $color_light_version_white;
+
+    svg {
+      path {
+        fill: #6C7583;
+        fill-opacity: 1;
+      }
+    }
+
+    &:hover {
+      @include desktop {
+        background-color: $color_light_version_light_gray;
+      }
+    }
+  }
+
+  &_light_mouseDown, &_light_mouseDown:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+}

@@ -1,0 +1,171 @@
+@import "../../../assets/styles/app";
+
+.tradesConfirmedDesktop {
+  @include onlyDesktop();
+
+  .header {
+    height: 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 1px solid $color_lines;
+
+    p {
+      @include centerRow;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_body_50;
+
+      &:first-child {
+        padding-left: 12px;
+        justify-content: flex-start;
+      }
+    }
+
+  }
+
+  .body {
+    //height: calc(100vh - 48px - 72px - 376px - 36px - 40px);
+    overflow-y: auto;
+
+    .row {
+      height: 56px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color_lines;
+      }
+
+      & > div {
+        @include centerRow;
+
+        &:first-child {
+          justify-content: flex-start;
+          padding-left: 12px;
+        }
+
+        &:not(:last-child) {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            width: 1px;
+            height: 20px;
+            background-color: $color_lines;
+          }
+        }
+      }
+
+      .holders {
+
+        img {
+          display: block;
+          width: 32px;
+          height: 32px;
+        }
+
+        p {
+          margin-left: 8px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_main_100;
+        }
+      }
+
+      .type {
+
+        p {
+          position: relative;
+          background: rgba(173, 231, 84, 0.08);
+          border: 1px solid rgba(173, 231, 84, 0.08);
+          padding: 2px 4px 2px 16px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_green;
+
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: $color_green;
+          }
+        }
+
+        &_sell {
+          p {
+            border: 1px solid rgba(255, 84, 0, 0.08);
+            background: rgba(255, 84, 0, 0.08);
+            color: $color_red;
+
+            &::before {
+              background: $color_red;
+            }
+          }
+        }
+
+      }
+
+      .price {
+
+        p {
+          margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_main_100;
+
+          span {
+            color: $color_body_50;
+          }
+        }
+      }
+
+      .time {
+        p {
+          padding: 4px;
+          border-radius: 2px;
+          background: $color_white_3;
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+
+          &:not(:first-child) {
+            margin-left: 3px;
+          }
+        }
+      }
+
+      .transaction {
+
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          text-decoration: underline;
+          text-decoration-skip-ink: none;
+          text-align: center;
+          color: $color_body_50;
+        }
+      }
+
+    }
+  }
+
+}

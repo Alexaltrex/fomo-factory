@@ -1,0 +1,77 @@
+@import "../../../assets/styles/app";
+
+.trending {
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid $color_lines;
+
+  .title {
+    padding-left: 12px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_main_100;
+    transition: 0.3s;
+  }
+
+  .list {
+    margin-top: 8px;
+    overflow: auto;
+    padding: 0 12px 12px;
+    display: flex;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+
+      &:not(:first-child) {
+        margin-left: 12px;
+      }
+
+      img {
+        display: block;
+        width: 50px;
+        height: 50px;
+      }
+
+      p {
+        margin-top: 8px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        text-align: center;
+        color: $color_body_50;
+        transition: 0.3s;
+      }
+    }
+
+  }
+
+  &_light {
+    border-color: $color_light_version_lines;
+
+    .title {
+      color: $color_bg_and_text;
+    }
+
+    .list {
+
+      .item {
+
+        p {
+          color: $color_light_version_gray;
+        }
+
+      }
+
+    }
+
+  }
+
+
+}

@@ -1,0 +1,38 @@
+@import "../../../../assets/styles/app";
+
+.confirmedListDesktop {
+  @include onlyDesktop();
+
+  .listHeader {
+    display: grid;
+    grid-template-columns: 1.5fr 116px 1.5fr 1fr 1fr 1fr  96px 156px;
+    height: 40px;
+    border-bottom: 1px solid $color_lines;
+
+    p {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_body_50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:nth-child(1) {
+        justify-content: flex-start;
+        padding-left: 12px;
+      }
+
+      &:last-child {
+        justify-content: flex-start;
+        padding-left: 32px;
+      }
+
+    }
+  }
+
+  .listBody {
+    overflow-y: auto;
+  }
+
+}

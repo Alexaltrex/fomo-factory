@@ -1,0 +1,162 @@
+@import "../../../assets/styles/app";
+
+.createNewToken {
+  @include centerColumn;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color_pop_up_bg;
+  backdrop-filter: blur(5px);
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid $color_lines;
+    background-color: $color_bg_and_text;
+
+    .cardHeader {
+      height: 36px;
+      display: flex;
+      border-bottom: 1px solid $color_lines;
+
+      .cardHeaderLeft {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+
+        span {
+          margin-left: 8px;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+        }
+      }
+
+      .closeBtn {
+        flex-shrink: 0;
+        width: 36px;
+        border-left: 1px solid $color_lines;
+
+      }
+    }
+
+    .description {
+      padding: 12px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_body_50;
+
+     &:not(:last-child) {
+       border-bottom: 1px solid $color_lines;
+     }
+
+      span {
+        color: $color_main;
+      }
+
+      .link {
+        text-decoration: none;
+        color: $color_main;
+      }
+    }
+
+    .form {
+
+      .field {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        padding: 0 8px;
+        border-bottom: 1px solid $color_lines;
+
+        .icon {
+          @include centerRow;
+          flex-shrink: 0;
+          border: 1px solid $color_lines;
+          width: 32px;
+          height: 32px;
+
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        input {
+          flex-grow: 1;
+          margin-left: 12px;
+          background: none;
+          border: none;
+          outline: none;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_main_100;
+
+          &::placeholder {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_body_50;
+          }
+        }
+      }
+
+      .error {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        padding: 0 8px;
+        border-bottom: 1px solid $color_lines;
+
+        .icon {
+          @include centerRow;
+          flex-shrink: 0;
+          background: rgba(255, 61, 0, 0.08);
+          width: 32px;
+          height: 32px;
+
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        p {
+          margin-left: 12px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_red;
+        }
+      }
+
+      .btn1, .btn2 {
+        width: 100%;
+        height: 48px;
+        border-bottom: 1px solid $color_lines;
+      }
+
+      .btn1 {
+        margin-top: 24px;
+        border-top: 1px solid $color_lines;
+      }
+
+    }
+
+    .goToBtn {
+      width: 100%;
+      height: 48px;
+    }
+
+
+
+  }
+}

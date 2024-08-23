@@ -1,0 +1,251 @@
+@import "../../../../assets/styles/app";
+
+.holdersDesktop {
+  @include onlyDesktop();
+
+  .header {
+    height: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 3fr;
+    border-bottom: 1px solid $color_lines;
+
+    p {
+      @include centerRow;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_body_50;
+
+      &:first-child {
+        padding-left: 12px;
+        justify-content: flex-start;
+      }
+    }
+
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: calc(100vh - 48px - 72px - 376px - 36px - 40px);
+    overflow-y: auto;
+
+    .table {
+      border-right: 1px solid $color_lines;
+
+      .row {
+        border-bottom: 1px solid $color_lines;
+        height: 56px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        & > div {
+          @include centerRow;
+
+          &:first-child {
+            justify-content: flex-start;
+            padding-left: 12px;
+          }
+
+          &:not(:last-child) {
+            position: relative;
+
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 0;
+              width: 1px;
+              height: 20px;
+              background-color: $color_lines;
+            }
+          }
+        }
+
+        .address {
+
+          .dot {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            border: 1px solid $color_lines;
+
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 6px;
+              height: 6px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-color: $color_main;
+            }
+          }
+
+          p {
+            margin-left: 4px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_body_50;
+          }
+
+          button {
+            @include button;
+            @include centerRow;
+            margin-left: 4px;
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        .tokens {
+
+          p {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+
+            &:nth-child(1) {
+              color: $color_main_100;
+            }
+
+            &:nth-child(2) {
+              margin-left: 4px;
+              border-radius: 2px;
+              padding: 4px;
+              background: $color_white_3;
+              color: $color_body_50;
+            }
+          }
+        }
+
+        .balance {
+         p {
+           margin-left: 4px;
+           font-weight: 400;
+           font-size: 12px;
+           line-height: 140%;
+           color: $color_main_100;
+
+           span {
+             color: $color_body_50;
+           }
+         }
+        }
+      }
+    }
+
+    .accountDistribution {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 0;
+
+      .diagramWrapper {
+        @include centerColumn;
+        position: relative;
+        width: 240px;
+        height: 240px;
+
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 140%;
+          text-align: center;
+          font-weight: 700;
+
+          &:not(:first-child) {
+            margin-top: 4px;
+          }
+
+          &:nth-child(1) {
+            color: $color_main_100;
+          }
+
+          &:nth-child(2) {
+            font-weight: 400;
+            color: $color_body_50;
+          }
+
+          &:nth-child(3) {
+            color: $color_main_100;
+          }
+
+        }
+      }
+
+      .tips {
+        margin-top: 32px;
+        display: flex;
+        justify-content: center;
+
+        .tip {
+          display: flex;
+          align-items: center;
+
+          &:not(:first-child) {
+            margin-left: 24px;
+          }
+
+          &:nth-child(1) .dot::after {
+            background: #54f778;
+          }
+
+          &:nth-child(2) .dot::after {
+            background: #f75454;
+          }
+
+          &:nth-child(3) .dot::after {
+            background: $color_main;
+          }
+
+          &:nth-child(4) .dot::after {
+            background: #32d5f9;
+          }
+
+
+          .dot {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            border: 1px solid $color_lines;
+
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 6px;
+              height: 6px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          p {
+            margin-left: 8px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_body_50;
+
+            span {
+              color: $color_main_100;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

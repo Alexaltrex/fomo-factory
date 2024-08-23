@@ -1,0 +1,252 @@
+@import "../../../../assets/styles/app";
+
+.confirmedGrid {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 6px;
+  overflow-y: auto;
+  //height: calc(100vh - 48px - 140px - 36px - 36px - 36px);
+  //
+  //@include desktop {
+  //  height: calc(100vh - 48px - 140px - 36px);
+  //}
+
+  .card {
+    position: relative;
+    padding: 12px 11px 60px;
+    border: 1px solid $color_lines;
+    margin: 6px;
+    width: 162px;
+
+    @include desktop {
+      width: 218px;
+    }
+
+    .imgWrapper {
+      position: relative;
+      width: 138px;
+      height: 138px;
+
+      @include desktop {
+        width: 194px;
+        height: 194px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .addToFavoritesBtn {
+        @include button;
+        @include centerRow;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        border: 1px solid $color_lines;
+        width: 36px;
+        height: 36px;
+        backdrop-filter: blur(20px);
+        background: $color_bg_and_text;
+
+        @include desktop {
+          top: 4px;
+          right: 4px;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .name {
+      margin-top: 12px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_main_100;
+    }
+
+    .info {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+      }
+
+      & > svg {
+        margin-left: 4px;
+        width: 12px;
+        height: 12px;
+      }
+
+      a {
+        @include centerRow;
+        margin-left: 4px;
+        width: 12px;
+        height: 12px;
+
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+
+    .price {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        path {
+          fill: #FFF;
+          fill-opacity: 0.5;
+        }
+      }
+
+      p {
+        margin-left: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_main;
+      }
+
+    }
+
+    .followers {
+      margin-top: 12px;
+
+      .followersInner {
+        margin: -2px -4px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .followerItem {
+          margin: 2px;
+          padding: 4px 8px;
+          border: 1px solid $color_lines;
+          display: flex;
+          align-items: center;
+
+          svg {
+            width: 12px;
+            height: 12px;
+          }
+
+          span {
+            margin-left: 4px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            text-align: center;
+            color: $color_main_100;
+          }
+        }
+
+      }
+
+
+    }
+
+    .prices {
+      margin-top: 12px;
+
+      .pricesRow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:first-child) {
+          margin-top: 8px;
+        }
+
+        .label {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+        }
+
+        .value {
+          display: flex;
+          align-items: center;
+
+          span {
+            margin-left: 4px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            text-align: right;
+            color: $color_main_100;
+          }
+        }
+      }
+    }
+
+
+    .statistics {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      .statisticsItem {
+        @include centerRow;
+
+        &:not(:first-child) {
+          border-left: 1px solid $color_lines;
+        }
+
+        svg {
+          path {
+            fill: #FFF;
+            fill-opacity: 0.5;
+          }
+        }
+
+        span {
+          margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+        }
+      }
+    }
+
+    .bottom {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      height: 36px;
+
+      .quickPledgeBtn {
+        flex-grow: 1;
+        height: 100%;
+        width: 100%;
+        border-top: 1px solid $color_lines;
+        border-right: 1px solid $color_lines;
+      }
+
+      .shareBtn {
+        flex-shrink: 0;
+        width: 36px;
+        height: 100%;
+        border-top: 1px solid $color_lines;
+      }
+    }
+
+  }
+}

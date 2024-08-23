@@ -1,0 +1,130 @@
+@import "../../../../assets/styles/app";
+
+.searchForTokens {
+  flex-grow: 1;
+  height: 36px;
+  border-right: 1px solid $color_lines;
+  transition: 0.3s;
+
+  .form {
+    display: flex;
+    height: 100%;
+
+    .inputWrapper {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      transition: 0.3s;
+      padding-left: 12px;
+
+      &:hover {
+        @include desktop {
+          background-color: $color_white_3;
+        }
+      }
+
+      input {
+        width: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main_100;
+        transition: 0.3s;
+
+        &::placeholder {
+          color: $color_body_50;
+          transition: 0.3s;
+        }
+      }
+
+      &_focus {
+        &:hover {
+          @include desktop {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    .submitBtn {
+      @include button;
+      @include centerRow;
+      flex-shrink: 0;
+      width: 36px;
+      border-left: 1px solid $color_lines;
+      background-color: transparent;
+      transition: 0.3s;
+
+      &:hover {
+        @include desktop {
+          background-color: $color_white_3;
+        }
+      }
+
+      svg {
+        path {
+          transition: 0.3s;
+        }
+      }
+
+    }
+  }
+
+  &_light {
+    border-color: $color_light_version_lines;
+
+    .form {
+
+      .inputWrapper {
+
+        &:hover {
+          @include desktop {
+            background-color: $color_light_version_light_gray;
+          }
+        }
+
+        &_focus {
+          &:hover {
+            @include desktop {
+              background-color: transparent;
+            }
+          }
+        }
+
+        input {
+          color: $color_bg_and_text;
+
+          &::placeholder {
+            color: $color_light_version_gray;
+          }
+        }
+
+      }
+
+      .submitBtn {
+        border-color: $color_light_version_lines;
+
+        svg {
+          path {
+            fill-opacity: 1;
+            fill: #6C7583;
+          }
+        }
+
+        &:hover {
+          @include desktop {
+            background-color: $color_light_version_light_gray;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}

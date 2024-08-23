@@ -1,0 +1,142 @@
+@import "../../../assets/styles/app";
+
+.advancedSettings {
+  @include centerColumn;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color_pop_up_bg;
+  backdrop-filter: blur(5px);
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid $color_lines;
+    background-color: $color_bg_and_text;
+
+    .cardHeader {
+      height: 36px;
+      display: flex;
+      border-bottom: 1px solid $color_lines;
+
+      .cardHeaderLeft {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+
+        span {
+          margin-left: 8px;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+        }
+      }
+
+      .closeBtn {
+        flex-shrink: 0;
+        width: 36px;
+        border-left: 1px solid $color_lines;
+
+      }
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-bottom: 1px solid $color_lines;
+
+      .tab {
+        @include button;
+        @include centerRow;
+        height: 36px;
+
+        &:not(:first-child) {
+          border-left: 1px solid $color_lines;
+        }
+
+        span {
+          font-family: var(--font-family);
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          text-align: center;
+          color: $color_body_50;
+          transition: 0.3s;
+        }
+
+        &_selected {
+          span {
+            color: $color_main;
+          }
+        }
+      }
+    }
+
+    .addressSection {
+      height: 48px;
+      border-bottom: 1px solid $color_lines;
+      display: flex;
+
+      .left {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+
+        .icon {
+          @include centerRow;
+          border: 1px solid $color_lines;
+          width: 32px;
+          height: 32px;
+        }
+
+        p {
+          padding-left: 12px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_main_100;
+        }
+      }
+
+      .copyBtn {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        border-left: 1px solid $color_lines;
+        border-bottom: 1px solid $color_lines;
+
+        svg {
+          path {
+            transition: 0.3s;
+          }
+        }
+
+        &_copied {
+          svg {
+            path {
+              fill-opacity: 1;
+              fill: $color_green;
+            }
+          }
+        }
+      }
+    }
+
+    .saveBtn {
+      margin-top: 24px;
+      width: 100%;
+      height: 48px;
+    }
+
+
+  }
+}
+

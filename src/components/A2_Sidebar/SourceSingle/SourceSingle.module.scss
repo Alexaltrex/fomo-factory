@@ -1,0 +1,28 @@
+@import "../../../assets/styles/app";
+
+.sourceSingle {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+
+  &_canDrop {
+    outline: 3px solid rgba(255, 255, 255, 1.0);
+  }
+
+  &_isOver {
+    outline: 3px solid green;
+  }
+
+  &_isDragging {
+    outline: none;
+  }
+
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}

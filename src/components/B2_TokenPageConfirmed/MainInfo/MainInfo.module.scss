@@ -1,0 +1,319 @@
+@import "../../../assets/styles/app";
+
+.mainInfo {
+  height: calc(100vh - 48px - 48px);
+  overflow-y: auto;
+  border-bottom: 1px solid $color_lines;
+
+  @include desktop {
+    height: auto;
+    overflow-y: unset;
+  }
+
+  .header {
+    @include onlyMobile(flex);
+    align-items: center;
+    height: 36px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_main_100;
+    border-bottom: 1px solid $color_lines;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+    }
+
+    .contentMain {
+      flex-shrink: 0;
+      display: flex;
+      height: 72px;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        width: 256px;
+        border-bottom: none;
+        border-right: 1px solid $color_lines;
+      }
+
+      & > .left {
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+        flex-grow: 1;
+        border-right: 1px solid $color_lines;
+
+        & > img {
+          display: block;
+          width: 50px;
+          height: 50px;
+        }
+
+        & > .right {
+          margin-left: 12px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          & > .top {
+            display: flex;
+            align-items: center;
+
+            p {
+              font-family: var(--font-family);
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              text-transform: uppercase;
+              color: $color_main_100;
+            }
+
+            & > svg {
+              width: 12px;
+              height: 12px;
+              margin-left: 4px;
+            }
+
+            a {
+              @include centerRow;
+              width: 12px;
+              height: 12px;
+              margin-left: 4px;
+            }
+          }
+
+          & > .bottom {
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+
+            p {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              color: $color_body_50;
+            }
+
+            button {
+              @include button;
+              margin-left: 4px;
+              width: 16px;
+              height: 16px;
+            }
+          }
+
+        }
+      }
+
+      & > .right {
+        display: flex;
+        flex-direction: column;
+
+        & > button {
+          width: 36px;
+          height: 36px;
+
+
+          &:nth-child(1) {
+            border-bottom: 1px solid $color_lines;
+
+            svg {
+              width: 16px;
+              height: 16px;
+
+              path {
+                fill-opacity: 1;
+                fill: $color_main;
+              }
+            }
+          }
+
+          &:nth-child(2) {
+
+          }
+
+        }
+      }
+
+
+    }
+
+    .contentOther {
+      width: 100%;
+      overflow-x: auto;
+
+      .inner {
+        display: flex;
+        align-items: center;
+        height: 62px;
+        width: 814px;
+        overflow-x: auto;
+
+        @include desktop {
+          flex-grow: 1;
+          height: 72px;
+          width: 100%;
+        }
+
+        & > div {
+          @include centerRow;
+
+          &:not(:last-child) {
+            position: relative;
+
+            &::after {
+              position: absolute;
+              content: "";
+              display: block;
+              width: 1px;
+              height: 27px;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              background-color: $color_lines;
+            }
+          }
+
+        }
+
+        .columnCell {
+          & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            & > p {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              color: $color_body_50;
+
+            }
+
+            & > div {
+              margin-top: 4px;
+              display: flex;
+              align-items: center;
+
+              svg {
+                margin-right: 4px;
+
+                path {
+                  fill: #FFF;
+                  fill-opacity: 0.5;
+                }
+              }
+
+              p {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 140%;
+                color: $color_main_100;
+              }
+            }
+          }
+        }
+
+        .followers {
+          width: 150px;
+
+          @include desktop {
+            width: calc((150 / 814) * 100%);
+          }
+
+          .followerItem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &:not(:first-child) {
+              margin-left: 16px;
+            }
+
+            svg {
+              width: 16px;
+              height: 16px;
+            }
+
+            span {
+              margin-top: 4px;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              text-align: center;
+              color: $color_main_100;
+            }
+          }
+
+        }
+
+        .created {
+          width: 84px;
+
+          @include desktop {
+            width: calc((84 / 814) * 100%);
+          }
+        }
+
+        .marketCap {
+          width: 150px;
+
+          @include desktop {
+            width: calc((150 / 814) * 100%);
+          }
+        }
+
+        .currentPrice {
+          width: 172px;
+
+          @include desktop {
+            width: calc((172 / 814) * 100%);
+          }
+        }
+
+        .saved {
+          width: 70px;
+
+          @include desktop {
+            width: calc((70 / 814) * 100%);
+          }
+        }
+
+        .holders {
+          width: 84px;
+
+          @include desktop {
+            width: calc((84 / 814) * 100%);
+          }
+        }
+
+        .comments {
+          width: 99px;
+
+          @include desktop {
+            width: calc((99 / 814) * 100%);
+          }
+        }
+      }
+    }
+  }
+
+  .graph {
+    display: block;
+    width: 100%;
+    height: 290px;
+    object-fit: fill;
+
+    @include desktop {
+      height: 376px;
+    }
+  }
+
+}

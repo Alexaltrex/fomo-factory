@@ -1,0 +1,83 @@
+@import "../../../../assets/styles/app";
+
+.confirmedSwitcher {
+  height: 36px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  transition: 0.3s;
+
+  @include desktop {
+    width: 330px;
+    border-right: 1px solid $color_lines;
+  }
+
+  .btn {
+    @include button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    background-color: transparent;
+
+    @include desktop {
+      justify-content: flex-start;
+      padding-left: 12px;
+    }
+
+    &:not(:first-child) {
+      border-left: 1px solid $color_lines;
+    }
+
+    //&:hover {
+    //  @include desktop {
+    //    background: #222;
+    //  }
+    //}
+
+    span {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_body_50;
+      transition: 0.3s;
+    }
+
+    &_selected {
+
+      span {
+        color: $color_main;
+      }
+
+    }
+
+  }
+
+  &_light {
+
+    @include desktop {
+      border-color: $color_light_version_lines;
+    }
+
+    .btn {
+      &:not(:first-child) {
+        border-color: $color_light_version_lines;
+      }
+
+      span {
+        color: $color_light_version_gray;
+      }
+
+      &_selected {
+        span {
+          color: $color_bg_and_text;
+        }
+      }
+
+
+    }
+
+
+  }
+}

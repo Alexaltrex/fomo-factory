@@ -1,0 +1,69 @@
+@import "../../../assets/styles/app";
+
+.enableInsta {
+  @include centerColumn;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color_pop_up_bg;
+  backdrop-filter: blur(5px);
+
+  .card {
+    width: 100%;
+    max-width: 360px;
+    border: 1px solid $color_lines;
+    background-color: $color_bg_and_text;
+
+    .cardHeader {
+      height: 36px;
+      display: flex;
+      border-bottom: 1px solid $color_lines;
+
+      .cardHeaderLeft {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+
+        span {
+          margin-left: 8px;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+        }
+      }
+
+      .closeBtn {
+        flex-shrink: 0;
+        width: 36px;
+        border-left: 1px solid $color_lines;
+
+      }
+    }
+
+    .description {
+      padding: 12px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_body_50;
+      border-bottom: 1px solid $color_lines;
+    }
+
+    .footer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      button {
+        height: 48px;
+      }
+    }
+
+
+  }
+}

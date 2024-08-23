@@ -1,0 +1,78 @@
+@import "../../../assets/styles/app";
+
+.viewModeSwitcher {
+  display: flex;
+  flex-shrink: 0;
+
+  .btn {
+    @include button;
+    @include centerRow;
+    position: relative;
+    width: 40px;
+    background-color: transparent;
+
+    &:not(:first-child) {
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        background-color: $color_lines;
+        left: 0;
+        width: 1px;
+        top: 8px;
+        bottom: 8px;
+        transition: 0.3s;
+      }
+    }
+
+    svg {
+      path {
+        fill: #FFF;
+        fill-opacity: 0.5;
+        transition: 0.3s;
+      }
+    }
+
+    &_selected {
+      svg {
+        path {
+          fill-opacity: 1;
+          fill: #D3F932;
+        }
+      }
+    }
+  }
+
+  &_light {
+
+    .btn {
+
+      &:not(:first-child) {
+        &::before {
+          background-color: $color_light_version_lines;
+        }
+      }
+
+      svg {
+        path {
+          fill-opacity: 1;
+          fill: #6C7583;
+        }
+      }
+
+      &_selected {
+
+        svg {
+          path {
+            fill-opacity: 1;
+            fill: #09090A;
+          }
+        }
+
+      }
+
+
+    }
+
+  }
+}

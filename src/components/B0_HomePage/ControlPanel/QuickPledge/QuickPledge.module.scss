@@ -1,0 +1,149 @@
+@import "../../../../assets/styles/app";
+
+.quickPledge {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+
+  @include desktop {
+    flex-grow: 0;
+    width: 327px;
+  }
+
+  .btn {
+    @include button;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+
+    .switcher {
+      position: relative;
+      width: 38px;
+      height: 20px;
+      border-radius: 999px;
+      border: 1px solid $color_lines;
+      transition: 0.3s;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        left: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        background-color: #FFF;
+        border-radius: 50%;
+        transition: 0.3s;
+      }
+    }
+
+    p {
+      white-space: nowrap;
+      margin-left: 12px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_body_50;
+      transition: 0.3s;
+    }
+
+    &_switched {
+
+      .switcher {
+
+        &::after {
+          left: 22px;
+          background-color: $color_main;
+        }
+
+      }
+
+    }
+
+  }
+
+  .value {
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    border-left: 1px solid $color_lines;
+    transition: 0.3s;
+
+    svg {
+      path {
+        fill: #FFF;
+        fill-opacity: 0.5;
+        transition: 0.3s;
+      }
+
+    }
+
+    input {
+      background: none;
+      border: none;
+      outline: none;
+      margin-left: 4px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_main_100;
+      transition: 0.3s;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      -moz-appearance: textfield;
+    }
+  }
+
+
+  &_light {
+
+    .btn {
+
+      .switcher {
+        border: 1px solid $color_light_version_lines;
+
+        &::after {
+          background-color: #09090A;
+        }
+      }
+
+      p {
+        color: $color_light_version_gray;
+      }
+    }
+
+    .value {
+      border-color: $color_light_version_lines;
+
+      svg {
+        path {
+          fill: #6C7583;
+          fill-opacity: 1;
+        }
+      }
+
+      p {
+        color: $color_bg_and_text;
+      }
+    }
+
+
+  }
+
+
+}

@@ -1,0 +1,133 @@
+@import "../../../assets/styles/app";
+
+.getTweet {
+  @include centerColumn;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color_pop_up_bg;
+  backdrop-filter: blur(5px);
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid $color_lines;
+    background-color: $color_bg_and_text;
+
+    .header {
+      height: 36px;
+      display: flex;
+      border-bottom: 1px solid $color_lines;
+
+      .cardHeaderLeft {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+
+        p {
+          margin-left: 8px;
+
+          span {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 140%;
+            text-transform: uppercase;
+            color: $color_main_100;
+          }
+
+          .grey {
+            font-weight: 400;
+            color: $color_body_50;
+          }
+        }
+      }
+
+      .closeBtn {
+        flex-shrink: 0;
+        width: 36px;
+        border-left: 1px solid $color_lines;
+
+      }
+    }
+
+    .body {
+
+      @include desktop {
+        height: 130px;
+      }
+
+      .description {
+        padding: 12px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+
+        span {
+          color: $color_main;
+        }
+      }
+
+    }
+
+    .footer {
+      height: 48px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      &_step4 {
+        grid-template-columns: 1fr;
+      }
+
+      .leftBtn {
+        border-right: 1px solid $color_lines;
+      }
+
+      .leftBtn, .rightBtn {
+        border-top: 1px solid $color_lines;
+      }
+    }
+
+  }
+
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0px 8px;
+  border-top: 1px solid $color_lines;
+  border-bottom: 1px solid $color_lines;
+
+  .icon {
+    @include centerRow;
+    flex-shrink: 0;
+    border: 1px solid $color_lines;
+    width: 32px;
+    height: 32px;
+  }
+
+  input {
+    flex-grow: 1;
+    margin-left: 12px;
+    background: none;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: $color_main_100;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_body_50;
+    }
+  }
+}

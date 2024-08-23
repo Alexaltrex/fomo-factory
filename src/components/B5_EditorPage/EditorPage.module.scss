@@ -1,0 +1,71 @@
+@import "../../assets/styles/app";
+
+.editorPage {
+  height: calc(100vh - 48px);
+  overflow-y: hidden;
+
+  .title {
+    height: 48px;
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_main_100;
+    border-bottom: 1px solid $color_lines;
+  }
+
+  .confirmedListMobile {
+    height: calc(100vh - 48px - 48px - 72px - 62px - 36px - 36px);
+  }
+
+  .confirmedListDesktop {
+    & > div:nth-child(2) {
+      height: calc(100vh - 48px - 48px - 72px - 36px - 40px);
+    }
+  }
+
+  .confirmedGrid {
+    height: calc(100vh - 48px - 48px - 72px - 62px - 36px - 36px);
+
+    @include desktop {
+      height: calc(100vh - 48px - 48px - 72px - 36px);
+    }
+  }
+
+  .unconfirmedListMobile {
+    height: calc(100vh - 48px - 48px - 72px - 62px - 36px - 36px);
+  }
+
+  .unconfirmedListDesktop {
+
+    & > div:nth-child(2) {
+      height: calc(100vh - 48px - 48px - 72px - 36px - 36px);
+    }
+
+  }
+
+  .unconfirmedGrid {
+    height: calc(100vh - 48px - 48px - 72px - 62px - 36px - 36px);
+
+    @include desktop {
+      height: calc(100vh - 48px - 48px - 72px - 36px);
+    }
+  }
+
+  .tradesMobile {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 48px - 48px - 72px - 62px - 36px - 36px - 36px);
+  }
+
+
+  .tradesDesktop {
+    & > div:nth-child(2) {
+      height: calc(100vh - 48px - 48px - 72px - 36px - 40px);
+    }
+  }
+
+}
