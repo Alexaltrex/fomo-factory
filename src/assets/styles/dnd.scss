@@ -1,0 +1,96 @@
+.singleCanDropDesktop {
+  animation: 1.25s infinite singleCanDropDesktopAnimation;
+}
+
+.singleIsOverDesktop {
+  animation: 1.25s infinite singleIsOverDesktopAnimation;
+}
+
+.folderCanDropDesktop {
+  animation: 1.25s infinite folderCanDropDesktopAnimation;
+}
+
+.folderIsOverDesktop {
+  animation: 1.25s infinite folderIsOverDesktopAnimation;
+}
+
+.singleCanDropMobile {
+  animation: 1.25s infinite singleCanDropMobileAnimation;
+}
+
+.singleIsOverMobile {
+  animation: 1.25s infinite singleIsOverMobileAnimation;
+}
+
+
+@keyframes singleCanDropDesktopAnimation {
+  0% {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    outline: 3px solid rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes singleIsOverDesktopAnimation {
+  0% {
+    outline: 3px solid rgba(0, 255, 0, 0.5);
+  }
+  50% {
+    outline: 3px solid rgba(0, 255, 0, 0.25);
+  }
+  100% {
+    outline: 3px solid rgba(0, 255, 0, 0.5);
+  }
+}
+
+@keyframes folderCanDropDesktopAnimation {
+  0% {
+    background:rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes folderIsOverDesktopAnimation {
+  0% {
+    background:rgba(0, 255, 0, 0.5);
+  }
+  50% {
+    background: rgba(0, 255, 0, 0.25);
+  }
+  100% {
+    background: rgba(0, 255, 0, 0.5);
+  }
+}
+
+@keyframes singleCanDropMobileAnimation {
+  0% {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes singleIsOverMobileAnimation {
+  0% {
+    background: rgba(173, 231, 84, 0.25);
+  }
+  50% {
+    background: rgba(173, 231, 84, 0.15);
+  }
+  100% {
+    background: rgba(173, 231, 84, 0.25);
+  }
+}

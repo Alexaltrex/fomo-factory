@@ -12,7 +12,7 @@ export const TransactionAlerts = observer(() => {
         }
     } = useStore()
 
-    console.log(Object.values(transactionAlerts))
+    //console.log(Object.values(transactionAlerts))
 
     return (
         <>

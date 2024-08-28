@@ -1,0 +1,23 @@
+@import "../../../assets/styles/app";
+
+.previewCustom {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255, 0.5);
+  padding-right: 12px;
+
+  img {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+
+  p {
+    margin-left: 12px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #FFF;
+  }
+}

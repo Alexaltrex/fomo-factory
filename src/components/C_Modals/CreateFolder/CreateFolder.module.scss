@@ -1,6 +1,6 @@
 @import "../../../assets/styles/app";
 
-.howToPlay {
+.createFolder {
   @include centerColumn;
   position: fixed;
   z-index: 999;
@@ -42,6 +42,7 @@
         flex-shrink: 0;
         width: 36px;
         border-left: 1px solid $color_lines;
+
       }
     }
 
@@ -52,76 +53,54 @@
       line-height: 140%;
       color: $color_body_50;
       border-bottom: 1px solid $color_lines;
-
-      span {
-        color: $color_main;
-      }
     }
 
-    .list {
+    .form {
 
-      .item {
-        padding: 12px;
-        display: flex;
+      .inputWrapper {
+        position: relative;
+        padding: 9px 12px;
         border-bottom: 1px solid $color_lines;
 
-        @include desktop {
-          padding: 8px;
-          align-items: center;
-        }
-
-        .icon {
-          @include centerRow;
-          flex-shrink: 0;
-          border: 1px solid $color_lines;
-          width: 32px;
-          height: 32px;
-
-          @include desktop {
-            width: 84px;
-            height: 84px;
-          }
-
-          svg {
-            width: 16px;
-            height: 16px;
-
-            @include desktop {
-              width: 32px;
-              height: 32px;
-            }
-          }
-
-        }
-
-        .right {
+        input {
           flex-grow: 1;
-          margin-left: 12px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_main_100;
 
-          p {
-            font-weight: 700;
+          &::placeholder {
+            font-weight: 400;
             font-size: 12px;
             line-height: 140%;
             text-transform: uppercase;
-            color: $color_main_100;
-
-            &:nth-child(2) {
-              margin-top: 8px;
-              font-weight: 400;
-              color: $color_body_50;
-              text-transform: unset;
-            }
+            color: $color_body_50;
           }
+
         }
 
+        .error {
+          position: absolute;
+          left: 12px;
+          bottom: -2px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_red;
+          transform: translateY(100%);
+        }
       }
 
-    }
-
-    .goToBtn {
-      margin-top: 24px;
-      width: 100%;
-      height: 48px;
+      .buttons {
+        border-top: 1px solid $color_lines;
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 48px;
+      }
     }
 
   }

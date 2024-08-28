@@ -19,6 +19,9 @@ import {TokenPageUnconfirmed} from "../B3_TokenPageUnconfirmed/TokenPageUnconfir
 import {EditorPage} from "../B5_EditorPage/EditorPage";
 import {HowToPlay} from "../C_Modals/HowToPlay/HowToPlay";
 import {TransactionAlerts} from "../C_Modals/TransactionAlerts/TransactionAlerts";
+import {CreateFolder} from "../C_Modals/CreateFolder/CreateFolder";
+import {RenameFolder} from "../C_Modals/RenameFolder/RenameFolder";
+import {DeleteFolder} from "../C_Modals/DeleteFolder/DeleteFolder";
 
 export const App = observer(() => {
     const {
@@ -40,7 +43,10 @@ export const App = observer(() => {
             <Share/>
             <HowToPlay/>
             <TransactionAlerts/>
-            
+            <CreateFolder/>
+            <RenameFolder/>
+            <DeleteFolder/>
+
             {
                 showConnectWallet && <ConnectWallet/>
             }

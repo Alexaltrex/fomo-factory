@@ -1,9 +1,11 @@
 @import "../../../assets/styles/app";
 
-.sourceSingle {
+.favoriteSingle {
   cursor: pointer;
   width: 32px;
   height: 32px;
+  transition: 0.3s;
+  outline: 3px solid transparent;
 
   &_canDrop {
     outline: 3px solid rgba(255, 255, 255, 1.0);
@@ -14,7 +16,8 @@
   }
 
   &_isDragging {
-    outline: none;
+    outline: none!important;
+    animation: none!important;
   }
 
   &:not(:first-child) {

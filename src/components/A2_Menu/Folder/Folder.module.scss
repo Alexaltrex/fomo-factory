@@ -1,0 +1,158 @@
+@import "../../../assets/styles/app";
+
+
+
+
+  .folder {
+    margin-top: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+
+    &_canDrop {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &_isOver {
+      background: rgba(173, 231, 84, 0.25);
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      .items {
+        width: 36px;
+        padding: 2px;
+        //margin-left: -2px;
+        background: $color_white_3;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2px;
+        transition: 0.3s;
+
+        img {
+          display: block;
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      .name {
+        margin-left: 12px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        //text-transform: uppercase;
+        color: $color_body_50;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      button {
+        @include button;
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) {
+          margin-left: 8px;
+        }
+
+        svg {
+          width: 18px;
+          height: 18px;
+
+          path {
+            fill: #FFF;
+            fill-opacity: 0.5;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .folderName {
+    position: absolute;
+    z-index: 999;
+    top: 2px;
+    right: -6px;
+    transform: translateX(100%);
+    padding: 8px 12px;
+    background: $color_bg_and_text;
+    border: 1px solid $color_lines;
+
+    p {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_body_50;
+      white-space: nowrap;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    z-index: 999;
+    top: 2px;
+    right: -6px;
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $color_lines;
+    background: $color_bg_and_text;
+
+    button {
+      @include button;
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      width: 165px;
+      height: 36px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+
+        path {
+          fill: #FFF;
+          fill-opacity: 0.5;
+          transition: 0.3s;
+        }
+      }
+
+      p {
+        padding-left: 8px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_body_50;
+        white-space: nowrap;
+        transition: 0.3s;
+      }
+
+      &:hover {
+        svg {
+          path {
+            fill-opacity: 1;
+          }
+        }
+
+        p {
+          color: #FFF;
+        }
+      }
+
+    }
+
+
+  }
+
+

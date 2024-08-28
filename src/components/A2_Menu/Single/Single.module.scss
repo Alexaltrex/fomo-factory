@@ -1,0 +1,41 @@
+@import "../../../assets/styles/app";
+
+.single {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &_canDrop {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &_isOver {
+    background: rgba(173, 231, 84, 0.25);
+  }
+
+  &_isDragging {
+    background: none!important;
+    animation: none!important;
+  }
+
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+
+  img {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+
+  p {
+    margin-left: 12px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_body_50;
+  }
+
+}
