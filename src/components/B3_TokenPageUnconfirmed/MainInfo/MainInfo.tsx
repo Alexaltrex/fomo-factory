@@ -141,9 +141,6 @@ export const MainInfo = observer(() => {
                             </div>
                         </div>
 
-
-
-
                     </div>
                 </div>
 

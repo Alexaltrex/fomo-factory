@@ -17,16 +17,37 @@
     border: 1px solid $color_lines;
     background-color: $color_bg_and_text;
 
+    @include desktop {
+      max-width: $k * 440px;
+    }
+
     .cardHeader {
       height: 36px;
       display: flex;
       border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        height: $k * 36px;
+      }
 
       .cardHeaderLeft {
         flex-grow: 1;
         display: flex;
         align-items: center;
         padding-left: 12px;
+
+        @include desktop {
+          padding-left: $k * 12px;
+        }
+
+        svg {
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+
+        }
 
         span {
           margin-left: 8px;
@@ -35,6 +56,11 @@
           line-height: 140%;
           text-transform: uppercase;
           color: $color_main_100;
+
+          @include desktop {
+            margin-left: $k * 8px;
+            font-size: $k * 12px;
+          }
         }
       }
 
@@ -43,6 +69,16 @@
         width: 36px;
         border-left: 1px solid $color_lines;
 
+        @include desktop {
+          width: $k * 36px;
+        }
+
+        svg {
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
       }
     }
 
@@ -53,11 +89,20 @@
       line-height: 140%;
       color: $color_body_50;
       border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        padding: $k * 12px;
+        font-size: $k * 12px;
+      }
     }
 
     .cardFooter {
       height: 48px;
       display: flex;
+
+      @include desktop {
+        height: $k * 48px;
+      }
 
       .left {
         flex-grow: 1;
@@ -65,11 +110,27 @@
         align-items: center;
         padding-left: 8px;
 
+        @include desktop {
+          padding-left: $k * 8px;
+        }
+
         .iconWrapper {
           @include centerRow;
           width: 32px;
           height: 32px;
           border: 1px solid $color_lines;
+
+          @include desktop {
+            width: $k * 32px;
+            height: $k * 32px;
+          }
+
+          svg {
+            @include desktop {
+              width: $k * 16px;
+              height: $k * 16px;
+            }
+          }
         }
 
         .link {
@@ -78,6 +139,11 @@
           font-size: 12px;
           line-height: 140%;
           color: $color_main_100;
+
+          @include desktop {
+            margin-left: $k * 12px;
+            font-size: $k * 12px;
+          }
         }
       }
 
@@ -86,7 +152,17 @@
         width: 48px;
         border-left: 1px solid $color_lines;
 
+        @include desktop {
+          width: $k * 48px;
+        }
+
         svg {
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+
           path {
             transition: 0.3s;
           }

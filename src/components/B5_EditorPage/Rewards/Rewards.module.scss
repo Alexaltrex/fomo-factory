@@ -5,11 +5,11 @@
   overflow-y: auto;
 
   @include desktop {
-    height: auto;
+    max-height: unset;
     overflow-y: unset;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 12px;
+    grid-column-gap: $k * 12px;
   }
 
   .referrals, .points {
@@ -25,6 +25,12 @@
       text-transform: uppercase;
       color: $color_main_100;
       border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        height: $k * 36px;
+        padding-left: $k * 12px;
+        font-size: $k * 12px;
+      }
     }
 
   }
@@ -38,7 +44,8 @@
       grid-template-columns: repeat(2, 1fr);
 
       @include desktop {
-        grid-template-columns: 1fr 214px;
+        grid-template-columns: 1fr $k * 214px;
+        height: $k * 48px;
       }
 
       p {
@@ -50,6 +57,10 @@
         display: flex;
         align-items: center;
 
+        @include desktop {
+          font-size: $k * 12px;
+          padding-left: $k * 12px;
+        }
 
         &:first-child {
           color: $color_body_50;
@@ -74,6 +85,10 @@
             height: 24px;
             transform: translateY(-50%);
             background: $color_lines;
+
+            @include desktop {
+              height: $k * 24px;
+            }
           }
         }
       }
@@ -103,6 +118,7 @@
           @include desktop {
             flex-grow: 1;
             border-bottom: none;
+            height: $k * 48px;
           }
 
           .code {
@@ -113,7 +129,14 @@
             width: 74px;
 
             @include desktop {
-              width: 96px;
+              width: $k * 96px;
+            }
+
+            svg {
+              @include desktop {
+                width: $k * 16px;
+                height: $k * 16px;
+              }
             }
 
             span {
@@ -124,6 +147,11 @@
               text-transform: uppercase;
               text-align: right;
               color: $color_body_50;
+
+              @include desktop {
+                margin-left: $k * 4px;
+                font-size: $k * 12px;
+              }
             }
           }
 
@@ -138,6 +166,11 @@
             font-size: 12px;
             line-height: 140%;
             color: $color_main_100;
+
+            @include desktop {
+              padding-left: $k * 12px;
+              font-size: $k * 12px;
+            }
           }
 
           .copyBtn {
@@ -146,7 +179,18 @@
             width: 48px;
 
             @include desktop {
+              width: $k * 48px;
+            }
+
+            @include desktop {
               border-right: 1px solid $color_lines;
+            }
+
+            svg {
+              @include desktop {
+                width: $k * 16px;
+                height: $k * 16px;
+              }
             }
 
           }
@@ -158,7 +202,8 @@
 
           @include desktop {
             flex-shrink: 0;
-            width: 214px;
+            width: $k * 214px;
+            height: $k * 48px;
           }
         }
       }
@@ -170,6 +215,10 @@
           display: flex;
           border-bottom: 1px solid $color_lines;
 
+          @include desktop {
+            height: $k * 48px;
+          }
+
           .left {
             flex-grow: 1;
             border-right: 1px solid $color_lines;
@@ -178,20 +227,27 @@
             grid-template-columns: 1fr 118px;
 
             @include desktop {
-              grid-template-columns: 1fr 130px;
+              grid-template-columns: 1fr $k * 130px;
             }
 
             p {
-              font-family: var(--font-family);
               font-weight: 400;
               font-size: 12px;
               line-height: 140%;
               text-transform: uppercase;
 
+              @include desktop {
+                font-size: $k * 12px;
+              }
+
 
               &:nth-child(1) {
                 color: $color_body_50;
                 padding-left: 12px;
+
+                @include desktop {
+                  padding-left: $k * 12px;
+                }
               }
 
               &:nth-child(2) {
@@ -214,6 +270,10 @@
                   height: 24px;
                   transform: translateY(-50%);
                   background: $color_lines;
+
+                  @include desktop {
+                    height: $k * 24px;
+                  }
                 }
               }
             }
@@ -224,7 +284,7 @@
             width: 60px;
 
             @include desktop {
-              width: 85px;
+              width: $k * 85px;
             }
           }
         }
@@ -236,7 +296,9 @@
         margin-top: 24px;
 
         @include desktop {
-          width: 318px;
+          height: $k * 48px;
+          margin-top: $k * 24px;
+          width: $k * 318px;
         }
       }
 
@@ -247,7 +309,7 @@
       margin-top: 36px;
 
       @include desktop {
-        margin-top: 12px;
+        margin-top: $k * 12px;
         border-right: 1px solid $color_lines;
       }
     }
@@ -272,6 +334,10 @@
         height: 48px;
         border-bottom: 1px solid $color_lines;
 
+        @include desktop {
+          height: $k * 48px;
+        }
+
         p {
           display: flex;
           align-items: center;
@@ -280,6 +346,11 @@
           font-size: 12px;
           line-height: 140%;
           color: $color_body_50;
+
+          @include desktop {
+            padding-left: $k * 12px;
+            font-size: $k * 12px;
+          }
 
           &:nth-child(1) {
             text-transform: uppercase;

@@ -45,7 +45,6 @@ export const SearchForTokens = observer(() => {
 
     const [focus, setFocus] = useState(false);
 
-
     return (
         <div className={clsx({
             [style.searchForTokens]: true,

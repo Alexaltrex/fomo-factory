@@ -271,12 +271,8 @@
         }
 
 
-
       }
     }
-
-
-
 
 
   }
@@ -284,7 +280,7 @@
 
   .tableDesktop {
     @include onlyDesktop();
-    width: 824px;
+    width: $k * 824px;
     margin-left: auto;
     margin-right: auto;
     border-left: 1px solid $color_lines;
@@ -292,12 +288,12 @@
 
     .tableHeader {
       display: flex;
-      height: 40px;
+      height: $k * 40px;
       border-bottom: 1px solid $color_lines;
 
       p {
         font-weight: 400;
-        font-size: 12px;
+        font-size: $k * 12px;
         line-height: 140%;
         color: $color_body_50;
         display: flex;
@@ -306,7 +302,7 @@
 
         &:nth-child(1) {
           justify-content: flex-start;
-          padding-left: 12px;
+          padding-left: $k * 12px;
           width: 28%;
         }
 
@@ -327,12 +323,12 @@
     }
 
     .tableBody {
-      max-height: calc(100vh - 48px - 40px);
+      max-height: calc(100vh - $k * (48px + 40px));
       overflow: auto;
 
       .row {
         display: flex;
-        height: 60px;
+        height: $k * 60px;
         border-bottom: 1px solid $color_lines;
 
         & > div {
@@ -351,7 +347,7 @@
               top: 50%;
               transform: translateY(-50%);
               right: 0;
-              height: 20px;
+              height: $k * 20px;
               width: 1px;
               background-color: $color_lines;
             }
@@ -360,7 +356,7 @@
           &:nth-child(1) {
             width: 28%;
             justify-content: flex-start;
-            padding-left: 12px;
+            padding-left: $k * 12px;
           }
 
           &:nth-child(2) {
@@ -382,19 +378,24 @@
           .addToFavoriteBtn {
             @include button;
             @include centerRow;
-            width: 12px;
-            height: 12px;
+            width: $k * 12px;
+            height: $k * 12px;
+
+            svg {
+              width: $k * 12px;
+              height: $k * 12px;
+            }
           }
 
           img {
             display: block;
-            width: 32px;
-            height: 32px;
-            margin-left: 12px;
+            width: $k * 32px;
+            height: $k * 32px;
+            margin-left: $k * 12px;
           }
 
           .info {
-            margin-left: 8px;
+            margin-left: $k * 8px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -405,28 +406,33 @@
 
               p {
                 font-weight: 400;
-                font-size: 12px;
+                font-size: $k * 12px;
                 line-height: 140%;
                 color: $color_main_100;
               }
 
               & > svg {
-                width: 12px;
-                height: 12px;
-                margin-left: 4px;
+                width: $k * 12px;
+                height: $k * 12px;
+                margin-left: $k * 4px;
               }
 
               a {
                 @include centerRow;
-                width: 12px;
-                height: 12px;
-                margin-left: 4px;
+                width: $k * 12px;
+                height: $k * 12px;
+                margin-left: $k * 4px;
+
+                svg {
+                  width: $k * 12px;
+                  height: $k * 12px;
+                }
               }
             }
 
             & > p {
               font-weight: 400;
-              font-size: 12px;
+              font-size: $k * 12px;
               line-height: 140%;
               color: $color_body_50;
             }
@@ -439,20 +445,20 @@
           .status {
             display: flex;
             align-items: center;
-            padding: 2px 4px;
+            padding: $k * 2px $k * 4px;
             border: 1px solid rgba(255, 61, 0, 0.08);
             background: rgba(255, 61, 0, 0.08);
 
             & > div {
-              width: 6px;
-              height: 6px;
+              width: $k * 6px;
+              height: $k * 6px;
               background-color: $color_red;
             }
 
             span {
-              margin-left: 6px;
+              margin-left: $k * 6px;
               font-weight: 400;
-              font-size: 12px;
+              font-size: $k * 12px;
               line-height: 140%;
               text-transform: uppercase;
               color: $color_red;
@@ -480,10 +486,13 @@
             align-items: center;
 
             &:not(:first-child) {
-              margin-left: 24px;
+              margin-left: $k * 24px;
             }
 
             svg {
+              width: $k * 12px;
+              height: $k * 12px;
+
               path {
                 fill: #FFF;
                 fill-opacity: 0.5;
@@ -491,9 +500,9 @@
             }
 
             span {
-              margin-left: 4px;
+              margin-left: $k * 4px;
               font-weight: 400;
-              font-size: 12px;
+              font-size: $k * 12px;
               line-height: 140%;
               color: $color_body_50;
             }
@@ -503,15 +512,18 @@
         .priceCell {
 
           svg {
+            width: $k * 16px;
+            height: $k * 16px;
+
             path {
               fill: $color_main;
             }
           }
 
           span {
-            margin-left: 4px;
+            margin-left: $k * 4px;
             font-weight: 700;
-            font-size: 12px;
+            font-size: $k * 12px;
             line-height: 140%;
             text-transform: uppercase;
             text-align: right;

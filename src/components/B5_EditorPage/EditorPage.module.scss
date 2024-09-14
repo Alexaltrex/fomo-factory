@@ -4,6 +4,10 @@
   height: calc(100vh - 48px);
   overflow-y: hidden;
 
+  @include desktop {
+    height: calc(100vh - $k * 48px);
+  }
+
   .title {
     height: 48px;
     padding-left: 12px;
@@ -15,6 +19,12 @@
     text-transform: uppercase;
     color: $color_main_100;
     border-bottom: 1px solid $color_lines;
+
+    @include desktop {
+      height: $k * 48px;
+      padding-left: $k * 12px;
+      font-size: $k * 12px;
+    }
   }
 
   .confirmedListMobile {
@@ -23,7 +33,7 @@
 
   .confirmedListDesktop {
     & > div:nth-child(2) {
-      height: calc(100vh - 48px - 48px - 72px - 36px - 40px);
+      height: calc(100vh - $k * (48px + 48px + 72px + 36px + 40px));
     }
   }
 
@@ -31,7 +41,7 @@
     height: calc(100vh - 48px - 48px - 72px - 62px - 36px - 36px);
 
     @include desktop {
-      height: calc(100vh - 48px - 48px - 72px - 36px);
+      height: calc(100vh - $k * (48px + 48px + 72px + 36px));
     }
   }
 
@@ -42,7 +52,7 @@
   .unconfirmedListDesktop {
 
     & > div:nth-child(2) {
-      height: calc(100vh - 48px - 48px - 72px - 36px - 36px);
+      height: calc(100vh - $k * (48px + 48px + 72px + 36px + 36px));
     }
 
   }
@@ -51,7 +61,7 @@
     height: calc(100vh - 48px - 48px - 72px - 62px - 36px - 36px);
 
     @include desktop {
-      height: calc(100vh - 48px - 48px - 72px - 36px);
+      height: calc(100vh - $k * (48px + 48px + 72px + 36px));
     }
   }
 
@@ -64,7 +74,7 @@
 
   .tradesDesktop {
     & > div:nth-child(2) {
-      height: calc(100vh - 48px - 48px - 72px - 36px - 40px);
+      height: calc(100vh - $k * (48px + 48px + 72px + 36px + 40px));
     }
   }
 

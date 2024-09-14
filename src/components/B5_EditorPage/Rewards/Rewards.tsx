@@ -158,10 +158,7 @@ export const Rewards = observer(() => {
                         ))
                     }
                 </div>
-
             </div>
-
-
         </div>
     )
 })

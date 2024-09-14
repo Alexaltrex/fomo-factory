@@ -17,7 +17,6 @@ export const AppContainer = () => {
                     <PreviewCustom/>
                     <App/>
 
-
                 </DndProvider>
 
             </StoreContext.Provider>

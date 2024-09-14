@@ -9,6 +9,10 @@
   padding: 0 12px;
   border-right: 1px solid $color_lines;
 
+  @include desktop {
+    padding: 0 $k * 12px;
+  }
+
   input {
     flex-grow: 1;
     background-color: transparent;
@@ -19,12 +23,20 @@
     line-height: 140%;
     color: $color_main_100;
 
+    @include desktop {
+      font-size: $k * 12px;
+    }
+
     &::placeholder {
       font-weight: 400;
       font-size: 12px;
       line-height: 140%;
       text-transform: uppercase;
       color: $color_body_50;
+
+      @include desktop {
+        font-size: $k * 12px;
+      }
     }
 
   }
@@ -36,6 +48,12 @@
     border: 1px solid $color_lines;
     width: 32px;
     height: 32px;
+
+    @include desktop {
+      margin-left: $k * 12px;
+      width: $k * 32px;
+      height: $k * 32px;
+    }
   }
 
 }

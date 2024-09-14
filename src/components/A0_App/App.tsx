@@ -63,7 +63,6 @@ export const App = observer(() => {
                         <Route path='/editor' element={<EditorPage/>}/>
                     </Routes>
                 </div>
-
             </main>
         </div>
     );

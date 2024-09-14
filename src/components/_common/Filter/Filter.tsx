@@ -29,7 +29,6 @@ export const Filter: FC<IFilter> = observer(({
     const btnRef = useRef<HTMLButtonElement>(null!);
     useOutsideButNotOnTargetClick(ref, btnRef, () => setMenu(false));
 
-
     return (
         <div className={clsx({
             [style.filter]: true,

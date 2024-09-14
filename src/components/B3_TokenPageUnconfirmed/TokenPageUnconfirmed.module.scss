@@ -55,24 +55,30 @@
     height: 100%;
 
     .desktopContentLeft {
-      width: calc(100vw - 48px - 318px);
+      width: calc(100vw - $k * (48px + 318px));
       border-right: 1px solid $color_lines;
       position: relative;
+      transition: 0.3s;
 
       .hideBtn {
         @include button;
         @include centerColumn;
         position: absolute;
-        width: 16px;
-        height: 40px;
+        width: $k * 16px;
+        height: $k * 40px;
         background-color: $color_bg_and_text;
         border: 1px solid $color_lines;
         border-left: 1px solid $color_bg_and_text;
-        top: 8px;
+        top: $k * 8px;
         right: 0;
         transform: translateX(100%);
         z-index: 100;
         transition: 0.3s;
+
+        svg {
+          width: $k * 7px;
+          height: $k * 12px;
+        }
       }
     }
 
@@ -80,7 +86,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 318px;
+      width: $k * 318px;
       height: 100%;
       transition: 0.3s;
     }
@@ -88,7 +94,7 @@
     &_hide {
 
       .desktopContentLeft {
-        width: calc(100vw - 48px);
+        width: calc(100vw - $k * 48px);
 
         .hideBtn {
           transform: translateX(0);

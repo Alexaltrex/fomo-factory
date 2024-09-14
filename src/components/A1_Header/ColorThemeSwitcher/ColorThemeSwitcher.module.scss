@@ -8,7 +8,8 @@
   transition: 0.3s;
 
   @include desktop {
-    width: 160px;
+    width: $k * 160px;
+
   }
 
   .labelDark, .labelLight {
@@ -18,6 +19,10 @@
     line-height: 140%;
     text-transform: uppercase;
     transition: 0.3s;
+
+    @include desktop {
+      font-size: $k * 12px;
+    }
   }
 
   .labelDark {
@@ -38,6 +43,12 @@
     transition: 0.3s;
     margin: 0 12px;
 
+    @include desktop {
+      width: $k * 38px;
+      height: $k * 20px;
+      margin: 0 $k * 12px;
+    }
+
     &::after {
       position: absolute;
       display: block;
@@ -50,6 +61,12 @@
       background-color: #FFF;
       border-radius: 50%;
       transition: 0.3s;
+
+      @include desktop {
+        left: $k * 4px;
+        width: $k * 12px;
+        height: $k * 12px;
+      }
     }
   }
 
@@ -75,6 +92,10 @@
       &::after {
         left: 22px;
         background-color: #09090A;
+
+        @include desktop {
+          left: $k * 22px;
+        }
       }
     }
   }

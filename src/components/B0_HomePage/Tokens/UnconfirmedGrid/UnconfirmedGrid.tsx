@@ -62,7 +62,6 @@ export const UnconfirmedGrid: FC<IUnconfirmedGrid> = observer(({
                         <div className={style.pledgeAmount}>
                             {svgIcons.solana}
                             <p>{pledgeAmount[0]}</p>
-
                         </div>
 
                         <div className={style.followers}>

@@ -11,9 +11,18 @@
   background: $color_main;
   display: flex;
 
+  @include desktop {
+    width: $k * 360px;
+    height: $k * 36px;
+  }
+
 
   &:not(:first-child) {
     margin-top: 8px;
+
+    @include desktop {
+      margin-top: $k * 8px;
+    }
   }
 
   .body {
@@ -21,6 +30,10 @@
     display: flex;
     align-items: center;
     padding-left: 12px;
+
+    @include desktop {
+      padding-left: $k * 12px;
+    }
 
     svg {
       path {
@@ -35,9 +48,13 @@
       line-height: 140%;
       text-transform: uppercase;
       color: $color_bg_and_text;
+
+      @include desktop {
+        margin-left: $k * 4px;
+        font-size: $k * 12px;
+      }
     }
   }
-
 
   .closeBtn {
     @include centerRow;
@@ -46,7 +63,17 @@
     width: 36px;
     border-left: 1px solid $color_lines;
 
+    @include desktop {
+      width: $k * 36px;
+    }
+
     svg {
+
+      @include desktop {
+        width: $k * 16px;
+        height: $k * 16px;
+      }
+
       path {
         fill: $color_bg_and_text;
       }

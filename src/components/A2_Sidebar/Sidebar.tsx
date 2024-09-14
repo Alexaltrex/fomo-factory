@@ -25,7 +25,6 @@ export const Sidebar = observer(() => {
     const {pathname} = useLocation();
 
     return (
-        // <DndProvider backend={HTML5Backend}>
             <div className={style.sidebar}>
 
                 <div className={style.favorites}>
@@ -36,7 +35,6 @@ export const Sidebar = observer(() => {
                                 <FavoriteSingle key={favoriteSingle.id}
                                                 favoriteSingle={favoriteSingle}
                                 />
-                                // <img key={id} src={src} alt=""/>
                             ))
                         }
                     </div>
@@ -114,8 +112,6 @@ export const Sidebar = observer(() => {
                 </div>
 
             </div>
-        // </DndProvider>
-
 
     )
 })

@@ -2,17 +2,17 @@
 
 .favoriteSingle {
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  width: $k * 32px;
+  height: $k * 32px;
   transition: 0.3s;
   outline: 3px solid transparent;
 
   &_canDrop {
-    outline: 3px solid rgba(255, 255, 255, 1.0);
+    outline: $k * 3px solid rgba(255, 255, 255, 1.0);
   }
 
   &_isOver {
-    outline: 3px solid green;
+    outline: $k * 3px solid green;
   }
 
   &_isDragging {
@@ -21,11 +21,11 @@
   }
 
   &:not(:first-child) {
-    margin-top: 8px;
+    margin-top: $k * 8px;
   }
 
   img {
-    width: 32px;
-    height: 32px;
+    width: $k * 32px;
+    height: $k * 32px;
   }
 }

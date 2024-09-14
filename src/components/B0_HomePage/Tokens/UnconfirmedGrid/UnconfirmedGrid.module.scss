@@ -3,14 +3,14 @@
 .unconfirmedGrid {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 6px;
   overflow-y: auto;
-  //height: calc(100vh - 48px - 140px - 36px - 36px - 36px);
-  //
-  //@include desktop {
-  //  height: calc(100vh - 48px - 140px - 36px);
-  //}
+
+  @include desktop {
+    padding: $k * 6px;
+  }
 
   .card {
     position: relative;
@@ -20,7 +20,9 @@
     width: 162px;
 
     @include desktop {
-      width: 218px;
+      width: $k * 218px;
+      padding: $k * 12px $k * 11px $k * 60px;
+      margin: $k * 6px;
     }
 
     .imgWrapper {
@@ -29,8 +31,8 @@
       height: 138px;
 
       @include desktop {
-        width: 194px;
-        height: 194px;
+        width: $k * 194px;
+        height: $k * 194px;
       }
 
       img {
@@ -52,13 +54,20 @@
         background: $color_bg_and_text;
 
         @include desktop {
-          top: 4px;
-          right: 4px;
+          top: $k * 4px;
+          right: $k * 4px;
+          width: $k * 36px;
+          height: $k * 36px;
         }
 
         svg {
           width: 16px;
           height: 16px;
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
         }
       }
     }
@@ -68,11 +77,19 @@
       display: flex;
       align-items: center;
 
+      @include desktop {
+        margin-top: $k * 12px;
+      }
+
       p {
         font-weight: 400;
         font-size: 12px;
         line-height: 140%;
         color: $color_main_100;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
       }
 
       a {
@@ -80,6 +97,22 @@
         width: 12px;
         height: 12px;
         margin-left: 4px;
+
+        @include desktop {
+          width: $k * 12px;
+          height: $k * 12px;
+          margin-left: $k * 4px;
+        }
+
+        svg {
+          width: 12px;
+          height: 12px;
+
+          @include desktop {
+            width: $k * 12px;
+            height: $k * 12px;
+          }
+        }
       }
     }
 
@@ -88,7 +121,18 @@
       display: flex;
       align-items: center;
 
+      @include desktop {
+        margin-top: $k * 8px;
+      }
+
       svg {
+
+        @include desktop {
+          width: $k * 16px;
+          height: $k * 16px;
+        }
+
+
         path {
           fill: #FFF;
           fill-opacity: 0.5;
@@ -101,6 +145,11 @@
         font-size: 12px;
         line-height: 140%;
         color: $color_main;
+
+        @include desktop {
+          margin-left: $k * 4px;
+          font-size: $k * 12px;
+        }
       }
 
     }
@@ -108,10 +157,18 @@
     .followers {
       margin-top: 12px;
 
+      @include desktop {
+        margin-top: $k * 12px;
+      }
+
       .followersInner {
         margin: -2px -4px;
         display: flex;
         flex-wrap: wrap;
+
+        @include desktop {
+          margin: $k * -2px $k * -4px;
+        }
 
         .followerItem {
           margin: 2px;
@@ -120,9 +177,19 @@
           display: flex;
           align-items: center;
 
+          @include desktop {
+            margin: $k * 2px;
+            padding: $k * 4px $k * 8px;
+          }
+
           svg {
             width: 12px;
             height: 12px;
+
+            @include desktop {
+              width: $k * 12px;
+              height: $k * 12px;
+            }
           }
 
           span {
@@ -132,6 +199,11 @@
             line-height: 140%;
             text-align: center;
             color: $color_main_100;
+
+            @include desktop {
+              margin-left: $k * 4px;
+              font-size: $k * 12px;
+            }
           }
         }
 
@@ -145,6 +217,10 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
 
+      @include desktop {
+        margin-top: $k * 12px;
+      }
+
       .statisticsItem {
         @include centerRow;
 
@@ -153,6 +229,12 @@
         }
 
         svg {
+
+          @include desktop {
+            width: $k * 12px;
+            height: $k * 12px;
+          }
+
           path {
             fill: #FFF;
             fill-opacity: 0.5;
@@ -165,6 +247,11 @@
           font-size: 12px;
           line-height: 140%;
           color: $color_body_50;
+
+          @include desktop {
+            margin-left: $k * 4px;
+            font-size: $k * 12px;
+          }
         }
       }
     }
@@ -176,6 +263,10 @@
       width: 100%;
       display: flex;
       height: 36px;
+
+      @include desktop {
+        height: $k * 36px;
+      }
 
       .quickPledgeBtn {
         flex-grow: 1;
@@ -190,6 +281,10 @@
         width: 36px;
         height: 100%;
         border-top: 1px solid $color_lines;
+
+        @include desktop {
+          width: $k * 36px;
+        }
       }
     }
 

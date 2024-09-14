@@ -6,6 +6,10 @@
   border-right: 1px solid $color_lines;
   transition: 0.3s;
 
+  @include desktop {
+    height: $k * 36px;
+  }
+
   .form {
     display: flex;
     height: 100%;
@@ -17,6 +21,10 @@
       background-color: transparent;
       transition: 0.3s;
       padding-left: 12px;
+
+      @include desktop {
+        padding-left: $k * 12px;
+      }
 
       &:hover {
         @include desktop {
@@ -35,6 +43,10 @@
         text-transform: uppercase;
         color: $color_main_100;
         transition: 0.3s;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
 
         &::placeholder {
           color: $color_body_50;
@@ -59,6 +71,10 @@
       border-left: 1px solid $color_lines;
       background-color: transparent;
       transition: 0.3s;
+
+      @include desktop {
+        width: $k * 36px;
+      }
 
       &:hover {
         @include desktop {

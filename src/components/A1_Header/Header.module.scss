@@ -7,6 +7,10 @@
   border-bottom: 1px solid $color_lines;
   display: flex;
 
+  @include desktop {
+    height: $k * 48px;
+  }
+
   .logo {
     @include onlyDesktop(flex);
     align-items: center;
@@ -15,9 +19,18 @@
     transition: 0.3s;
     border-right: 1px solid $color_lines;
 
+    @include desktop {
+      width: $k * 48px;
+    }
+
     svg {
       path {
         transition: 0.3s;
+      }
+
+      @include desktop {
+        width: $k * 24px;
+        height: $k * 24px;
       }
     }
 
@@ -38,8 +51,20 @@
     background-color: transparent;
     transition: 0.3s;
 
-    svg path {
-      transition: 0.3s;
+    @include desktop {
+      padding: 0 $k * 12px;
+    }
+
+    svg {
+
+      @include desktop {
+        width: $k * 15px;
+        height: $k * 15px;
+      }
+
+      path {
+        transition: 0.3s;
+      }
     }
 
     span {
@@ -51,6 +76,11 @@
       text-align: center;
       color: $color_body_50;
       transition: 0.3s;
+
+      @include desktop {
+        margin-left: $k * 8px;
+        font-size: $k * 12px;
+      }
     }
 
     //&:hover {
@@ -66,11 +96,20 @@
     flex-shrink: 0;
     padding: 0 12px 0 16px;
 
+    @include desktop {
+      padding: 0 $k * 12px 0 $k * 16px;
+    }
+
     .dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background-color: $color_red;
+
+      @include desktop {
+        width: $k * 8px;
+        height: $k * 8px;
+      }
     }
 
     p {
@@ -80,6 +119,11 @@
       line-height: 140%;
       text-transform: uppercase;
       color: $color_red;
+
+      @include desktop {
+        margin-left: $k * 8px;
+        font-size: $k * 12px;
+      }
     }
 
     &_active {
@@ -105,6 +149,10 @@
       width: 48px;
       height: 100%;
       border-right: 1px solid $color_lines;
+
+      @include desktop {
+        width: $k * 48px;
+      }
     }
   }
 
@@ -117,6 +165,11 @@
   .bellBtn {
     position: relative;
     width: 48px;
+    height: 100%;
+
+    @include desktop {
+      width: $k * 48px;
+    }
 
     &::before {
       display: block;
@@ -127,6 +180,11 @@
       width: 6px;
       height: 6px;
       background: $color_main;
+
+      @include desktop {
+        width: $k * 6px;
+        height: $k * 6px;
+      }
     }
   }
 
@@ -134,6 +192,10 @@
     @include onlyDesktop(flex);
     width: 160px;
     transition: 0.3s;
+
+    @include desktop {
+      width: $k * 160px;
+    }
   }
 
   .createNewCoinBtn {
@@ -141,9 +203,9 @@
     width: 160px;
     transition: 0.3s;
 
-
     @include desktop {
       flex-grow: unset;
+      width: $k * 160px;
     }
   }
 
@@ -175,8 +237,6 @@
       span {
         color: $color_light_version_gray;
       }
-
-
     }
 
 

@@ -17,16 +17,35 @@
     border: 1px solid $color_lines;
     background-color: $color_bg_and_text;
 
+    @include desktop {
+      max-width: $k * 440px;
+    }
+
     .cardHeader {
       height: 36px;
       display: flex;
       border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        height: $k * 36px;
+      }
 
       .cardHeaderLeft {
         flex-grow: 1;
         display: flex;
         align-items: center;
         padding-left: 12px;
+
+        @include desktop {
+          padding-left: $k * 12px;
+        }
+
+        svg {
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
 
         span {
           margin-left: 8px;
@@ -35,6 +54,11 @@
           line-height: 140%;
           text-transform: uppercase;
           color: $color_main_100;
+
+          @include desktop {
+            margin-left: $k * 8px;
+            font-size: $k * 12px;
+          }
         }
       }
 
@@ -43,6 +67,16 @@
         width: 36px;
         border-left: 1px solid $color_lines;
 
+        @include desktop {
+          width: $k * 36px;
+        }
+
+        svg {
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
       }
     }
 
@@ -53,6 +87,11 @@
       line-height: 140%;
       color: $color_body_50;
       border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        padding: $k * 12px;
+        font-size: $k * 12px;
+      }
     }
 
     .form {
@@ -61,6 +100,10 @@
         position: relative;
         padding: 9px 12px;
         border-bottom: 1px solid $color_lines;
+
+        @include desktop {
+          padding: $k * 9px $k * 12px;
+        }
 
         input {
           flex-grow: 1;
@@ -72,12 +115,20 @@
           line-height: 140%;
           color: $color_main_100;
 
+          @include desktop {
+            font-size: $k * 12px;
+          }
+
           &::placeholder {
             font-weight: 400;
             font-size: 12px;
             line-height: 140%;
             text-transform: uppercase;
             color: $color_body_50;
+
+            @include desktop {
+              font-size: $k * 12px;
+            }
           }
 
         }
@@ -91,6 +142,12 @@
           line-height: 140%;
           color: $color_red;
           transform: translateY(100%);
+
+          @include desktop {
+            left: $k * 12px;
+            bottom: $k * -2px;
+            font-size: $k * 12px;
+          }
         }
       }
 
@@ -100,6 +157,11 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         height: 48px;
+
+        @include desktop {
+          margin-top: $k * 24px;
+          height: $k * 48px;
+        }
       }
     }
 

@@ -14,7 +14,8 @@
     border-bottom: 1px solid $color_lines;
 
     @include desktop {
-      grid-template-columns: 1fr 210px;
+      height: $k * 36px;
+      grid-template-columns: 1fr $k * 210px;
     }
 
     p {
@@ -26,12 +27,17 @@
       font-size: 12px;
       line-height: 140%;
 
+      @include desktop {
+        padding-left: $k * 12px;
+        font-size: $k * 12px;
+      }
+
 
       &:nth-child(2) {
         color: $color_body_50;
 
         @include desktop {
-          padding-left: 64px;
+          padding-left: $k * 64px;
         }
       }
     }
@@ -42,7 +48,7 @@
     overflow: auto;
 
     @include desktop {
-      max-height: calc(100vh - 48px - 48px - 36px - 24px - 48px - 12px)
+      max-height: calc(100vh - $k * (48px + 48px + 36px + 24px + 48px + 12px))
     }
 
     .item {
@@ -52,13 +58,18 @@
       grid-template-columns: repeat(2, 1fr);
 
       @include desktop {
-        grid-template-columns: 1fr 210px;
+        height: $k * 48px;
+        grid-template-columns: 1fr $k * 210px;
       }
 
       .left, .right {
         display: flex;
         align-items: center;
         padding: 0 12px;
+
+        @include desktop {
+          padding: 0 $k * 12px;
+        }
       }
 
       .left {
@@ -74,12 +85,21 @@
           width: 1px;
           transform: translateY(-50%);
           background-color: $color_lines;
+
+          @include desktop {
+            height: $k * 24px;
+          }
         }
 
         img {
           display: block;
           width: 32px;
           height: 32px;
+
+          @include desktop {
+            width: $k * 32px;
+            height: $k * 32px;
+          }
         }
 
         p {
@@ -96,6 +116,8 @@
 
           @include desktop {
             width: auto;
+            margin-left: $k * 8px;
+            font-size: $k * 12px;
           }
         }
       }
@@ -103,7 +125,7 @@
       .right {
 
         @include desktop {
-          padding-left: 64px;
+          padding-left: $k * 64px;
         }
 
         p {
@@ -111,6 +133,10 @@
           font-size: 12px;
           line-height: 140%;
           color: $color_main_100;
+
+          @include desktop {
+            font-size: $k * 12px;
+          }
         }
       }
     }
@@ -122,8 +148,9 @@
     width: 100%;
 
     @include desktop {
-      margin-top: 24px;
-      width: 318px;
+      margin-top: $k * 24px;
+      height: $k * 48px;
+      width: $k * 318px;
     }
   }
 

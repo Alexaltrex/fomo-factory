@@ -30,6 +30,10 @@
     border-bottom: 1px solid $color_lines;
     position: relative;
 
+    @include desktop {
+      height: $k * 36px;
+    }
+
     .headerLeft {
       display: flex;
 
@@ -42,14 +46,26 @@
         text-transform: uppercase;
         border-right: 1px solid $color_lines;
 
+        @include desktop {
+          font-size: $k * 12px;
+        }
+
         &:nth-child(1) {
           width: 62px;
           color: $color_main;
+
+          @include desktop {
+            width: $k * 62px;
+          }
         }
 
         &:nth-child(2) {
           width: 84px;
           color: $color_body_50;
+
+          @include desktop {
+            width: $k * 84px;
+          }
         }
       }
     }
@@ -60,6 +76,17 @@
       padding-left: 10px;
       border-left: 1px solid $color_lines;
 
+      @include desktop {
+        padding-left: $k * 10px;
+      }
+
+      & > svg {
+        @include desktop {
+          width: $k * 16px;
+          height: $k * 16px;
+        }
+      }
+
       span {
         margin-left: 4px;
         font-weight: 400;
@@ -67,6 +94,11 @@
         line-height: 140%;
         text-align: center;
         color: $color_body_50;
+
+        @include desktop {
+          margin-left: $k * 4px;
+          font-size: $k * 12px;
+        }
       }
 
       .icon {
@@ -74,6 +106,19 @@
         padding: 0 10px;
         border-left: 1px solid $color_lines;
         margin-left: 10px;
+
+        @include desktop {
+          height: $k * 20px;
+          padding: 0 $k * 10px;
+          margin-left: $k * 10px;
+        }
+
+        svg {
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
       }
     }
 
@@ -91,8 +136,19 @@
       border-bottom: 1px solid $color_bg_and_text;
       background-color: $color_bg_and_text;
 
+      @include desktop {
+        right: $k * 8px;
+        height: $k * 16px;
+        width: $k * 40px;
+      }
+
       svg {
         transform: rotate(-90deg);
+
+        @include desktop {
+          width: $k * 7px;
+          height: $k * 12px;
+        }
       }
 
       &_expand {
@@ -114,12 +170,16 @@
     overflow-y: auto;
 
     @include desktop {
-      height: calc(100vh - 48px - 486px - 36px - 36px);
+      height: calc(100vh - $k * (48px + 486px + 36px + 36px));
       transition: 0.3s;
     }
 
     .comment {
       padding: 12px;
+
+      @include desktop {
+        padding: $k * 12px;
+      }
 
       &:not(:last-child) {
         border-bottom: 1px solid $color_lines;
@@ -138,6 +198,11 @@
             display: block;
             width: 32px;
             height: 32px;
+
+            @include desktop {
+              width: $k * 32px;
+              height: $k * 32px;
+            }
           }
 
           p {
@@ -146,8 +211,12 @@
             font-size: 12px;
             line-height: 140%;
             color: $color_main_100;
-          }
 
+            @include desktop {
+              margin-left: $k * 8px;
+              font-size: $k * 12px;
+            }
+          }
 
         }
 
@@ -155,6 +224,19 @@
           border: 1px solid $color_lines;
           width: 24px;
           height: 24px;
+
+          @include desktop {
+            width: $k * 24px;
+            height: $k * 24px;
+          }
+
+          svg {
+            @include desktop {
+              width: $k * 16px;
+              height: $k * 16px;
+            }
+          }
+
         }
 
       }
@@ -165,11 +247,20 @@
         font-size: 12px;
         line-height: 140%;
         color: $color_body_50;
+
+        @include desktop {
+          margin-top: $k * 8px;
+          font-size: $k * 12px;
+        }
       }
 
       .items {
         margin-top: 16px;
         display: flex;
+
+        @include desktop {
+          margin-top: $k * 16px;
+        }
 
         .item {
           @include centerRow;
@@ -177,8 +268,17 @@
           width: 48px;
           height: 24px;
 
+          @include desktop {
+            width: $k * 48px;
+            height: $k * 24px;
+          }
+
           &:not(:first-child) {
             margin-left: 4px;
+
+            @include desktop {
+              margin-left: $k * 4px;
+            }
           }
 
           span {
@@ -188,6 +288,11 @@
             line-height: 140%;
             text-align: center;
             color: $color_main_100;
+
+            @include desktop {
+              margin-left: $k * 6px;
+              font-size: $k * 12px;
+            }
           }
         }
       }
@@ -198,6 +303,10 @@
         justify-content: space-between;
         align-items: flex-end;
 
+        @include desktop {
+          margin-top: $k * 4px;
+        }
+
         .left {
           display: flex;
 
@@ -207,8 +316,24 @@
             width: 48px;
             height: 24px;
 
+            @include desktop {
+              width: $k * 48px;
+              height: $k * 24px;
+            }
+
             &:not(:first-child) {
               margin-left: 4px;
+
+              @include desktop {
+                margin-left: $k * 4px;
+              }
+            }
+
+            svg {
+              @include desktop {
+                width: $k * 16px;
+                height: $k * 16px;
+              }
             }
 
             span {
@@ -218,10 +343,19 @@
               line-height: 140%;
               text-align: center;
               color: $color_main_100;
+
+              @include desktop {
+                margin-left: $k * 6px;
+                font-size: $k * 12px;
+              }
             }
 
             svg:nth-child(2) {
               margin-left: 6px;
+
+              @include desktop {
+                margin-left: $k * 6px;
+              }
             }
           }
         }
@@ -232,6 +366,10 @@
           line-height: 140%;
           text-align: right;
           color: $color_body_50;
+
+          @include desktop {
+            font-size: $k * 12px;
+          }
         }
       }
     }
@@ -243,12 +381,21 @@
     height: 36px;
     display: flex;
 
+    @include desktop {
+      height: $k * 36px;
+    }
+
     .fieldWrapper {
       flex-grow: 1;
       display: flex;
       align-items: center;
       padding-left: 12px;
       padding-right: 8px;
+
+      @include desktop {
+        padding-left: $k * 12px;
+        padding-right: $k * 8px;
+      }
 
       input {
         flex-grow: 1;
@@ -260,6 +407,10 @@
         font-size: 12px;
         line-height: 140%;
         color: $color_main_100;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
 
         &::placeholder {
           color: $color_body_50;
@@ -273,8 +424,24 @@
         width: 24px;
         height: 24px;
 
+        @include desktop {
+          width: $k * 24px;
+          height: $k * 24px;
+        }
+
         &:not(:first-child) {
           margin-left: 8px;
+
+          @include desktop {
+            margin-left: $k * 8px;
+          }
+        }
+
+        svg {
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
         }
 
         span {
@@ -282,6 +449,10 @@
           font-size: 10px;
           text-align: center;
           color: $color_body_50;
+
+          @include desktop {
+            font-size: $k * 10px;
+          }
         }
       }
 
@@ -295,12 +466,20 @@
       width: 62px;
       border-left: 1px solid $color_lines;
 
+      @include desktop {
+        width: $k * 62px;
+      }
+
       span {
         font-weight: 700;
         font-size: 12px;
         line-height: 140%;
         text-transform: uppercase;
         color: $color_body_50;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
       }
     }
 
@@ -310,7 +489,7 @@
 
     .comments {
       @include desktop {
-        height: calc(100vh - 48px - 36px - 36px);
+        height: calc(100vh - $k * (48px + 36px + 36px));
       }
     }
   }

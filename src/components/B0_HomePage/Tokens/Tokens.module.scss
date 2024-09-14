@@ -9,7 +9,7 @@
   .confirmedListDesktop {
 
     & > div:nth-child(2) {
-      height: calc(100vh - 48px - 140px - 36px - 40px);
+      height: calc(100vh - $k * (48px + 140px + 36px + 40px));
     }
 
   }
@@ -18,7 +18,7 @@
     height: calc(100vh - 48px - 140px - 36px - 36px - 36px);
 
     @include desktop {
-      height: calc(100vh - 48px - 140px - 36px);
+      height: calc(100vh - $k * (48px + 140px + 36px));
     }
   }
 
@@ -29,7 +29,7 @@
   .unconfirmedListDesktop {
 
     & > div:nth-child(2) {
-      height: calc(100vh - 48px - 140px - 36px - 40px);
+      height: calc(100vh - $k * (48px + 140px + 36px + 40px));
     }
 
   }
@@ -38,7 +38,7 @@
     height: calc(100vh - 48px - 140px - 36px - 36px - 36px);
 
     @include desktop {
-      height: calc(100vh - 48px - 140px - 36px);
+      height: calc(100vh - $k * (48px + 140px + 36px));
     }
   }
 

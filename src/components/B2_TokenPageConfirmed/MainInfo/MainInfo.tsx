@@ -7,6 +7,7 @@ import {useStore} from "../../../store/rootStore";
 import {clsx} from "clsx";
 import graph from "../../../assets/png/graph.png";
 import {Trades} from "../Trades/Trades";
+import {TradeAdvancedPage} from "../../_common/TradingViewChart/TradingViewChart";
 
 export const MainInfo = observer(() => {
     const {
@@ -36,9 +37,11 @@ export const MainInfo = observer(() => {
 
                 <div className={style.contentMain}>
 
-                    <div className={style.left}>
+                    <div className={style.contentMain_left}>
+
                         <img src={src} alt=""/>
-                        <div className={style.right}>
+
+                        <div className={style.contentMain_left_right}>
 
                             <div className={style.top}>
                                 <p>{name}</p>
@@ -164,6 +167,9 @@ export const MainInfo = observer(() => {
 
             </div>
 
+            {/*<div className={style.graph}>*/}
+            {/*    <TradeAdvancedPage/>*/}
+            {/*</div>*/}
             <img src={graph} alt="" className={style.graph}/>
 
             <Trades/>

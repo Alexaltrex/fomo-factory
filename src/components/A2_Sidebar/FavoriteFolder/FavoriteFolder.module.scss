@@ -1,17 +1,17 @@
 @import "../../../assets/styles/app";
 
 .favoriteFolderWrapper {
-  margin-top: 8px;
+  margin-top: $k * 8px;
   position: relative;
 
   .favoriteFolder {
     cursor: pointer;
-    width: 36px;
-    padding: 2px;
+    width: $k * 36px;
+    padding: $k * 2px;
     background: $color_white_3;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2px;
+    grid-gap: $k * 2px;
     transition: 0.3s;
 
     &_canDrop {
@@ -24,24 +24,24 @@
 
     img {
       display: block;
-      width: 15px;
-      height: 15px;
+      width: $k * 15px;
+      height: $k * 15px;
     }
   }
 
   .folderName {
     position: absolute;
     z-index: 999;
-    top: 2px;
-    right: -6px;
+    top: $k * 2px;
+    right: $k * -6px;
     transform: translateX(100%);
-    padding: 8px 12px;
+    padding: $k * 8px $k * 12px;
     background: $color_bg_and_text;
     border: 1px solid $color_lines;
 
     p {
       font-weight: 400;
-      font-size: 12px;
+      font-size: $k * 12px;
       line-height: 140%;
       color: $color_body_50;
       white-space: nowrap;
@@ -51,8 +51,8 @@
   .menu {
     position: absolute;
     z-index: 999;
-    top: 2px;
-    right: -6px;
+    top: $k * 2px;
+    right: $k * -6px;
     transform: translateX(100%);
     display: flex;
     flex-direction: column;
@@ -63,13 +63,13 @@
       @include button;
       display: flex;
       align-items: center;
-      padding-left: 12px;
-      width: 165px;
-      height: 36px;
+      padding-left: $k * 12px;
+      width: $k * 165px;
+      height: $k * 36px;
 
       svg {
-        width: 16px;
-        height: 16px;
+        width: $k * 16px;
+        height: $k * 16px;
 
         path {
           fill: #FFF;
@@ -79,9 +79,9 @@
       }
 
       p {
-        padding-left: 8px;
+        padding-left: $k * 8px;
         font-weight: 400;
-        font-size: 12px;
+        font-size: $k * 12px;
         line-height: 140%;
         text-transform: uppercase;
         color: $color_body_50;
@@ -100,13 +100,8 @@
           color: #FFF;
         }
       }
-
     }
-
-
   }
-
-
 }
 
 

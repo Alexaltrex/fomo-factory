@@ -14,12 +14,20 @@
     height: 36px;
     border-bottom: 1px solid $color_lines;
     transition: 0.3s;
+
+    @include desktop {
+      height: $k * 36px;
+    }
   }
 
   .desktop {
     @include onlyDesktop(flex);
     width: 100%;
     height: 36px;
+
+    @include desktop {
+      height: $k * 36px;
+    }
   }
 
   &_light {

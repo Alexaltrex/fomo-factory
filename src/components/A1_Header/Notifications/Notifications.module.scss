@@ -5,9 +5,19 @@
   width: 48px;
   height: 48px;
 
+  @include desktop {
+    width: $k * 48px;
+    height: $k * 48px;
+  }
+
   .refWrapper {
     width: 48px;
     height: 48px;
+
+    @include desktop {
+      width: $k * 48px;
+      height: $k * 48px;
+    }
 
     .btn {
       position: relative;
@@ -16,11 +26,24 @@
       border-right: 1px solid $color_lines;
       border-bottom: 1px solid $color_lines;
 
+      @include desktop {
+        width: $k * 48px;
+        height: $k * 48px;
+      }
+
+      svg {
+        @include desktop {
+          width: $k * 16px;
+          height: $k * 16px;
+        }
+      }
+
       &_light {
         border-color: $color_light_version_lines;
       }
 
       &_hasNew {
+
         &::before {
           display: block;
           content: "";
@@ -30,6 +53,11 @@
           width: 6px;
           height: 6px;
           background: $color_main;
+
+          @include desktop {
+            width: $k * 6px;
+            height: $k * 6px;
+          }
         }
       }
 
@@ -48,7 +76,7 @@
     @include desktop {
       position: absolute;
       top: auto;
-      width: 360px;
+      width: $k * 360px;
       bottom: 0;
       left: auto;
       right: 0;
@@ -63,12 +91,21 @@
       align-items: center;
       border-bottom: 1px solid $color_lines;
 
+      @include desktop {
+        height: $k * 40px;
+        padding: 0 $k * 12px;
+      }
+
       p {
         font-weight: 700;
         font-size: 12px;
         line-height: 140%;
         text-transform: uppercase;
         color: $color_main_100;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
       }
 
       button {
@@ -80,6 +117,10 @@
           line-height: 140%;
           text-align: right;
           color: $color_main;
+
+          @include desktop {
+            font-size: $k * 12px;
+          }
         }
       }
     }
@@ -89,8 +130,17 @@
       max-height: 320px;
       overflow-y: auto;
 
+      @include desktop {
+        padding: 0 $k * 12px;
+        max-height: $k * 320px;
+      }
+
       .item {
         padding: 12px 0;
+
+        @include desktop {
+          padding: $k * 12px 0;
+        }
 
         &:not(:last-child) {
           border-bottom: 1px solid $color_lines;
@@ -112,6 +162,11 @@
               line-height: 140%;
               text-transform: uppercase;
               color: $color_body_50;
+
+              @include desktop {
+                margin-left: $k * 8px;
+                font-size: $k * 12px;
+              }
             }
           }
 
@@ -120,6 +175,10 @@
             font-size: 12px;
             line-height: 140%;
             color: $color_body_50;
+
+            @include desktop {
+              font-size: $k * 12px;
+            }
           }
         }
 
@@ -129,6 +188,11 @@
           font-size: 12px;
           line-height: 140%;
           color: $color_body_50;
+
+          @include desktop {
+            margin-top: $k * 12px;
+            font-size: $k * 12px;
+          }
         }
       }
     }

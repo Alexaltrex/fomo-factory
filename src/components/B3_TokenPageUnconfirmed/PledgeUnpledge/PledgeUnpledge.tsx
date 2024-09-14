@@ -15,8 +15,6 @@ export const PledgeUnpledge = () => {
     const [price, setPrice] = useState(0.25);
     const [advancedSettingsModal, setAdvancedSettings] = useState(false);
     const [getTweetModal, setGetTweetModal] = useState(false);
-
-
     const onInsta = () => {
         if (tab === 0) {
             instaPledge ? setInstaPledge(false) : setShowModal(true)

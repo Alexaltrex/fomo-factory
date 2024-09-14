@@ -5,13 +5,13 @@
 
   .listHeader {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) 150px 185px;
-    height: 40px;
+    grid-template-columns: repeat(4, 1fr) $k * 150px $k * 185px;
+    height: $k * 40px;
     border-bottom: 1px solid $color_lines;
 
     p {
       font-weight: 400;
-      font-size: 12px;
+      font-size: $k * 12px;
       line-height: 140%;
       color: $color_body_50;
       display: flex;
@@ -20,7 +20,7 @@
 
       &:nth-child(1) {
         justify-content: flex-start;
-        padding-left: 12px;
+        padding-left: $k * 12px;
       }
 
     }

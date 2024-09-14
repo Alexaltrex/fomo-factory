@@ -60,13 +60,11 @@ export const CreateFolder = observer(() => {
         return errors
     }
 
-
     const formik = useFormik({
         initialValues,
         onSubmit,
         validate,
     })
-
 
     return (
         <>

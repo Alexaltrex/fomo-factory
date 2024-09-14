@@ -8,7 +8,8 @@
   transition: 0.3s;
 
   @include desktop {
-    width: 330px;
+    height: $k * 36px;
+    width: $k * 330px;
     border-right: 1px solid $color_lines;
   }
 
@@ -23,6 +24,10 @@
     @include desktop {
       justify-content: flex-start;
       padding-left: 12px;
+
+      @include desktop {
+        padding-left: $k * 12px;
+      }
     }
 
     &:not(:first-child) {
@@ -42,6 +47,10 @@
       text-transform: uppercase;
       color: $color_body_50;
       transition: 0.3s;
+
+      @include desktop {
+        font-size: $k * 12px;
+      }
     }
 
     &_selected {
@@ -74,10 +83,6 @@
           color: $color_bg_and_text;
         }
       }
-
-
     }
-
-
   }
 }

@@ -6,7 +6,7 @@
   transition: 0.3s;
   height: 56px;
   display: grid;
-  grid-template-columns: 1.5fr 116px 1.5fr 1fr 1fr 1fr  96px 156px;
+  grid-template-columns: 1.5fr $k * 116px 1.5fr 1fr 1fr 1fr $k * 96px $k * 156px;
   align-items: center;
 
   &:not(:last-child) {
@@ -27,7 +27,7 @@
         transform: translateY(-50%);
         right: 0;
         width: 1px;
-        height: 20px;
+        height: $k * 20px;
         background-color: $color_lines;
         transition: 0.3s;
       }
@@ -36,24 +36,24 @@
 
   .infoCell {
     justify-content: flex-start;
-    padding-left: 12px;
+    padding-left: $k * 12px;
 
     .addToFavoriteBtn {
       @include button;
       @include centerRow;
-      width: 12px;
-      height: 12px;
+      width: $k * 12px;
+      height: $k * 12px;
     }
 
     img {
       display: block;
-      width: 32px;
-      height: 32px;
-      margin-left: 12px;
+      width: $k * 32px;
+      height: $k * 32px;
+      margin-left: $k * 12px;
     }
 
     .info {
-      margin-left: 8px;
+      margin-left: $k * 8px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -64,28 +64,28 @@
 
         p {
           font-weight: 400;
-          font-size: 12px;
+          font-size: $k * 12px;
           line-height: 140%;
           color: $color_main_100;
         }
 
         & > svg {
-          width: 12px;
-          height: 12px;
-          margin-left: 4px;
+          width: $k * 12px;
+          height: $k * 12px;
+          margin-left: $k * 4px;
         }
 
         a {
           @include centerRow;
-          width: 12px;
-          height: 12px;
-          margin-left: 4px;
+          width: $k * 12px;
+          height: $k * 12px;
+          margin-left: $k * 4px;
         }
       }
 
       & > p {
         font-weight: 400;
-        font-size: 12px;
+        font-size: $k * 12px;
         line-height: 140%;
         color: $color_body_50;
       }
@@ -94,10 +94,16 @@
   }
 
   .created {
+
+    svg {
+      width: $k * 12px;
+      height: $k * 12px;
+    }
+
     span {
-      margin-left: 4px;
+      margin-left: $k * 4px;
       font-weight: 400;
-      font-size: 12px;
+      font-size: $k * 12px;
       line-height: 140%;
       color: $color_body_50;
     }
@@ -105,24 +111,24 @@
 
   .followers {
     .followerItem {
-      padding: 4px 8px;
+      padding: $k * 4px $k * 8px;
       border: 1px solid $color_lines;
       display: flex;
       align-items: center;
 
       &:not(:first-child) {
-        margin-left: 4px;
+        margin-left: $k * 4px;
       }
 
       svg {
-        width: 12px;
-        height: 12px;
+        width: $k * 12px;
+        height: $k * 12px;
       }
 
       span {
-        margin-left: 4px;
+        margin-left: $k * 4px;
         font-weight: 400;
-        font-size: 12px;
+        font-size: $k * 12px;
         line-height: 140%;
         text-align: center;
         color: $color_main_100;
@@ -131,9 +137,10 @@
   }
 
   .marketcap, .currentPrice {
+
     svg {
-      width: 16px;
-      height: 16px;
+      width: $k * 16px;
+      height: $k * 16px;
 
       path {
         fill: #FFF;
@@ -142,12 +149,12 @@
     }
 
     p {
-      margin-left: 4px;
+      margin-left: $k * 4px;
     }
 
     span {
       font-weight: 400;
-      font-size: 12px;
+      font-size: $k * 12px;
       line-height: 140%;
       color: $color_main_100;
 
@@ -164,10 +171,13 @@
       align-items: center;
 
       &:not(:first-child) {
-        margin-left: 24px;
+        margin-left: $k * 24px;
       }
 
       svg {
+        width: $k * 12px;
+        height: $k * 12px;
+
         path {
           fill: #FFF;
           fill-opacity: 0.5;
@@ -175,9 +185,9 @@
       }
 
       span {
-        margin-left: 4px;
+        margin-left: $k * 4px;
         font-weight: 400;
-        font-size: 12px;
+        font-size: $k * 12px;
         line-height: 140%;
         color: $color_body_50;
       }
@@ -187,11 +197,14 @@
   .share {
 
     .shareBtn {
-      width: 32px;
-      height: 32px;
+      width: $k * 32px;
+      height: $k * 32px;
       border: 1px solid $color_lines;
 
       svg {
+        width: $k * 16px;
+        height: $k * 16px;
+
         path {
           fill-opacity: 1;
         }
@@ -201,13 +214,13 @@
   }
 
   .buy {
-    padding-right: 12px;
+    padding-right: $k * 12px;
     justify-content: flex-end;
 
     .buyBtn {
       border: 1px solid $color_lines;
-      width: 113px;
-      height: 32px;
+      width: $k * 113px;
+      height: $k * 32px;
     }
 
   }

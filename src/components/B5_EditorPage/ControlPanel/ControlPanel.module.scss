@@ -11,6 +11,10 @@
   .searchSection, .tabs {
     height: 36px;
     border-bottom: 1px solid $color_lines;
+
+    @include desktop {
+      height: $k * 36px;
+    }
   }
 
   .searchSection {
@@ -27,7 +31,7 @@
         width: 36px;
 
         @include desktop {
-          width: 165px;
+          width: $k * 165px;
         }
 
         span {
@@ -67,7 +71,7 @@
       }
 
       @include desktop {
-        width: 165px;
+        width: $k * 165px;
       }
 
       span {
@@ -79,7 +83,7 @@
         transition: 0.3s;
 
         @include desktop {
-          font-size: 12px;
+          font-size: $k * 12px;
         }
       }
 
@@ -107,8 +111,10 @@
     border-bottom: 1px solid $color_lines;
 
     @include desktop {
+      height: $k * 36px;
+      padding: $k * 12px;
       order: 2;
-      width: 200px;
+      width: $k * 200px;
       border-right: 1px solid $color_lines;
     }
 
@@ -120,6 +126,12 @@
       border: 1px solid $color_lines;
       transition: 0.3s;
       margin: 0 12px;
+
+      @include desktop {
+        width: $k * 38px;
+        height: $k * 20px;
+        margin: 0 $k * 12px;
+      }
 
       &::after {
         position: absolute;
@@ -133,6 +145,12 @@
         background-color: #FFF;
         border-radius: 50%;
         transition: 0.3s;
+
+        @include desktop {
+          left: $k * 4px;
+          width: $k * 12px;
+          height: $k * 12px;
+        }
       }
     }
 
@@ -143,6 +161,11 @@
       line-height: 140%;
       text-transform: uppercase;
       color: $color_body_50;
+
+      @include desktop {
+        margin-left: $k * 12px;
+        font-size: $k * 12px;
+      }
     }
 
     &_on {
@@ -150,6 +173,10 @@
         &::after {
           left: 22px;
           background-color: $color_main;
+
+          @include desktop {
+            left: $k * 22px;
+          }
         }
       }
     }

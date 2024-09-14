@@ -14,7 +14,9 @@
     align-items: center;
 
     @include desktop {
-      padding: 12px;
+      padding: $k * 12px;
+      font-size: $k * 12px;
+      height: $k * 48px;
     }
   }
 
@@ -30,6 +32,10 @@
       height: 36px;
       transition: 0.3s;
 
+      @include desktop {
+        height: $k * 36px;
+      }
+
       &:not(:first-child) {
         border-left: 1px solid $color_lines;
       }
@@ -42,6 +48,10 @@
         text-align: center;
         color: $color_body_50;
         transition: 0.3s;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
       }
 
       &_selected {
@@ -55,13 +65,12 @@
 
   .mobileContent {
     @include onlyMobile();
-
   }
 
   .desktopContent {
     @include onlyDesktop(grid);
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 12px;
+    grid-column-gap: $k * 12px;
   }
 
 

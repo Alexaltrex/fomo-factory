@@ -11,7 +11,12 @@
     width: 40px;
     background-color: transparent;
 
+    @include desktop {
+      width: $k * 40px;
+    }
+
     &:not(:first-child) {
+
       &::before {
         position: absolute;
         content: "";
@@ -22,10 +27,22 @@
         top: 8px;
         bottom: 8px;
         transition: 0.3s;
+
+        @include desktop {
+          top: $k * 8px;
+          bottom: $k * 8px;
+        }
       }
+
     }
 
     svg {
+
+      @include desktop {
+        width: $k * 16px;
+        height: $k * 16px;
+      }
+
       path {
         fill: #FFF;
         fill-opacity: 0.5;

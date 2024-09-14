@@ -7,7 +7,8 @@
 
   @include desktop {
     flex-grow: 0;
-    width: 327px;
+    width: $k * 327px;
+    border-right: 1px solid $color_lines;
   }
 
   .btn {
@@ -16,6 +17,10 @@
     align-items: center;
     padding: 0 12px;
 
+    @include desktop {
+      padding: 0 $k * 12px;
+    }
+
     .switcher {
       position: relative;
       width: 38px;
@@ -23,6 +28,11 @@
       border-radius: 999px;
       border: 1px solid $color_lines;
       transition: 0.3s;
+
+      @include desktop {
+        width: $k * 38px;
+        height: $k * 20px;
+      }
 
       &::after {
         position: absolute;
@@ -36,6 +46,12 @@
         background-color: #FFF;
         border-radius: 50%;
         transition: 0.3s;
+
+        @include desktop {
+          left: $k * 4px;
+          width: $k * 12px;
+          height: $k * 12px;
+        }
       }
     }
 
@@ -48,6 +64,11 @@
       text-transform: uppercase;
       color: $color_body_50;
       transition: 0.3s;
+
+      @include desktop {
+        margin-left: $k * 12px;
+        font-size: $k * 12px;
+      }
     }
 
     &_switched {
@@ -57,6 +78,10 @@
         &::after {
           left: 22px;
           background-color: $color_main;
+
+          @include desktop {
+            left: $k * 22px;
+          }
         }
 
       }
@@ -72,13 +97,16 @@
     border-left: 1px solid $color_lines;
     transition: 0.3s;
 
+    @include desktop {
+      padding-left: $k * 12px;
+    }
+
     svg {
       path {
         fill: #FFF;
         fill-opacity: 0.5;
         transition: 0.3s;
       }
-
     }
 
     input {
@@ -92,11 +120,20 @@
       color: $color_main_100;
       transition: 0.3s;
 
+      @include desktop {
+        margin-left: $k * 4px;
+        font-size: $k * 12px;
+      }
+
       &::placeholder {
         font-weight: 400;
         font-size: 12px;
         line-height: 140%;
         color: $color_body_50;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
       }
 
       &::-webkit-outer-spin-button,

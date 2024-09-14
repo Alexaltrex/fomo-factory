@@ -11,12 +11,22 @@
     align-items: center;
     border-bottom: 1px solid $color_lines;
 
+    @include desktop {
+      height: $k * 48px;
+      padding-left: $k * 12px;
+      padding-right: $k * 8px;
+    }
+
     p {
       font-weight: 700;
       font-size: 12px;
       line-height: 140%;
       text-transform: uppercase;
       color: $color_main_100;
+
+      @include desktop {
+        font-size: $k * 12px;
+      }
     }
 
     .openBtn {
@@ -24,9 +34,19 @@
       width: 32px;
       height: 32px;
 
+      @include desktop {
+        width: $k * 32px;
+        height: $k * 32px;
+      }
+
       svg {
         transform: rotate(90deg);
         transition: 0.3s;
+
+        @include desktop {
+          width: $k * 7px;
+          height: $k * 12px;
+        }
       }
 
       &_open {
@@ -46,6 +66,11 @@
     color: $color_body_50;
     padding: 12px 12px 24px;
     border-bottom: 1px solid $color_lines;
+
+    @include desktop {
+      font-size: $k * 12px;
+      padding: $k * 12px $k * 12px $k * 24px;
+    }
   }
 
   .btns {
@@ -57,6 +82,10 @@
       display: flex;
       border-bottom: 1px solid $color_lines;
 
+      @include desktop {
+        height: $k * 36px;
+      }
+
       .value {
         flex-grow: 1;
         display: flex;
@@ -67,6 +96,11 @@
         line-height: 140%;
         color: $color_main_100;
         align-self: stretch;
+
+        @include desktop {
+          padding-left: $k * 12px;
+          font-size: $k * 12px;
+        }
       }
 
       .right {
@@ -74,7 +108,17 @@
         height: 100%;
         width: 64px;
         border-left: 1px solid $color_lines;
-        //border-bottom: 1px solid $color_lines;
+
+        @include desktop {
+          width: $k * 64px;
+        }
+
+        svg {
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
 
         span {
           margin-left: 4px;
@@ -84,6 +128,11 @@
           text-transform: uppercase;
           text-align: right;
           color: $color_main_100;
+
+          @include desktop {
+            margin-left: $k * 4px;
+            font-size: $k * 12px;
+          }
         }
       }
     }

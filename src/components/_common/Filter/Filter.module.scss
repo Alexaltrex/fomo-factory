@@ -11,7 +11,18 @@
     border-right: 1px solid $color_lines;
     transition: 0.3s;
 
+    @include desktop {
+      height: $k * 36px;
+      width: $k * 93px;
+    }
+
     svg {
+
+      @include desktop {
+        width: $k * 16px;
+        height: $k * 16px;
+      }
+
       path {
         transition: 0.3s;
       }
@@ -25,6 +36,11 @@
       text-transform: uppercase;
       color: $color_body_50;
       transition: 0.3s;
+
+      @include desktop {
+        margin-left: $k * 8px;
+        font-size: $k * 12px;
+      }
     }
 
     &:hover {
@@ -68,10 +84,20 @@
     border: 1px solid $color_lines;
     padding: 12px;
 
+    @include desktop {
+      width: $k * 165px;
+      padding: $k * 12px;
+    }
+
     .menuBottom {
       margin-top: 12px;
       padding-top: 12px;
       border-top: 1px solid $color_lines;
+
+      @include desktop {
+        margin-top: $k * 12px;
+        padding-top: $k * 12px;
+      }
     }
 
     .item {
@@ -81,6 +107,10 @@
 
       &:not(:first-child) {
         margin-top: 8px;
+
+        @include desktop {
+          margin-top: $k * 8px;
+        }
       }
 
       p {
@@ -88,6 +118,10 @@
         font-size: 12px;
         line-height: 140%;
         color: $color_body_50;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
       }
 
       .btn {
@@ -97,7 +131,13 @@
         height: 16px;
         border: 1px solid $color_lines;
 
+        @include desktop {
+          width: $k * 16px;
+          height: $k * 16px;
+        }
+
         &_selected {
+
           &::after {
             position: absolute;
             content: "";
@@ -108,6 +148,11 @@
             width: 6px;
             height: 6px;
             background: $color_main;
+
+            @include desktop {
+              width: $k * 6px;
+              height: $k * 6px;
+            }
           }
         }
 

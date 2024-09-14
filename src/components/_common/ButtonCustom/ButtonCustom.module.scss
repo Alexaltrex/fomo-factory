@@ -11,6 +11,10 @@
     text-transform: uppercase;
     text-align: center;
     transition: 0.3s;
+
+    @include desktop {
+      font-size: $k * 12px;
+    }
   }
 
   &_outlined_dark {

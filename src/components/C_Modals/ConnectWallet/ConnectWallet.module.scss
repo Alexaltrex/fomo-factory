@@ -12,14 +12,13 @@
   backdrop-filter: blur(5px);
 
   .card {
-    margin-top: 24px;
     border-top: 1px solid $color_lines;
     border-bottom: 1px solid $color_lines;
     width: 100%;
     background: $color_bg_and_text;
 
     @include desktop {
-      width: 440px;
+      width: $k * 440px;
       border: 1px solid $color_lines;
     }
 
@@ -30,9 +29,18 @@
       padding-left: 12px;
       border-bottom: 1px solid $color_lines;
 
+      @include desktop {
+        height: $k * 40px;
+      }
+
       svg {
         width: 16px;
         height: 16px;
+
+        @include desktop {
+          width: $k * 16px;
+          height: $k * 16px;
+        }
       }
 
       span {
@@ -43,6 +51,11 @@
         text-transform: uppercase;
         color: $color_main_100;
         margin-left: 8px;
+
+        @include desktop {
+          font-size: $k * 12px;
+          margin-left: $k * 8px;
+        }
       }
 
       button {
@@ -54,6 +67,10 @@
         background-color: transparent;
         transition: 0.3s;
 
+        @include desktop {
+          width: $k * 36px;
+        }
+
         &:hover {
           background-color: #222;
         }
@@ -61,6 +78,11 @@
         svg {
           width: 16px;
           height: 16px;
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
         }
       }
 
@@ -71,6 +93,10 @@
       border-bottom: 1px solid $color_lines;
       display: flex;
 
+      @include desktop {
+        padding: $k * 12px;
+      }
+
       .icon {
         flex-shrink: 0;
         @include centerRow;
@@ -79,9 +105,20 @@
         height: 32px;
         margin-right: 12px;
 
+        @include desktop {
+          width: $k * 32px;
+          height: $k * 32px;
+          margin-right: $k * 12px;
+        }
+
         svg {
           width: 16px;
           height: 16px;
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
         }
       }
 
@@ -90,6 +127,10 @@
         font-size: 12px;
         line-height: 140%;
         color: $color_body_50;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
       }
 
     }
@@ -107,6 +148,11 @@
         background-color: transparent;
         transition: 0.3s;
 
+        @include desktop {
+          height: $k * 48px;
+          padding: $k * 8px $k * 12px;
+        }
+
         &:not(:last-child) {
           border-bottom: 1px solid $color_lines;
         }
@@ -121,9 +167,19 @@
           width: 32px;
           height: 32px;
 
+          @include desktop {
+            width: $k * 32px;
+            height: $k * 32px;
+          }
+
           svg {
             width: 16px;
             height: 16px;
+
+            @include desktop {
+              width: $k * 16px;
+              height: $k * 16px;
+            }
           }
         }
 
@@ -133,6 +189,11 @@
           line-height: 140%;
           color: $color_body_50;
           margin-left: 12px;
+
+          @include desktop {
+            font-size: $k * 12px;
+            margin-left: $k * 12px;
+          }
         }
 
         .detected {
@@ -145,9 +206,12 @@
           line-height: 140%;
           text-transform: uppercase;
           color: $color_body_50;
+
+          @include desktop {
+            right: $k * 12px;
+            font-size: $k * 12px;
+          }
         }
-
-
       }
     }
 
@@ -158,6 +222,17 @@
       background: $color_white_3;
       height: 48px;
       transition: 0.3s;
+
+      @include desktop {
+        height: $k * 48px;
+      }
+
+      svg {
+        @include desktop {
+          width: $k * 16px;
+          height: $k * 16px;
+        }
+      }
 
       &:hover {
         background-color: rgba(211, 249, 50, 0.2);
