@@ -1,0 +1,217 @@
+@import "../../../assets/styles/app";
+
+.card {
+  position: relative;
+  padding: 12px;
+  border: 1px solid $color_lines;
+  width: 162px;
+  margin: 6px;
+  display: flex;
+  flex-direction: column;
+
+  .imgWrapper {
+    position: relative;
+    width: 138px;
+    height: 138px;
+
+    @include desktop {
+      width: $k * 194px;
+      height: $k * 194px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+  .nameWrapper {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+
+    & > svg {
+      margin-left: 4px;
+      width: 12px;
+      height: 12px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_main_100;
+    }
+
+    a {
+      @include centerRow;
+      width: 12px;
+      height: 12px;
+      margin-left: 4px;
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  .price {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 16px;
+      height: 16px;
+
+      path {
+        fill-opacity: 1;
+        fill: $color_main;
+      }
+    }
+
+    p {
+      margin-left: 4px;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      text-align: right;
+      color: $color_main;
+    }
+
+  }
+
+  .status {
+    margin-top: 8px;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+    border: 1px solid rgba(255, 61, 0, 0.08);
+    background: rgba(255, 61, 0, 0.08);
+
+    & > div {
+      width: 6px;
+      height: 6px;
+      background-color: $color_red;
+    }
+
+    span {
+      margin-left: 6px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_red;
+    }
+
+
+    &_confirmed {
+      border: 1px solid rgba(173, 231, 84, 0.08);
+      background: rgba(173, 231, 84, 0.08);
+
+      & > div {
+        background-color: $color_green;
+      }
+
+      span {
+        color: $color_green;
+      }
+    }
+  }
+
+  .created {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-size: 12px;
+      line-height: 140%;
+      color: $color_body_50;
+
+      &:nth-child(2) {
+        color: #FFF;
+      }
+    }
+  }
+
+  .liquidity {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & > div {
+      &:nth-child(1) {
+        p {
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+        }
+      }
+
+      &:nth-child(2) {
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 16px;
+          height: 16px;
+
+          path {
+            fill-opacity: 0.5;
+            fill: #FFF;
+          }
+        }
+
+        p {
+          margin-left: 4px;
+          font-size: 12px;
+          line-height: 140%;
+          text-align: right;
+          color: $color_main_100;
+        }
+      }
+    }
+  }
+
+  .statistics {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .statisticsItem {
+      @include centerRow;
+
+      &:nth-child(2) {
+        border-left: 1px solid $color_lines;
+        border-right: 1px solid $color_lines;
+      }
+
+      svg {
+        width: 12px;
+        height: 12px;
+
+        path {
+          fill: #FFF;
+          fill-opacity: 0.5;
+        }
+      }
+
+      span {
+        margin-left: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+      }
+    }
+  }
+
+}

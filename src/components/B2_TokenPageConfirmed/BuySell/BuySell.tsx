@@ -10,6 +10,9 @@ import {observer} from "mobx-react-lite";
 import {useStore} from "../../../store/rootStore";
 import {v4 as uuidv4} from 'uuid';
 import {TransactionStatusEnum} from "../../../store/cryptoStore";
+import downloadSrc from "../../../assets/png/download.png"
+import {Tweet} from "../../C_Modals/Tweet/Tweet";
+import {Tabs} from "../../_common/Tabs/Tabs";
 
 export const BuySell = observer(() => {
     const {
@@ -29,6 +32,7 @@ export const BuySell = observer(() => {
     const [price, setPrice] = useState(0.25);
     const [advancedSettingsModal, setAdvancedSettings] = useState(false);
     const [getTweetModal, setGetTweetModal] = useState(false);
+    const [tweetModal, setTweetModal] = useState(false);
 
     const onInsta = () => {
         if (tab === 0) {
@@ -72,28 +76,22 @@ export const BuySell = observer(() => {
                       onClose={() => setGetTweetModal(false)}
             />
 
+            <Tweet show={tweetModal}
+                   onClose={() => setTweetModal(false)}
+            />
+
             <div className={style.header}>
                 buy / sell
             </div>
 
-            <div className={style.tabs}>
-                {
-                    [
-                        "BUY",
-                        "Sell",
-                    ].map((label, key) => (
-                        <button key={key}
-                                onClick={() => setTab(key)}
-                                className={clsx({
-                                    [style.tab]: true,
-                                    [style.tab_selected]: key === tab,
-                                })}
-                        >
-                            <span>{label}</span>
-                        </button>
-                    ))
-                }
-            </div>
+            <Tabs tabs={[
+                "BUY",
+                "Sell",
+            ]}
+                  tab={tab}
+                  onClick={(tab) => setTab(tab)}
+                  className={style.tabs}
+            />
 
             <button className={clsx({
                 [style.toggleWrapper]: true,
@@ -166,25 +164,67 @@ export const BuySell = observer(() => {
                           onClick={() => setAdvancedSettings(true)}
             />
 
-            <div className={style.giftSection}>
-                <div className={style.top}>
-                    <div className={style.topLeft}>
-                        <p>GIFT</p>
-                        {svgIcons.boxUsd}
-                    </div>
-                    <div className={style.topRight}>
-                        <span>BONUS </span><span>SOL 0.02</span>
-                    </div>
-                </div>
-                <p className={style.description}>
-                    Just have a tweet for points button
-                </p>
+            <div className={style.checksSection}>
+                {
+                    [
+                        {
+                            icon: svgIcons.check_green,
+                            label: "ff Launched"
+                        },
+                        {
+                            icon: svgIcons.check_green,
+                            label: "Authority revoked"
+                        },
+                        {
+                            icon: svgIcons.check_green,
+                            label: "Liquidity locked"
+                        },
+                        {
+                            icon: svgIcons.close_red,
+                            label: "No creator allocation"
+                        },
+                    ].map(({icon, label}, key) => (
+                        <div key={key}
+                        >
+                            {icon}
+                            <p>{label}</p>
+                        </div>
+                    ))
+                }
             </div>
 
-            <ButtonCustom label="GET TWEET"
-                          className={style.getTweetBtn}
-                          onClick={() => setGetTweetModal(true)}
-            />
+            <div className={style.shareSection}>
+                <p>Share your P&L</p>
+                <div>
+                    <button onClick={() => setTweetModal(true)}
+                    >
+                        <p>TWEET</p>
+                        <img src={downloadSrc} alt=""/>
+                    </button>
+                    <p>✦ 200</p>
+                </div>
+            </div>
+
+
+            {/*<div className={style.giftSection}>*/}
+            {/*    <div className={style.top}>*/}
+            {/*        <div className={style.topLeft}>*/}
+            {/*            <p>GIFT</p>*/}
+            {/*            {svgIcons.boxUsd}*/}
+            {/*        </div>*/}
+            {/*        <div className={style.topRight}>*/}
+            {/*            <span>BONUS </span><span>SOL 0.02</span>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    <p className={style.description}>*/}
+            {/*        Just have a tweet for points button*/}
+            {/*    </p>*/}
+            {/*</div>*/}
+
+            {/*<ButtonCustom label="GET TWEET"*/}
+            {/*              className={style.getTweetBtn}*/}
+            {/*              onClick={() => setGetTweetModal(true)}*/}
+            {/*/>*/}
 
         </div>
     )

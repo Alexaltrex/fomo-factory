@@ -6,6 +6,7 @@ import {HoldersDesktop} from "./HoldersDesktop/HoldersDesktop";
 import {HoldersMobile} from "./HoldersMobile/HoldersMobile";
 import {TradesConfirmedMobile} from "../../_common/TradesConfirmedMobile/TradesConfirmedMobile";
 import {TradesConfirmedDesktop} from "../../_common/TradesConfirmedDesktop/TradesConfirmedDesktop";
+import {Tabs} from "../../_common/Tabs/Tabs";
 
 export const Trades = () => {
     const [tab, setTab] = useState(0)
@@ -23,40 +24,26 @@ export const Trades = () => {
     return (
         <div className={style.trades}>
 
-            <div className={style.tabs}>
-                {
-                    [
-                        {
-                            label: "ALL TRADES",
-                            value: 321
-                        },
-                        {
-                            label: "your trades",
-                            value: 229
-                        },
-                        {
-                            label: "HOLDERS",
-                            value: 162
-                        },
-                    ].map(({label, value}, key) => (
-                        <button key={key}
-                                className={clsx({
-                                    [style.tab]: true,
-                                    [style.tab_selected]: key === tab,
-                                })}
-                                onClick={() => setTab(key)}
-                        >
-                            <p>{label}</p>
-                            <p>[{value}]</p>
-                        </button>
-                    ))
-                }
+            <div className={style.header}>
+                trades
             </div>
+
+            <Tabs tabs={[
+                "ALL TRADES",
+                "your trades",
+                "HOLDERS",
+            ]}
+                  tab={tab}
+                  onClick={(tab) => setTab(tab)}
+                  className={style.tabs}
+            />
 
             {
                 tab === 0 && (
                     <>
-                        <TradesConfirmedMobile trades={allTrades}/>
+                        <TradesConfirmedMobile trades={allTrades}
+
+                        />
                         <TradesConfirmedDesktop trades={allTrades}
                                                 className={style.tradesConfirmedDesktop}
                         />

@@ -90,7 +90,7 @@
 
   }
 
-  .value {
+  .form {
     display: flex;
     align-items: center;
     padding-left: 12px;
@@ -110,6 +110,8 @@
     }
 
     input {
+      display: block;
+      width: 60px;
       background: none;
       border: none;
       outline: none;

@@ -2,10 +2,14 @@
 
 .tradesConfirmedMobile {
   @include onlyMobile();
+  height: calc(100vh - (40px + 36px + 48px + 48px));
+  overflow-y: auto;
+  overflow-x: hidden;
 
   .inner {
     display: flex;
     width: 100%;
+
 
     .left, .right {
       width: 50%;
@@ -64,7 +68,7 @@
       overflow-x: auto;
 
       .rightInner {
-        width: 485px;
+        width: 858px;
 
         .header {
           height: 40px;
@@ -79,19 +83,23 @@
             color: $color_body_50;
 
             &:nth-child(1) {
-              width: 86px;
+              width: 168px;
             }
 
             &:nth-child(2) {
-              width: 142px;
+              width: 190px;
             }
 
             &:nth-child(3) {
-              width: 122px;
+              width: 127px;
             }
 
             &:nth-child(4) {
-              width: 132px;
+              width: 148px;
+            }
+
+            &:nth-child(5) {
+              width: 219px;
             }
           }
 
@@ -127,19 +135,23 @@
               }
 
               &:nth-child(1) {
-                width: 86px;
+                width: 168px;
               }
 
               &:nth-child(2) {
-                width: 142px;
+                width: 190px;
               }
 
               &:nth-child(3) {
-                width: 122px;
+                width: 127px;
               }
 
               &:nth-child(4) {
-                width: 132px;
+                width: 148px;
+              }
+
+              &:nth-child(5) {
+                width: 219px;
               }
             }
 
@@ -183,7 +195,7 @@
 
             }
 
-            .price {
+            .size {
 
               p {
                 margin-left: 4px;
@@ -198,20 +210,19 @@
               }
             }
 
-            .time {
+            .price {
               p {
-                padding: 4px;
-                border-radius: 2px;
-                background: $color_white_3;
-                font-family: var(--font-family);
-                font-weight: 400;
                 font-size: 12px;
                 line-height: 140%;
-                color: $color_body_50;
+                color: $color_main_100;
+              }
+            }
 
-                &:not(:first-child) {
-                  margin-left: 3px;
-                }
+            .time {
+              p {
+                font-size: $k * 12px;
+                line-height: 140%;
+                color: $color_body_50;
               }
             }
 

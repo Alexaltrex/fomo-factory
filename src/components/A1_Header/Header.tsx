@@ -22,6 +22,7 @@ export const Header = observer(() => {
             colorTheme,
             setShowConnectWallet,
             walletAddress,
+            createNewTokenModal, setCreateNewTokenModal
         }
     } = useStore();
 
@@ -33,17 +34,13 @@ export const Header = observer(() => {
         navigate("/search")
     }
 
-    const [createNewTokenModal, setCreateNewTokenModal] = useState(false)
-
     return (
         <header className={clsx({
             [style.header]: true,
             [style.header_light]: colorTheme === ColorThemeEnum.light,
         })}>
 
-            <CreateNewToken showModal={createNewTokenModal}
-                            onClose={() => setCreateNewTokenModal(false)}
-            />
+            <CreateNewToken />
 
             <Link className={clsx(style.logo, style.borderRight)}
                   to="/"

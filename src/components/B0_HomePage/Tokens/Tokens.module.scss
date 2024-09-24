@@ -9,16 +9,16 @@
   .confirmedListDesktop {
 
     & > div:nth-child(2) {
-      height: calc(100vh - $k * (48px + 140px + 36px + 40px));
+      height: calc(100vh - $k * (48px + 140px + 36px + 40px + 40px));
     }
 
   }
 
   .confirmedGrid {
-    height: calc(100vh - 48px - 140px - 36px - 36px - 36px);
+    height: calc(100vh - 48px - 140px - 36px - 36px - 36px - 44px);
 
     @include desktop {
-      height: calc(100vh - $k * (48px + 140px + 36px));
+      height: calc(100vh - $k * (48px + 140px + 36px + 40px));
     }
   }
 
@@ -29,16 +29,16 @@
   .unconfirmedListDesktop {
 
     & > div:nth-child(2) {
-      height: calc(100vh - $k * (48px + 140px + 36px + 40px));
+      height: calc(100vh - $k * (48px + 140px + 36px + 40px + 40px));
     }
 
   }
 
   .unconfirmedGrid {
-    height: calc(100vh - 48px - 140px - 36px - 36px - 36px);
+    height: calc(100vh - 48px - 140px - 36px - 36px - 36px - 40px - 4px);
 
     @include desktop {
-      height: calc(100vh - $k * (48px + 140px + 36px));
+      height: calc(100vh - $k * (48px + 140px + 36px + 40px));
     }
   }
 

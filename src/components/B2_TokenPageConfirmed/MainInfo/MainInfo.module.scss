@@ -311,54 +311,31 @@
         }
 
         .followers {
-          width: 150px;
+          width: 103px;
 
           @include desktop {
-            width: calc((150 / 814) * 100%);
+            width: calc((95 / 814) * 100%);
           }
 
-          .followerItem {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            &:not(:first-child) {
-              margin-left: 16px;
-
-              @include desktop {
-                margin-left: $k * 16px;
-              }
-            }
-
-            svg {
-              width: 16px;
-              height: 16px;
-
-              @include desktop {
-                width: $k * 16px;
-                height: $k * 16px;
-              }
-            }
-
-            span {
-              margin-top: 4px;
-              font-weight: 400;
-              font-size: 12px;
-              line-height: 140%;
-              text-align: center;
-              color: $color_main_100;
-
-              @include desktop {
-                margin-top: $k * 4px;
-                font-size: $k * 12px;
-              }
+          svg {
+            @include desktop {
+              width: $k * 16px;
+              height: $k * 16px;
             }
           }
-
         }
 
+        .charity {
+          width: 100px;
+
+          @include desktop {
+            width: calc((84 / 814) * 100%);
+          }
+        }
+
+
         .created {
-          width: 84px;
+          width: 100px;
 
           @include desktop {
             width: calc((84 / 814) * 100%);
@@ -366,7 +343,7 @@
         }
 
         .marketCap {
-          width: 150px;
+          width: 166px;
 
           @include desktop {
             width: calc((150 / 814) * 100%);
@@ -374,10 +351,10 @@
         }
 
         .currentPrice {
-          width: 172px;
+          width: 144px;
 
           @include desktop {
-            width: calc((172 / 814) * 100%);
+            width: calc((142 / 814) * 100%);
           }
 
           svg {
@@ -398,7 +375,7 @@
         }
 
         .saved {
-          width: 70px;
+          width: 85px;
 
           @include desktop {
             width: calc((70 / 814) * 100%);
@@ -406,7 +383,7 @@
         }
 
         .holders {
-          width: 84px;
+          width: 100px;
 
           @include desktop {
             width: calc((84 / 814) * 100%);

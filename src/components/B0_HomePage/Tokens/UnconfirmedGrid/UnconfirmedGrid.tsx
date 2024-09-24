@@ -7,6 +7,8 @@ import {svgIcons} from "../../../../assets/svgIcons";
 import {ButtonCustom} from "../../../_common/ButtonCustom/ButtonCustom";
 import {IconButton} from "../../../_common/IconButton/IconButton";
 import {clsx} from "clsx";
+import {StarButton} from "../StarButton/StarButton";
+import {ViewModeEnum} from "../../../../store/appStore";
 
 interface IUnconfirmedGrid {
     tokens: IUnconfirmedToken[]
@@ -43,9 +45,7 @@ export const UnconfirmedGrid: FC<IUnconfirmedGrid> = observer(({
 
                         <div className={style.imgWrapper}>
                             <img src={src} alt=""/>
-                            <button className={style.addToFavoritesBtn}>
-                                {svgIcons.star}
-                            </button>
+                            <StarButton viewMode={ViewModeEnum.grid}/>
                         </div>
 
                         <div className={style.nameWrapper}>
@@ -65,33 +65,27 @@ export const UnconfirmedGrid: FC<IUnconfirmedGrid> = observer(({
                         </div>
 
                         <div className={style.followers}>
-                            <div className={style.followersInner}>
-                                {
-                                    [
-                                        {
-                                            icon: svgIcons.x_outlined,
-                                            value: followers.x,
-                                        },
-                                        {
-                                            icon: svgIcons.instagram,
-                                            value: followers.instagram,
-                                        },
-                                        {
-                                            icon: svgIcons.tiktok,
-                                            value: followers.tiktok,
-                                        },
-
-                                    ].map(({value, icon}, key) => (
-                                        <div key={key}
-                                             className={style.followerItem}
-                                        >
-                                            {icon}
-                                            <span>{value}</span>
-                                        </div>
-                                    ))
-                                }
+                            <p className={style.label}>Followers</p>
+                            <div className={style.value}
+                            >
+                                {svgIcons.x_outlined}
+                                <span>{followers.x}</span>
                             </div>
                         </div>
+
+                        <div className={style.twitterJoined}>
+                            <p className={style.label}>Twitter Joined</p>
+                            <p className={style.value}>1d</p>
+                        </div>
+
+                        <div className={style.pledge}>
+                            <p className={style.label}>Pledge</p>
+                            <div className={style.value}>
+                                {svgIcons.solana}
+                                <span>0.653</span>
+                            </div>
+                        </div>
+
 
                         <div className={style.statistics}>
                             {

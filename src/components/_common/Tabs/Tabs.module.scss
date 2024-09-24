@@ -1,0 +1,43 @@
+@import "../../../assets/styles/app";
+
+.tabs {
+  position: relative;
+  background-color: $color_bg_and_text;
+  width: 100%;
+  display: grid;
+
+  .btn {
+    @include button;
+    @include centerRow;
+    height: 100%;
+    background-color: transparent;
+
+    span {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      text-align: center;
+      color: $color_body_50;
+
+      @include desktop {
+        font-size: $k * 12px;
+      }
+    }
+
+    &_selected {
+      span {
+        color: $color_main;
+      }
+
+    }
+  }
+
+  .line {
+    position: absolute;
+    bottom: 0;
+    background-color: $color_main;
+    height: 1px;
+    transition: 0.2s;
+  }
+}

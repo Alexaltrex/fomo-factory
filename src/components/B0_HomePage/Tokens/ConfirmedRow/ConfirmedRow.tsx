@@ -8,6 +8,7 @@ import {ColorThemeEnum} from "../../../../store/appStore";
 import {svgIcons} from "../../../../assets/svgIcons";
 import {IconButton} from "../../../_common/IconButton/IconButton";
 import {ButtonCustom, VariantEnum} from "../../../_common/ButtonCustom/ButtonCustom";
+import {StarButton} from "../StarButton/StarButton";
 
 export const ConfirmedRow: FC<IConfirmedToken> = observer(({
                                                                src,
@@ -33,9 +34,7 @@ export const ConfirmedRow: FC<IConfirmedToken> = observer(({
         })}>
 
             <div className={style.infoCell}>
-                <button className={style.addToFavoriteBtn}>
-                    {svgIcons.star}
-                </button>
+                <StarButton/>
                 <img src={src} alt=""/>
                 <div className={style.info}>
                     <div className={style.infoTop}>
@@ -64,15 +63,14 @@ export const ConfirmedRow: FC<IConfirmedToken> = observer(({
                             icon: svgIcons.x_outlined,
                             value: followers.x,
                         },
-                        {
-                            icon: svgIcons.instagram,
-                            value: followers.instagram,
-                        },
-                        {
-                            icon: svgIcons.tiktok,
-                            value: followers.tiktok,
-                        },
-
+                        // {
+                        //     icon: svgIcons.instagram,
+                        //     value: followers.instagram,
+                        // },
+                        // {
+                        //     icon: svgIcons.tiktok,
+                        //     value: followers.tiktok,
+                        // },
                     ].map(({value, icon}, key) => (
                         <div key={key}
                              className={style.followerItem}
@@ -82,6 +80,10 @@ export const ConfirmedRow: FC<IConfirmedToken> = observer(({
                         </div>
                     ))
                 }
+            </div>
+
+            <div className={style.charity}>
+                <p>$369.5</p>
             </div>
 
             <div className={style.marketcap}>
@@ -126,12 +128,12 @@ export const ConfirmedRow: FC<IConfirmedToken> = observer(({
                 }
             </div>
 
-            <div className={style.share}>
-                <IconButton icon={svgIcons.share}
-                            className={style.shareBtn}
-                            onClick={() => setShareModal(true)}
-                />
-            </div>
+            {/*<div className={style.share}>*/}
+            {/*    <IconButton icon={svgIcons.share}*/}
+            {/*                className={style.shareBtn}*/}
+            {/*                onClick={() => setShareModal(true)}*/}
+            {/*    />*/}
+            {/*</div>*/}
 
 
             <div className={style.buy}>

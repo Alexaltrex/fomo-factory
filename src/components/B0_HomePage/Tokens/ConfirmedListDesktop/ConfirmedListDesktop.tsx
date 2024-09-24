@@ -33,10 +33,10 @@ export const ConfirmedListDesktop: FC<IConfirmedListDesktop> = observer(({
                         "# Listed",
                         "Created",
                         "Followers",
+                        "Charity",
                         "Marketcap (24h)",
-                        "Current price",
-                        "Statistics",
-                        "Share",
+                        "Liquidity",
+                        "Followers",
                         "Buy"
                     ].map((label, key) => (
                         <p key={key}>{label}</p>

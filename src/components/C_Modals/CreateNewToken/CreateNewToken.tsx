@@ -6,6 +6,8 @@ import {IconButton} from "../../_common/IconButton/IconButton";
 import {FormikHelpers, useFormik} from "formik";
 import {ButtonCustom, VariantEnum} from "../../_common/ButtonCustom/ButtonCustom";
 import {Link, useNavigate} from "react-router-dom";
+import {observer} from "mobx-react-lite";
+import {useStore} from "../../../store/rootStore";
 
 interface ICreateNewToken {
     showModal: boolean
@@ -24,12 +26,15 @@ const initialValues: IValues = {
     tiktok: "",
 }
 
-export const CreateNewToken: FC<ICreateNewToken> = ({
-                                                        showModal,
-                                                        onClose,
-                                                    }) => {
+export const CreateNewToken = observer(() => {
+    const {
+        appStore: {
+            createNewTokenModal, setCreateNewTokenModal,
+        }
+    } = useStore();
+
     const onCloseHandler = () => {
-        onClose();
+        setCreateNewTokenModal(false);
         setAdded(false);
     }
 
@@ -67,7 +72,7 @@ export const CreateNewToken: FC<ICreateNewToken> = ({
     return (
         <>
             {
-                showModal && (
+                createNewTokenModal && (
                     <div className={style.createNewToken}>
                         <div className={style.card}
                              ref={ref}
@@ -107,7 +112,6 @@ export const CreateNewToken: FC<ICreateNewToken> = ({
                                                 </p>
                                             </div>
 
-
                                             {
                                                 [
                                                     {
@@ -115,16 +119,16 @@ export const CreateNewToken: FC<ICreateNewToken> = ({
                                                         placeholder: "Add a link to celebrity’s Twitter",
                                                         name: "twitter"
                                                     },
-                                                    {
-                                                        icon: svgIcons.instagram,
-                                                        placeholder: "Add a link to celebrity’s Instagram",
-                                                        name: "instagram"
-                                                    },
-                                                    {
-                                                        icon: svgIcons.tiktok,
-                                                        placeholder: "Add a link to celebrity’s TikTok",
-                                                        name: "tiktok"
-                                                    },
+                                                    // {
+                                                    //     icon: svgIcons.instagram,
+                                                    //     placeholder: "Add a link to celebrity’s Instagram",
+                                                    //     name: "instagram"
+                                                    // },
+                                                    // {
+                                                    //     icon: svgIcons.tiktok,
+                                                    //     placeholder: "Add a link to celebrity’s TikTok",
+                                                    //     name: "tiktok"
+                                                    // },
                                                 ].map(({icon, placeholder, name}, key) => (
                                                     <div key={key}
                                                          className={style.field}
@@ -196,7 +200,5 @@ export const CreateNewToken: FC<ICreateNewToken> = ({
                 )
             }
         </>
-
-
     )
-}
+})

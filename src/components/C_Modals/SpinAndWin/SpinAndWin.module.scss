@@ -1,0 +1,225 @@
+@import "../../../assets/styles/app";
+
+.spinAndWin {
+  @include centerColumn;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color_pop_up_bg;
+  backdrop-filter: blur(5px);
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid $color_lines;
+    background-color: $color_bg_and_text;
+
+    @include desktop {
+      max-width: $k * 440px;
+    }
+
+    .cardHeader {
+      height: 36px;
+      display: flex;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        height: $k * 36px;
+      }
+
+      .cardHeaderLeft {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+
+        @include desktop {
+          padding-left: $k * 12px;
+        }
+
+        svg {
+
+          path {
+            fill-opacity: 1;
+          }
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+
+        }
+
+        span {
+          margin-left: 8px;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+
+          @include desktop {
+            margin-left: $k * 8px;
+            font-size: $k * 12px;
+          }
+        }
+      }
+    }
+
+    .cardBody {
+      padding: 48px 0;
+
+      @include desktop {
+        padding: $k * 48px 0;
+      }
+
+      .wheelWrapper {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 264px;
+        height: 264px;
+
+        @include desktop {
+          width: $k * 312px;
+          height: $k * 312px;
+        }
+
+        & > svg:nth-child(1) {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+        }
+
+        .pointer {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 0;
+          height: 0;
+          z-index: 2;
+
+          svg {
+            position: absolute;
+            left: -40.3px;
+            bottom: -40.3px;
+            width: 80.6px;
+            height: 98.5px;
+
+            @include desktop {
+              left: -$k * 47.63px;
+              bottom: -$k * 47.63px;
+              width: $k * 95.26px;
+              height: $k * 115.88px;
+            }
+          }
+        }
+
+        & > svg:nth-child(2) {
+          position: absolute;
+          z-index: 3;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 54px;
+          height: 54px;
+
+          @include desktop {
+            width: 63px;
+            height: 63px;
+          }
+        }
+
+        .label {
+          position: absolute;
+          z-index: 4;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 0;
+          height: 0;
+
+          & > div {
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 0;
+            left: 0;
+
+            p {
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: 84px;
+
+              font-weight: 700;
+              font-size: 12px;
+              line-height: 140%;
+              text-transform: uppercase;
+              color: $color_main_100;
+              white-space: nowrap;
+
+              @include desktop {
+                font-size: $k * 12px;
+                bottom: $k * 97px;
+              }
+            }
+          }
+
+
+        }
+      }
+
+      .cup {
+        width: 264px;
+        height: 236px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include desktop {
+          width: $k * 312px;
+          height: $k * 278px;
+        }
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .winLabel {
+        margin-top: 12px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main_100;
+        text-align: center;
+
+        span {
+          color: $color_main;
+        }
+
+        @include desktop {
+          margin-top: $k * 12px;
+          font-size: $k * 18px;
+        }
+      }
+
+    }
+
+    .btn {
+      width: 100%;
+      height: 48px;
+
+      @include desktop {
+        height: $k * 48px;
+      }
+    }
+  }
+}

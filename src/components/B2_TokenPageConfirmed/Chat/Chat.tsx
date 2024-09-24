@@ -5,6 +5,7 @@ import {comments} from "./data";
 import {IconButton} from "../../_common/IconButton/IconButton";
 import {useState} from "react";
 import {clsx} from "clsx";
+import {Tabs} from "../../_common/Tabs/Tabs";
 
 interface IValues {
     yourComment: string
@@ -31,7 +32,7 @@ export const Chat = () => {
     })
 
     const [expandChat, setExpandChat] = useState(false);
-
+    const [tab, setTab] = useState(0)
 
     return (
         <div className={clsx({
@@ -43,10 +44,15 @@ export const Chat = () => {
             </div>
 
             <div className={style.header}>
-                <div className={style.headerLeft}>
-                    <p>CHAT</p>
-                    <p>TWITTER</p>
-                </div>
+                <Tabs tabs={[
+                    "CHAT",
+                    "TWITTER",
+                ]}
+                      tab={tab}
+                      onClick={tab => setTab(tab)}
+                      className={style.headerLeft}
+                />
+
                 <div className={style.headerRight}>
                     {svgIcons.eye}
                     <span>1.2k</span>

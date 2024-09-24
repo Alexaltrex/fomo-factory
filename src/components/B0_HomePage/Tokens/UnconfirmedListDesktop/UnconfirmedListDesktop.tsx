@@ -33,7 +33,8 @@ export const UnconfirmedListDesktop: FC<IUnconfirmedListDesktop> = observer(({
                     [
                         "# Listed",
                         "Followers",
-                        "Pledge Amount",
+                        "Twitter Joined date",
+                        "Pledge",
                         "Statistics",
                         "Share",
                         "Pledge"

@@ -7,6 +7,7 @@ import {svgIcons} from "../../../../assets/svgIcons";
 import {IconButton} from "../../../_common/IconButton/IconButton";
 import {ButtonCustom, VariantEnum} from "../../../_common/ButtonCustom/ButtonCustom";
 import {clsx} from "clsx";
+import {StarButton} from "../StarButton/StarButton";
 
 interface IUnconfirmedListMobile {
     tokens: IUnconfirmedToken[]
@@ -53,9 +54,7 @@ export const UnconfirmedListMobile: FC<IUnconfirmedListMobile> = observer(({
                                      className={style.row}
                                 >
 
-                                    <button className={style.starBtn}>
-                                        {svgIcons.star}
-                                    </button>
+                                    <StarButton/>
 
                                     <img src={src} alt=""/>
 

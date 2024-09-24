@@ -3,6 +3,7 @@ import {CelebsRefered} from "../components/C_Modals/CelebsRefered/CelebsRefered"
 import {HowToPlay} from "../components/C_Modals/HowToPlay/HowToPlay";
 import {favoriteSingles, IFavorite, IFavoriteFolder} from "../components/A2_Sidebar/data";
 import {v4 as uuidv4} from 'uuid';
+import {SpinAndWin} from "../components/C_Modals/SpinAndWin/SpinAndWin";
 
 export enum ColorThemeEnum {
     dark = "dark",
@@ -26,6 +27,10 @@ export class AppStore {
     shareModal = false
     celebsReferedModal = false
     howToPlayModal = false
+    spinAndWinModal = true
+    claimModal = false
+    createNewTokenModal = false
+    depositedSolana = false
 
     createFolderModal = false
     renameFolderModal = false
@@ -35,6 +40,8 @@ export class AppStore {
     sourceFavorite = null as null | IFavorite
     targetFavorite = null as null | IFavorite
     folderToEdit = null as null | IFavoriteFolder
+    win = false
+    winValue = ""
 
     constructor() {
         makeObservable(this,
@@ -50,6 +57,9 @@ export class AppStore {
                 shareModal: observable,
                 celebsReferedModal: observable,
                 howToPlayModal: observable,
+                spinAndWinModal: observable,
+                win: observable,
+                winValue: observable,
 
                 createFolderModal: observable,
                 renameFolderModal: observable,
@@ -59,6 +69,9 @@ export class AppStore {
                 sourceFavorite: observable,
                 targetFavorite: observable,
                 folderToEdit: observable,
+                claimModal: observable,
+                createNewTokenModal: observable,
+                depositedSolana: observable,
 
                 setAddress: action.bound,
                 setTwitter: action.bound,
@@ -71,6 +84,10 @@ export class AppStore {
                 setShareModal: action.bound,
                 setCelebsReferedModal: action.bound,
                 setHowToPlayModal: action.bound,
+                setSpinAndWinModal: action.bound,
+                setClaimModal: action.bound,
+                setCreateNewTokenModal: action.bound,
+                setDepositedSolana: action.bound,
 
                 setCreateFolderModal: action.bound,
                 setRenameFolderModal: action.bound,
@@ -83,6 +100,8 @@ export class AppStore {
                 moveFolderItemToAnotherFolder: action.bound,
                 renameFolder: action.bound,
                 deleteFolder: action.bound,
+                setWin: action.bound,
+                setWinValue: action.bound,
             }
         )
     }
@@ -259,6 +278,30 @@ export class AppStore {
     deleteFolder(folderId: string) {
         const _favoriteFolders = this.favoriteFolders.filter(folder => folder.id !== folderId)
         this.favoriteFolders = _favoriteFolders
+    }
+
+    setSpinAndWinModal(spinAndWinModal: boolean) {
+        this.spinAndWinModal = spinAndWinModal
+    }
+
+    setWin(win: boolean) {
+        this.win = win
+    }
+
+    setWinValue(winValue: string) {
+        this.winValue = winValue
+    }
+
+    setClaimModal(claimModal: boolean) {
+        this.claimModal = claimModal
+    }
+
+    setCreateNewTokenModal(createNewTokenModal: boolean) {
+        this.createNewTokenModal = createNewTokenModal
+    }
+
+    setDepositedSolana(depositedSolana: boolean) {
+        this.depositedSolana = depositedSolana
     }
 
 }

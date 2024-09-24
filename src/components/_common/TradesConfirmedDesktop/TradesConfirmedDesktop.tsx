@@ -24,7 +24,8 @@ export const TradesConfirmedDesktop: FC<ITradesConfirmedDesktop> = ({
                     [
                         "Holders (5)",
                         "Type",
-                        "Price, SOL",
+                        "Size",
+                        "Price",
                         "Time",
                         "Transaction"
                     ].map((label, key) => (
@@ -62,25 +63,20 @@ export const TradesConfirmedDesktop: FC<ITradesConfirmedDesktop> = ({
                                 </p>
                             </div>
 
-                            <div className={style.price}>
+                            <div className={style.size}>
                                 {svgIcons.solana}
                                 <p>
                                     {price[0]}<span>/${price[1]}</span>
                                 </p>
                             </div>
 
+                            <div className={style.price}>
+                                <p>$3.5</p>
+                            </div>
+
 
                             <div className={style.time}>
-                                {
-                                    [
-                                        ...time[0].split(""),
-                                        time[1]
-                                    ].map((string, key) => (
-                                        <p key={key}>
-                                            {string}
-                                        </p>
-                                    ))
-                                }
+                                <p>12 d</p>
                             </div>
 
                             <div className={style.transaction}>

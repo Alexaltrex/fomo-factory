@@ -7,6 +7,8 @@ import {ButtonCustom} from "../../../_common/ButtonCustom/ButtonCustom";
 import {IconButton} from "../../../_common/IconButton/IconButton";
 import {useStore} from "../../../../store/rootStore";
 import {clsx} from "clsx";
+import {ViewModeEnum} from "../../../../store/appStore";
+import {StarButton} from "../StarButton/StarButton";
 
 interface IConfirmedGrid {
     tokens: IConfirmedToken[]
@@ -45,9 +47,7 @@ export const ConfirmedGrid: FC<IConfirmedGrid> = observer(({
 
                         <div className={style.imgWrapper}>
                             <img src={src} alt=""/>
-                            <button className={style.addToFavoritesBtn}>
-                                {svgIcons.star}
-                            </button>
+                            <StarButton viewMode={ViewModeEnum.grid}/>
                         </div>
 
                         <p className={style.name}>{name}</p>
@@ -71,34 +71,26 @@ export const ConfirmedGrid: FC<IConfirmedGrid> = observer(({
                         </div>
 
                         <div className={style.followers}>
-                            <div className={style.followersInner}>
-                                {
-                                    [
-                                        {
-                                            icon: svgIcons.x_outlined,
-                                            value: followers.x,
-                                        },
-                                        {
-                                            icon: svgIcons.instagram,
-                                            value: followers.instagram,
-                                        },
-                                        {
-                                            icon: svgIcons.tiktok,
-                                            value: followers.tiktok,
-                                        },
-                                    ].map(({value, icon}, key) => (
-                                        <div key={key}
-                                             className={style.followerItem}
-                                        >
-                                            {icon}
-                                            <span>{value}</span>
-                                        </div>
-                                    ))
-                                }
+                            <p className={style.label}>Followers</p>
+                            <div className={style.value}
+                            >
+                                {svgIcons.x_outlined}
+                                <span>{followers.x}</span>
                             </div>
                         </div>
 
+
                         <div className={style.prices}>
+
+                            <div className={style.pricesRow}>
+                                <p className={style.label}>
+                                    Charity
+                                </p>
+                                <p className={style.value}>
+                                    <span>$369.5</span>
+                                </p>
+                            </div>
+
                             <div className={style.pricesRow}>
                                 <p className={style.label}>
                                     Marketcap
@@ -107,6 +99,7 @@ export const ConfirmedGrid: FC<IConfirmedGrid> = observer(({
                                     {svgIcons.solana}<span>{marketcap[0]}</span>
                                 </p>
                             </div>
+
                             <div className={style.pricesRow}>
                                 <p className={style.label}>
                                     Price
@@ -115,6 +108,7 @@ export const ConfirmedGrid: FC<IConfirmedGrid> = observer(({
                                     {svgIcons.solana}<span>{currentPrice[0]}</span>
                                 </p>
                             </div>
+
                             <div className={style.pricesRow}>
                                 <p className={style.label}>
                                     Created
@@ -123,6 +117,7 @@ export const ConfirmedGrid: FC<IConfirmedGrid> = observer(({
                                     <span>{`${created} ago`}</span>
                                 </p>
                             </div>
+
                         </div>
 
                         <div className={style.statistics}>
@@ -155,10 +150,6 @@ export const ConfirmedGrid: FC<IConfirmedGrid> = observer(({
                             <ButtonCustom label="QUICK buy"
                                           className={style.quickPledgeBtn}
 
-                            />
-                            <IconButton icon={svgIcons.share}
-                                        className={style.shareBtn}
-                                        onClick={() => setShareModal(true)}
                             />
                         </div>
 

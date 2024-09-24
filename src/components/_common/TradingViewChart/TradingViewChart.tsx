@@ -12,19 +12,19 @@ import ReactGridLayout, {
 //     ResolutionString,
 //     AvailableSaveloadVersions,
 // } from "./library";
-import useLocalStorageState from "./services/hooks/useLocalStorageState";
-import { COLORS } from "./constants/tradingColorsData";
-import Datafeed from "./services/datafeed";
-import { formatPrice } from "./services/birdeye/helpers";
-import {
-    RESOLUTION_KEY,
-    TV_CHART_CONTAINER_ID,
-    TRADE_LAYOUT_KEY,
-    SIDEBAR_KEY,
-} from "./constants/tradingViewConstants";
-import {
-    breakpoints,
-} from "./services/hooks/useViewport";
+// import useLocalStorageState from "./services/hooks/useLocalStorageState";
+// import { COLORS } from "./constants/tradingColorsData";
+// import Datafeed from "./services/datafeed";
+// import { formatPrice } from "./services/birdeye/helpers";
+// import {
+//     RESOLUTION_KEY,
+//     TV_CHART_CONTAINER_ID,
+//     TRADE_LAYOUT_KEY,
+//     SIDEBAR_KEY,
+// } from "./constants/tradingViewConstants";
+// import {
+//     breakpoints,
+// } from "./services/hooks/useViewport";
 
 export type TradeLayout =
     | "chartLeft"

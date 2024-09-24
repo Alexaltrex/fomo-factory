@@ -41,35 +41,6 @@
         height: 100%;
       }
 
-      .addToFavoritesBtn {
-        @include button;
-        @include centerRow;
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        border: 1px solid $color_lines;
-        width: 36px;
-        height: 36px;
-        backdrop-filter: blur(20px);
-        background: $color_bg_and_text;
-
-        @include desktop {
-          top: $k * 4px;
-          right: $k * 4px;
-          width: $k * 36px;
-          height: $k * 36px;
-        }
-
-        svg {
-          width: 16px;
-          height: 16px;
-
-          @include desktop {
-            width: $k * 16px;
-            height: $k * 16px;
-          }
-        }
-      }
     }
 
     .nameWrapper {
@@ -126,16 +97,14 @@
       }
 
       svg {
-
         @include desktop {
           width: $k * 16px;
           height: $k * 16px;
         }
 
-
         path {
-          fill: #FFF;
-          fill-opacity: 0.5;
+          fill: $color_main;
+          fill-opacity: 1;
         }
       }
 
@@ -156,69 +125,157 @@
 
     .followers {
       margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
       @include desktop {
         margin-top: $k * 12px;
       }
 
-      .followersInner {
-        margin: -2px -4px;
-        display: flex;
-        flex-wrap: wrap;
+      .label {
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
 
         @include desktop {
-          margin: $k * -2px $k * -4px;
+          font-size: $k * 12px;
+        }
+      }
+
+      .value {
+        padding: 4px 8px;
+        border: 1px solid $color_lines;
+        display: flex;
+        align-items: center;
+
+        @include desktop {
+          padding: $k * 4px $k * 8px;
         }
 
-        .followerItem {
-          margin: 2px;
-          padding: 4px 8px;
-          border: 1px solid $color_lines;
-          display: flex;
-          align-items: center;
+        svg {
+          width: 12px;
+          height: 12px;
 
           @include desktop {
-            margin: $k * 2px;
-            padding: $k * 4px $k * 8px;
-          }
-
-          svg {
-            width: 12px;
-            height: 12px;
-
-            @include desktop {
-              width: $k * 12px;
-              height: $k * 12px;
-            }
-          }
-
-          span {
-            margin-left: 4px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 140%;
-            text-align: center;
-            color: $color_main_100;
-
-            @include desktop {
-              margin-left: $k * 4px;
-              font-size: $k * 12px;
-            }
+            width: $k * 12px;
+            height: $k * 12px;
           }
         }
 
+        span {
+          margin-left: 4px;
+          font-size: 12px;
+          line-height: 140%;
+          text-align: center;
+          color: $color_main_100;
+
+          @include desktop {
+            margin-left: $k * 4px;
+            font-size: $k * 12px;
+          }
+        }
       }
+
+
 
 
     }
 
+    .twitterJoined {
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include desktop {
+        margin-top: $k * 6px;
+      }
+
+      .label {
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
+      }
+
+      .value {
+        font-size: 12px;
+        line-height: 140%;
+        text-align: center;
+        color: $color_main_100;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
+      }
+    }
+
+    .pledge {
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include desktop {
+        margin-top: $k * 8px;
+      }
+
+      .label {
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_body_50;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
+      }
+
+      .value {
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 16px;
+          height: 16px;
+
+          path {
+            fill: #FFF;
+            fill-opacity: 0.5;
+          }
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
+
+        span {
+          margin-left: 4px;
+          font-size: 12px;
+          line-height: 140%;
+          text-align: right;
+          color: $color_main_100;
+
+          @include desktop {
+            margin-left: $k * 4px;
+            font-size: $k * 12px;
+          }
+        }
+      }
+    }
+
+
     .statistics {
-      margin-top: 12px;
+      margin-top: 20px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
 
       @include desktop {
-        margin-top: $k * 12px;
+        margin-top: $k * 20px;
       }
 
       .statisticsItem {

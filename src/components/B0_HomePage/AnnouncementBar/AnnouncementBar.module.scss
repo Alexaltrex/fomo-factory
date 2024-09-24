@@ -1,0 +1,56 @@
+@import "../../../assets/styles/app";
+
+.announcementBar {
+  @include button;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  border-bottom: 1px solid $color_lines;
+  background: transparent;
+  transition: 0.3s;
+
+  &:hover {
+    @include desktop {
+      background: #222;
+    }
+  }
+
+  @include desktop {
+    height: $k * 36px;
+  }
+
+
+
+  .info {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_main_100;
+
+    span {
+      font-weight: 700;
+      color: $color_main;
+    }
+
+    @include desktop {
+      font-size: $k * 12px;
+    }
+  }
+
+  .timer {
+    margin-left: 12px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_main;
+
+    @include desktop {
+      margin-left: $k * 32px;
+      font-size: $k * 12px;
+    }
+  }
+}

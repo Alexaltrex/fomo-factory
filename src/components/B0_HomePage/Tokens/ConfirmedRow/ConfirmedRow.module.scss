@@ -4,9 +4,9 @@
 
 .confirmedRow {
   transition: 0.3s;
-  height: 56px;
+  height: $k * 56px;
   display: grid;
-  grid-template-columns: 1.5fr $k * 116px 1.5fr 1fr 1fr 1fr $k * 96px $k * 156px;
+  grid-template-columns: 1fr $k * 132px $k * 147px $k * 132px $k * 191px $k * 174px $k * 197px $k * 165px;
   align-items: center;
 
   &:not(:last-child) {
@@ -43,6 +43,11 @@
       @include centerRow;
       width: $k * 12px;
       height: $k * 12px;
+
+      svg {
+        width: $k * 12px;
+        height: $k * 12px;
+      }
     }
 
     img {
@@ -133,6 +138,14 @@
         text-align: center;
         color: $color_main_100;
       }
+    }
+  }
+
+  .charity {
+    p {
+      font-size: $k * 12px;
+      line-height: 140%;
+      color: $color_body_50;
     }
   }
 

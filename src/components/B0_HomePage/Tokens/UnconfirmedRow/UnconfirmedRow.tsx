@@ -8,6 +8,7 @@ import {ColorThemeEnum} from "../../../../store/appStore";
 import {svgIcons} from "../../../../assets/svgIcons";
 import {IconButton} from "../../../_common/IconButton/IconButton";
 import {ButtonCustom, VariantEnum} from "../../../_common/ButtonCustom/ButtonCustom";
+import {StarButton} from "../StarButton/StarButton";
 
 export const UnconfirmedRow: FC<IUnconfirmedToken> = observer(({
                                                                    src,
@@ -34,9 +35,7 @@ export const UnconfirmedRow: FC<IUnconfirmedToken> = observer(({
 
                 <div className={style.listed}>
 
-                    <button className={style.starBtn}>
-                        {svgIcons.star}
-                    </button>
+                    <StarButton/>
 
                     <img src={src} alt=""/>
 
@@ -58,14 +57,14 @@ export const UnconfirmedRow: FC<IUnconfirmedToken> = observer(({
                                 icon: svgIcons.x_outlined,
                                 value: followers.x,
                             },
-                            {
-                                icon: svgIcons.instagram,
-                                value: followers.instagram,
-                            },
-                            {
-                                icon: svgIcons.tiktok,
-                                value: followers.tiktok,
-                            },
+                            // {
+                            //     icon: svgIcons.instagram,
+                            //     value: followers.instagram,
+                            // },
+                            // {
+                            //     icon: svgIcons.tiktok,
+                            //     value: followers.tiktok,
+                            // },
 
                         ].map(({value, icon}, key) => (
                             <div key={key}
@@ -77,6 +76,10 @@ export const UnconfirmedRow: FC<IUnconfirmedToken> = observer(({
                         ))
                     }
                 </div>
+
+               <div className={style.twitterJoinedDate}>
+                    <p>12 Sep, 2021</p>
+               </div>
 
                 <div className={style.pledgeAmount}>
                     {svgIcons.solana}

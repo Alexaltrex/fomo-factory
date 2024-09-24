@@ -8,11 +8,14 @@ import {useStore} from "../../../store/rootStore";
 import {clsx} from "clsx";
 import {ColorThemeEnum} from "../../../store/appStore";
 import {QuickPledge} from "./QuickPledge/QuickPledge";
+import {Tabs} from "../../_common/Tabs/Tabs";
+import {DepositSolana} from "./DepositSolana/DepositSolana";
 
 export const ControlPanel = observer(() => {
     const {
         appStore: {
             colorTheme,
+            confirmed,
         }
     } = useStore();
 
@@ -23,7 +26,7 @@ export const ControlPanel = observer(() => {
         })}>
             <div className={style.topPartMobile}>
                 <SearchForTokens/>
-                <ViewModeSwitcher/>
+                {!confirmed && <DepositSolana/>}
             </div>
             <div className={style.middlePartMobile}>
                 <Filter/>
@@ -36,6 +39,7 @@ export const ControlPanel = observer(() => {
             <div className={style.desktop}>
                 <ConfirmedSwitcher/>
                 <SearchForTokens/>
+                {!confirmed && <DepositSolana/>}
                 <QuickPledge/>
                 <Filter/>
                 <ViewModeSwitcher/>

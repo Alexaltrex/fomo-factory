@@ -38,9 +38,6 @@ export const Tokens = observer(() => {
             {
                 !confirmed && viewMode === ViewModeEnum.list && (
                     <>
-                        <UnconfirmedListMobile tokens={unconfirmedTokensData}
-                                               className={style.unconfirmedListMobile}
-                        />
                         <UnconfirmedListDesktop tokens={unconfirmedTokensData}
                                                 className={style.unconfirmedListDesktop}
                         />
@@ -48,7 +45,7 @@ export const Tokens = observer(() => {
 
                 )
             }
-           
+
             {
                 !confirmed && viewMode === ViewModeEnum.grid && (
                     <UnconfirmedGrid tokens={unconfirmedTokensData}
@@ -60,9 +57,6 @@ export const Tokens = observer(() => {
             {
                 confirmed && viewMode === ViewModeEnum.list && (
                     <>
-                        <ConfirmedListMobile tokens={confirmedTokensData}
-                                             className={style.confirmedListMobile}
-                        />
                         <ConfirmedListDesktop tokens={confirmedTokensData}
                                               className={style.confirmedListDesktop}
                         />

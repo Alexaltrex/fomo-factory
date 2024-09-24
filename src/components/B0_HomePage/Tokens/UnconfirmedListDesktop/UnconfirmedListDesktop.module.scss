@@ -5,7 +5,7 @@
 
   .listHeader {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) $k * 150px $k * 185px;
+    grid-template-columns: 1fr $k * 163px $k * 227px $k * 192px $k * 237px $k * 133px $k * 173px;
     height: $k * 40px;
     border-bottom: 1px solid $color_lines;
 

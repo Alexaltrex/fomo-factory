@@ -16,43 +16,11 @@
   }
 
   .tabs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     border-bottom: 1px solid $color_lines;
+    height: 36px;
 
-    .tab {
-      @include button;
-      @include centerRow;
-      height: 36px;
-
-      @include desktop {
-        height: $k * 36px;
-      }
-
-      &:not(:first-child) {
-        border-left: 1px solid $color_lines;
-      }
-
-      span {
-        font-family: var(--font-family);
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 140%;
-        text-transform: uppercase;
-        text-align: center;
-        color: $color_body_50;
-        transition: 0.3s;
-
-        @include desktop {
-          font-size: $k * 12px;
-        }
-      }
-
-      &_selected {
-        span {
-          color: $color_main;
-        }
-      }
+    @include desktop {
+      height: $k * 36px;
     }
   }
 
@@ -353,84 +321,206 @@
     }
   }
 
-  .giftSection {
-    padding: 12px 12px 24px;
+  .checksSection {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid $color_lines;
+    height: 72px;
+    padding-top: 12px;
 
     @include desktop {
-      padding: $k * 12px $k * 12px $k * 24px;
+      height: $k * 72px;
+      padding-top: $k *12px;
     }
 
-    .top {
+    & > div {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
 
-      .topLeft {
-        display: flex;
-        align-items: center;
+      svg {
+        width: 16px;
+        height: 16px;
 
-        p {
-          font-weight: 400;
-          font-size: 12px;
-          line-height: 140%;
-          color: $color_body_50;
-
-          @include desktop {
-            font-size: $k * 12px;
-          }
-        }
-
-        svg {
-          margin-left: 4px;
-
-          @include desktop {
-            margin-left: $k * 4px;
-          }
+        @include desktop {
+          width: $k * 16px;
+          height: $k * 16px;
         }
       }
 
-      .topRight {
+      p {
+        margin-top: 4px;
+        font-size: 10px;
+        line-height: 140%;
+        color: $color_body_50;
+        text-align: center;
+        width: 68px;
 
-        span {
-          font-weight: 700;
-          font-size: 12px;
-          line-height: 140%;
-          text-transform: uppercase;
-          text-align: right;
-          color: $color_body_50;
-
-          @include desktop {
-            font-size: $k * 12px;
-          }
-
-          &:nth-child(2) {
-            color: $color_main_100;
-          }
+        @include desktop {
+          margin-top: $k * 4px;
+          font-size: $k * 10px;
+          width: $k * 68px;
         }
       }
     }
+  }
 
-    .description {
-      margin-top: 8px;
-      font-weight: 400;
-      font-size: 12px;
+  .shareSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $color_lines;
+    height: 42px;
+    padding: 0 12px;
+
+    @include desktop {
+      height: $k * 42px;
+      padding: 0 $k * 12px;
+    }
+
+    & > p {
+      font-size: 10px;
       line-height: 140%;
       color: $color_body_50;
 
       @include desktop {
-        margin-top: $k * 8px;
-        font-size: $k * 12px;
+        font-size: $k * 10px;
+      }
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+
+      & > button {
+        @include button;
+        display: flex;
+        align-items: center;
+
+        p {
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          text-align: center;
+          color: $color_main;
+
+          @include desktop {
+            font-size: $k * 12px;
+          }
+        }
+
+        img {
+          display: block;
+          margin-left: 4px;
+          width: 16px;
+          height: 16px;
+
+          @include desktop {
+            margin-left: $k * 4px;
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
+      }
+
+      & > p {
+        margin-left: 16px;
+        border: 1px solid $color_lines;
+        border-radius: 999px;
+        padding: 2px 4px;
+        font-size: 8px;
+        line-height: 140%;
+        color: $color_body_50;
+
+        @include desktop {
+          margin-left: $k * 16px;
+          padding: $k * 2px $k * 4px;
+          font-size: $k * 8px;
+        }
       }
     }
   }
 
-  .getTweetBtn {
-    width: 100%;
-    height: 32px;
+  //.giftSection {
+  //  padding: 12px 12px 24px;
+  //
+  //  @include desktop {
+  //    padding: $k * 12px $k * 12px $k * 24px;
+  //  }
+  //
+  //  .top {
+  //    display: flex;
+  //    align-items: center;
+  //    justify-content: space-between;
+  //
+  //    .topLeft {
+  //      display: flex;
+  //      align-items: center;
+  //
+  //      p {
+  //        font-weight: 400;
+  //        font-size: 12px;
+  //        line-height: 140%;
+  //        color: $color_body_50;
+  //
+  //        @include desktop {
+  //          font-size: $k * 12px;
+  //        }
+  //      }
+  //
+  //      svg {
+  //        margin-left: 4px;
+  //
+  //        @include desktop {
+  //          margin-left: $k * 4px;
+  //        }
+  //      }
+  //    }
+  //
+  //    .topRight {
+  //
+  //      span {
+  //        font-weight: 700;
+  //        font-size: 12px;
+  //        line-height: 140%;
+  //        text-transform: uppercase;
+  //        text-align: right;
+  //        color: $color_body_50;
+  //
+  //        @include desktop {
+  //          font-size: $k * 12px;
+  //        }
+  //
+  //        &:nth-child(2) {
+  //          color: $color_main_100;
+  //        }
+  //      }
+  //    }
+  //  }
+  //
+  //  .description {
+  //    margin-top: 8px;
+  //    font-weight: 400;
+  //    font-size: 12px;
+  //    line-height: 140%;
+  //    color: $color_body_50;
+  //
+  //    @include desktop {
+  //      margin-top: $k * 8px;
+  //      font-size: $k * 12px;
+  //    }
+  //  }
+  //}
+  //
+  //.getTweetBtn {
+  //  width: 100%;
+  //  height: 32px;
+  //
+  //  @include desktop {
+  //    height: $k * 32px;
+  //  }
+  //}
 
-    @include desktop {
-      height: $k * 32px;
-    }
-  }
 
 }

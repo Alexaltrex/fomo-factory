@@ -18,7 +18,8 @@ const initialValues: IValues = {
 export const QuickPledge = observer(() => {
     const {
         appStore: {
-            colorTheme
+            colorTheme,
+            confirmed,
         }
     } = useStore()
 
@@ -53,10 +54,12 @@ export const QuickPledge = observer(() => {
                     onClick={() => setSwitched(!switched)}
             >
                 <div className={style.switcher}/>
-                <p>Quick Pledge</p>
+                <p>
+                    {confirmed ? "Quick buy" : "Quick Pledge"}
+                </p>
             </button>
 
-            <form className={style.value}
+            <form className={style.form}
                   onSubmit={formik.handleSubmit}
             >
                 {svgIcons.solana}

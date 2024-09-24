@@ -34,40 +34,8 @@
       height: $k * 36px;
     }
 
-    .headerLeft {
-      display: flex;
+    .tabs {
 
-      p {
-        @include centerRow;
-        height: 100%;
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 140%;
-        text-transform: uppercase;
-        border-right: 1px solid $color_lines;
-
-        @include desktop {
-          font-size: $k * 12px;
-        }
-
-        &:nth-child(1) {
-          width: 62px;
-          color: $color_main;
-
-          @include desktop {
-            width: $k * 62px;
-          }
-        }
-
-        &:nth-child(2) {
-          width: 84px;
-          color: $color_body_50;
-
-          @include desktop {
-            width: $k * 84px;
-          }
-        }
-      }
     }
 
     .headerRight {
@@ -170,7 +138,7 @@
     overflow-y: auto;
 
     @include desktop {
-      height: calc(100vh - $k * (48px + 486px + 36px + 36px));
+      height: calc(100vh - $k * (48px + 486px + 36px + 36px - 4px));
       transition: 0.3s;
     }
 

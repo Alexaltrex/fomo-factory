@@ -1,0 +1,348 @@
+@import "../../../assets/styles/app";
+
+.depositedSolana {
+  @include centerColumn;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color_pop_up_bg;
+  backdrop-filter: blur(5px);
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid $color_lines;
+    background-color: $color_bg_and_text;
+
+    @include desktop {
+      max-width: $k * 440px;
+    }
+
+    .cardHeader {
+      height: 36px;
+      display: flex;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        height: $k * 36px;
+      }
+
+      .cardHeaderLeft {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+
+        @include desktop {
+          padding-left: $k * 12px;
+        }
+
+        & > svg {
+          width: 16px;
+          height: 16px;
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+
+        }
+
+        & > img {
+          display: block;
+          width: 16px;
+          height: 16px;
+          margin-left: 12px;
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+            margin-left: $k * 12px;
+
+          }
+        }
+
+        & > p {
+          flex-grow: 1;
+          margin-left: 8px;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+
+          @include desktop {
+            margin-left: $k * 8px;
+            font-size: $k * 12px;
+          }
+        }
+
+        & > div {
+          width: 164px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          padding-left: 12px;
+          border-left: 1px solid $color_lines;
+
+          @include desktop {
+            width: $k * 164px;
+            padding-left: $k * 12px;
+          }
+
+          svg {
+            width: 16px;
+            height: 16px;
+
+            @include desktop {
+              width: $k * 16px;
+              height: $k * 16px;
+            }
+
+            path {
+              fill-opacity: 0.5;
+              fill: #FFF;
+            }
+          }
+
+          p {
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_main_100;
+            margin-left: 4px;
+
+            @include desktop {
+              font-size: $k * 12px;
+              margin-left: $k * 4px;
+            }
+          }
+        }
+      }
+
+      .closeBtn {
+        flex-shrink: 0;
+        width: 36px;
+        border-left: 1px solid $color_lines;
+
+        @include desktop {
+          width: $k * 36px;
+        }
+
+        svg {
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
+      }
+    }
+
+   .timer {
+     @include centerRow;
+     border-bottom: 1px solid $color_lines;
+     padding: 24px 0;
+
+     @include desktop {
+       padding: $k * 24px 0;
+     }
+
+     .timerWrapperMobile {
+       @include onlyMobile(flex);
+       justify-content: center;
+     }
+
+     .timerWrapperDesktop {
+       @include onlyDesktop(flex);
+       justify-content: center;
+     }
+   }
+
+    .price {
+      @include centerRow;
+      border-bottom: 1px solid $color_lines;
+      padding: 24px 0;
+
+      @include desktop {
+        padding: $k * 24px 0;
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+
+        @include desktop {
+          width: $k * 16px;
+          height: $k * 16px;
+        }
+
+        path {
+          fill-opacity: 1;
+          fill: #FFF;
+        }
+      }
+
+      p {
+        margin-left: 8px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 140%;
+        color: $color_main_100;
+
+        @include desktop {
+          margin-left: $k * 8px;
+          font-size: $k * 18px;
+        }
+
+        span {
+          color: $color_body_50;
+        }
+      }
+
+    }
+
+    .withdraw {
+      @include centerRow;
+      height: 48px;
+      background: $color_white_3;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      text-align: center;
+      color: $color_body_50;
+
+      @include desktop {
+        height: $k * 48px;
+        font-size: $k * 12px;
+      }
+
+    }
+
+    .forms {
+
+      .form {
+        height: 48px;
+        display: flex;
+
+        &:nth-child(1) {
+          border-bottom: 1px solid $color_lines;
+        }
+
+        .inputWrapper {
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          padding-left: 12px;
+
+          @include desktop {
+            padding-left: $k * 12px;
+          }
+
+          svg {
+            width: 16px;
+            height: 16px;
+
+            @include desktop {
+              width: $k * 16px;
+              height: $k * 16px;
+            }
+
+            path {
+              fill-opacity: 0.5;
+              fill: #FFF;
+            }
+          }
+
+          input {
+            flex-grow: 1;
+            margin-left: 4px;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 12px;
+            line-height: 140%;
+            color: #FFF;
+
+            @include desktop {
+              margin-left: $k * 4px;
+              font-size: $k * 12px;
+            }
+
+            &::placeholder {
+              font-size: 12px;
+              line-height: 140%;
+              color: $color_body_50;
+
+              @include desktop {
+                font-size: $k * 12px;
+              }
+            }
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            -moz-appearance: textfield;
+          }
+
+
+        }
+
+        .btn {
+          @include button;
+          @include centerRow;
+          background: $color_main_10;
+          width: 142px;
+          transition: 0.3s;
+
+          @include desktop {
+            width: $k * 142px;
+          }
+
+          &:hover {
+            @include desktop {
+              background: rgba(211, 249, 50, 0.2);
+            }
+          }
+
+          img {
+            display: block;
+            width: 13px;
+            height: 14px;
+
+            @include desktop {
+              width: $k * 13px;
+              height: $k * 14px;
+            }
+          }
+
+          p {
+            margin-left: 10px;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 140%;
+            text-transform: uppercase;
+            color: $color_main;
+
+            @include desktop {
+              margin-left: $k * 10px;
+              font-size: $k * 12px;
+            }
+          }
+
+
+
+        }
+      }
+
+    }
+
+
+
+  }
+}

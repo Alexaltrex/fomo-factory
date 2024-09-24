@@ -10,7 +10,7 @@
 
   .row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) 150px 185px;
+    grid-template-columns: 1fr $k * 163px $k * 227px $k * 192px $k * 237px $k * 133px $k * 173px;
     align-items: center;
     padding: $k * 12px 0;
 
@@ -113,6 +113,15 @@
           color: $color_main_100;
         }
       }
+    }
+
+    .twitterJoinedDate {
+      p {
+        font-size: $k * 12px;
+        line-height: 140%;
+        color: $color_body_50;
+      }
+
     }
 
     .pledgeAmount {

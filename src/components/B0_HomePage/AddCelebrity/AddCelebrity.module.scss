@@ -1,0 +1,39 @@
+@import "../../../assets/styles/app";
+
+.addCelebrity {
+  @include button;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  background: transparent;
+  transition: 0.3s;
+  border-bottom: 1px solid $color_lines;
+
+  @include desktop {
+    height: $k * 40px;
+    padding-left: $k * 12px;
+  }
+
+  &:hover {
+    @include desktop {
+      background: #222;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: $color_body_50;
+
+    span {
+      color: $color_main;
+    }
+
+    @include desktop {
+      font-size: $k * 12px;
+    }
+  }
+}

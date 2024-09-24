@@ -5,8 +5,7 @@
 
   .header {
     height: $k * 40px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
     border-bottom: 1px solid $color_lines;
 
     p {
@@ -20,6 +19,30 @@
         padding-left: $k * 12px;
         justify-content: flex-start;
       }
+
+      &:nth-child(1) {
+        width: 214 / 1071 * 100%;
+      }
+
+      &:nth-child(2) {
+        width: 168 / 1071 * 100%;
+      }
+
+      &:nth-child(3) {
+        width: 190 / 1071 * 100%;
+      }
+
+      &:nth-child(4) {
+        width: 127 / 1071 * 100%;
+      }
+
+      &:nth-child(5) {
+        width: 148 / 1071 * 100%;
+      }
+
+      &:nth-child(6) {
+        width: 219 / 1071 * 100%;
+      }
     }
 
   }
@@ -29,8 +52,7 @@
 
     .row {
       height: $k * 56px;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      display: flex;
       align-items: center;
 
       &:not(:last-child) {
@@ -60,7 +82,35 @@
             background-color: $color_lines;
           }
         }
+
+        &:nth-child(1) {
+          width: 214 / 1071 * 100%;
+        }
+
+        &:nth-child(2) {
+          width: 168 / 1071 * 100%;
+        }
+
+        &:nth-child(3) {
+          width: 190 / 1071 * 100%;
+        }
+
+        &:nth-child(4) {
+          width: 127 / 1071 * 100%;
+        }
+
+        &:nth-child(5) {
+          width: 148 / 1071 * 100%;
+        }
+
+        &:nth-child(6) {
+          width: 219 / 1071 * 100%;
+        }
+
+
       }
+
+
 
       .holders {
 
@@ -119,7 +169,7 @@
 
       }
 
-      .price {
+      .size {
 
         svg {
           width: $k * 16px;
@@ -139,20 +189,19 @@
         }
       }
 
+      .price {
+        p {
+          font-size: $k * 12px;
+          line-height: 140%;
+          color: $color_main_100;
+        }
+      }
+
       .time {
         p {
-          padding: $k * 4px;
-          border-radius: $k * 2px;
-          background: $color_white_3;
-          font-family: var(--font-family);
-          font-weight: 400;
           font-size: $k * 12px;
           line-height: 140%;
           color: $color_body_50;
-
-          &:not(:first-child) {
-            margin-left: $k * 3px;
-          }
         }
       }
 

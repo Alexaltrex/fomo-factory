@@ -1,0 +1,48 @@
+@import "../../../../assets/styles/app";
+
+.depositSolana {
+  @include button;
+  @include centerRow;
+  height: 100%;
+  background: $color_main_10;
+  transition: 0.3s;
+  width: 150px;
+
+  @include desktop {
+    width: $k * 150px;
+    border-right: 1px solid $color_lines;
+  }
+
+  &:hover {
+    background: rgba(211, 249, 50, 0.2);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+
+    @include desktop {
+      width: $k * 16px;
+      height: $k * 16px;
+    }
+
+    path {
+      fill-opacity: 1;
+      fill: $color_main;
+    }
+  }
+
+  span {
+    margin-left: 8px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_main;
+
+    @include desktop {
+      margin-left: $k * 8px;
+      font-size: $k * 12px;
+    }
+  }
+}
