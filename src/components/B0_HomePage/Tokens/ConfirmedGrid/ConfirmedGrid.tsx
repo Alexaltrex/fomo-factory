@@ -79,7 +79,6 @@ export const ConfirmedGrid: FC<IConfirmedGrid> = observer(({
                             </div>
                         </div>
 
-
                         <div className={style.prices}>
 
                             <div className={style.pricesRow}>

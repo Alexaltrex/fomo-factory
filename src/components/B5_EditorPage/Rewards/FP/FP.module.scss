@@ -1,0 +1,607 @@
+@import "../../../../assets/styles/app";
+
+.fp {
+  padding-top: 24px;
+  max-height: calc(100vh - 48px - 48px - 72px - 62px - 36px - 36px - 36px);
+  overflow-y: auto;
+
+  @include desktop {
+    padding-top: $k * 24px;
+    max-height: unset;
+    overflow-y: unset;
+  }
+
+  @include desktop {
+    padding-top: $k * 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: $k * 24px;
+  }
+
+  .left {
+
+    .wrapper {
+      border-top: 1px solid $color_lines;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        border-right: 1px solid $color_lines;
+      }
+    }
+
+    .pointsSection {
+
+      .title {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $color_lines;
+        height: 36px;
+        padding-left: 12px;
+
+        @include desktop {
+          height: $k * 36px;
+          padding-left: $k * 12px;
+        }
+
+        p {
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+
+          @include desktop {
+            font-size: $k * 12px;
+          }
+        }
+      }
+
+      .items {
+
+        .item {
+          display: flex;
+          height: 48px;
+
+          @include desktop {
+            height: $k * 48px;
+          }
+
+          &:not(:last-child) {
+            border-bottom: 1px solid $color_lines;
+          }
+
+          p:nth-child(1), p:nth-child(2) {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            line-height: 140%;
+            text-transform: uppercase;
+
+            @include desktop {
+              padding-left: $k * 12px;
+              font-size: $k * 12px;
+            }
+          }
+
+          p:nth-child(1) {
+            color: $color_body_50;
+            padding-left: 12px;
+            width: (238 / 360) * 100%;
+
+            @include desktop {
+              padding-left: $k * 12px;
+              width: (477 / 683) * 100%;
+            }
+          }
+
+          p:nth-child(2) {
+            position: relative;
+            font-weight: 700;
+            color: $color_main;
+            justify-content: center;
+            width: (122 / 360) * 100%;
+
+            @include desktop {
+              width: (206 / 683) * 100%;
+            }
+
+            &::before {
+              position: absolute;
+              content: "";
+              display: block;
+              left: 0;
+              top: 50%;
+              width: 1px;
+              height: 24px;
+              transform: translateY(-50%);
+              background: $color_lines;
+
+              @include desktop {
+                height: $k * 24px;
+              }
+            }
+          }
+
+        }
+      }
+
+    }
+
+    .weeklySection {
+      margin-top: 24px;
+      padding: 12px 12px 36px;
+
+      @include desktop {
+        margin-top: $k * 24px;
+        padding: $k * 12px $k * 12px $k * 36px;
+      }
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p:nth-child(1) span, p:nth-child(2) {
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+
+          @include desktop {
+            font-size: $k * 12px;
+          }
+        }
+
+
+        p:nth-child(1) {
+          display: flex;
+          align-items: center;
+
+          svg {
+            width: 16px;
+            height: 16px;
+            margin-left: 8px;
+
+            @include desktop {
+              width: $k * 16px;
+              height: $k * 16px;
+              margin-left: $k * 8px;
+            }
+          }
+        }
+      }
+
+      .value {
+        margin-top: 12px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 140%;
+        color: $color_main;
+
+        @include desktop {
+          margin-top: $k * 24px;
+          font-size: $k * 18px;
+        }
+      }
+
+      .scaleWrapper {
+        position: relative;
+        border: 1px solid $color_lines;
+        margin-top: 8px;
+        height: 32px;
+
+        @include desktop {
+          margin-top: $k * 8px;
+          height: $k * 32px;
+        }
+
+        .tick {
+          position: absolute;
+          width: 1px;
+          height: 24px;
+          background: $color_lines;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1;
+
+          @include desktop {
+            height: $k * 24px;
+          }
+        }
+
+        .line {
+          z-index: 2;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: $color_main;
+          height: 100%;
+          width: 40%;
+        }
+
+        .labels {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+
+          .label {
+            position: absolute;
+            left: 0;
+            bottom: -25px;
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_body_50;
+            transform: translateX(-50%);
+
+            @include desktop {
+              bottom: $k * -25px;
+              font-size: $k * 12px;
+            }
+
+            &:first-child {
+              transform: none;
+            }
+
+            &:last-child {
+              transform: translateX(-100%);
+            }
+
+          }
+        }
+
+
+      }
+
+    }
+
+    .dailySection {
+      margin-top: 24px;
+      padding: 12px 12px 36px;
+
+      @include desktop {
+        margin-top: $k * 24px;
+        padding: $k * 12px $k * 12px $k * 36px;
+      }
+
+      .title {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main_100;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
+      }
+
+      .scaleWrapper {
+        position: relative;
+        margin-top: 24px;
+        height: 12px;
+        border: 1px solid $color_lines;
+
+        @include desktop {
+          margin-top: $k * 24px;
+          height: $k * 12px;
+        }
+
+        .tick {
+          position: absolute;
+          width: 1px;
+          height: 8px;
+          background: $color_lines;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1;
+
+          @include desktop {
+            height: $k * 8px;
+          }
+        }
+
+        .line {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 55%;
+          z-index: 2;
+          background: $color_main;
+        }
+
+        .icon {
+          @include centerRow;
+          position: absolute;
+          z-index: 3;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          border-width: 1px;
+          border-style: solid;
+          border-color: $color_lines;
+          background: $color_bg_and_text;
+          top: 50%;
+          transform: translate(-50%, -50%);
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+
+          svg {
+            width: 8px;
+            height: 8px;
+
+            @include desktop {
+              width: $k * 8px;
+              height: $k * 8px;
+            }
+
+            path {
+              fill: #FFF;
+              fill-opacity: 0.5;
+            }
+          }
+
+          &_selected {
+            border-color: $color_main;
+
+            svg {
+              path {
+                fill: $color_main;
+                fill-opacity: 1;
+              }
+            }
+          }
+        }
+
+        .label {
+          position: absolute;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+          transform: translateX(-50%);
+          bottom: -27px;
+
+          @include desktop {
+            font-size: $k * 12px;
+            bottom: $k * -27px;
+          }
+
+          &_selected {
+            color: $color_main;
+          }
+        }
+      }
+
+
+    }
+
+    .redeemSection {
+      display: flex;
+      align-items: center;
+      margin-top: 24px;
+      height: 48px;
+
+      @include desktop {
+        margin-top: $k * 24px;
+        height: $k * 48px;
+      }
+
+      p:nth-child(1) {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: (221 / 360) * 100%;
+        padding-left: 12px;
+
+        @include desktop {
+          padding-left: $k * 12px;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          display: block;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0;
+          width: 1px;
+          height: 24px;
+          background: $color_lines;
+
+          @include desktop {
+            height: $k * 24px;
+          }
+
+        }
+
+        span {
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_body_50;
+
+          @include desktop {
+            font-size: $k * 12px;
+          }
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+          margin-left: 8px;
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+            margin-left: $k * 8px;
+          }
+        }
+
+      }
+
+      p:nth-child(2) {
+        @include centerRow;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_main_100;
+        width: (69 / 360) * 100%;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
+      }
+
+      p:nth-child(3) {
+        align-self: stretch;
+        @include centerRow;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main;
+        width: (85 / 360) * 100%;
+        border-left: 1px solid $color_lines;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
+      }
+
+
+    }
+  }
+
+  .right {
+
+    .title {
+      height: 36px;
+      padding-left: 12px;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_main_100;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        height: $k * 36px;
+        padding-left: $k * 12px;
+        font-size: $k * 12px;
+      }
+    }
+
+    .wrapper {
+      border-top: 1px solid $color_lines;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        border-left: 1px solid $color_lines;
+      }
+
+    }
+
+    .list {
+
+      .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 48px;
+        border-bottom: 1px solid $color_lines;
+
+        @include desktop {
+          height: $k * 48px;
+        }
+
+        p {
+          display: flex;
+          align-items: center;
+          padding-left: 12px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+
+          @include desktop {
+            padding-left: $k * 12px;
+            font-size: $k * 12px;
+          }
+
+          &:nth-child(1) {
+            text-transform: uppercase;
+            width: 50%;
+
+            @include desktop {
+              width: 70%;
+            }
+          }
+
+          &:nth-child(2) {
+            position: relative;
+            color: $color_main_100;
+            width: 50%;
+
+            @include desktop {
+              padding-left: 0;
+              justify-content: center;
+              width: 30%;
+            }
+
+            &::before {
+              position: absolute;
+              content: "";
+              display: block;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 0;
+              width: 1px;
+              height: 24px;
+              background: $color_lines;
+
+              @include desktop {
+                height: $k * 24px;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+
+          p {
+
+            &:nth-child(2) {
+              color: $color_main;
+            }
+
+          }
+        }
+      }
+
+
+    }
+
+    .btn {
+      margin-top: 24px;
+      height: 48px;
+      width: 100%;
+
+      @include desktop {
+        margin-top: $k * 24px;
+        height: $k * 48px;
+        width: $k * 318px;
+      }
+    }
+
+  }
+
+}
+
+
+

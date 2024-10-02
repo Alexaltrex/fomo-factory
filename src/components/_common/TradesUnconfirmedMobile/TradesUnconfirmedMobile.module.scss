@@ -2,6 +2,9 @@
 
 .tradesUnconfirmedMobile {
   @include onlyMobile();
+  height: calc(100vh - (40px + 36px + 48px + 48px));
+  overflow-y: auto;
+  overflow-x: hidden;
 
   .inner {
     display: flex;
@@ -64,7 +67,7 @@
       overflow-x: auto;
 
       .rightInner {
-        width: 524px;
+        width: 524px + 122px;
 
         .header {
           height: 40px;
@@ -91,6 +94,10 @@
             }
 
             &:nth-child(4) {
+              width: 122px;
+            }
+
+            &:nth-child(5) {
               width: 132px;
             }
           }
@@ -135,10 +142,14 @@
               }
 
               &:nth-child(3) {
-                width: 122px;
+                width: 142px;
               }
 
               &:nth-child(4) {
+                width: 122px;
+              }
+
+              &:nth-child(5) {
                 width: 132px;
               }
             }
@@ -183,7 +194,7 @@
 
             }
 
-            .price {
+            .pledged {
 
               p {
                 margin-left: 4px;
@@ -198,20 +209,19 @@
               }
             }
 
+            .price {
+              p {
+                font-size: $k * 12px;
+                line-height: 140%;
+                color: $color_main_100;
+              }
+            }
+
             .time {
               p {
-                padding: 4px;
-                border-radius: 2px;
-                background: $color_white_3;
-                font-family: var(--font-family);
-                font-weight: 400;
-                font-size: 12px;
+                font-size: $k * 12px;
                 line-height: 140%;
                 color: $color_body_50;
-
-                &:not(:first-child) {
-                  margin-left: 3px;
-                }
               }
             }
 

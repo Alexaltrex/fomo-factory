@@ -18,10 +18,10 @@ export const ViewModeSwitcher = observer(() => {
     const size = useWindowSize();
 
     useEffect(() => {
-       if (size && size.width && size.width >= 1440 ) {
+       if (size && size.width && size.width >= 1.2 * 1440 ) {
            setViewMode(ViewModeEnum.list)
        }
-        if (size && size.width && size.width < 1440 ) {
+        if (size && size.width && size.width < 1.2 * 1440 ) {
             setViewMode(ViewModeEnum.grid)
         }
     }, [size])

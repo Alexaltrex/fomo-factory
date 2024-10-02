@@ -1,0 +1,350 @@
+@import "../../../../assets/styles/app";
+
+.editProfileModal {
+  @include centerColumn;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color_pop_up_bg;
+  backdrop-filter: blur(5px);
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid $color_lines;
+    background-color: $color_bg_and_text;
+
+    @include desktop {
+      max-width: $k * 440px;
+    }
+
+    .cardHeader {
+      height: 36px;
+      display: flex;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        height: $k * 36px;
+      }
+
+      .cardHeaderLeft {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+
+        @include desktop {
+          padding-left: $k * 12px;
+        }
+
+        svg {
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
+
+        span {
+          margin-left: 8px;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+
+          @include desktop {
+            margin-left: $k * 8px;
+            font-size: $k * 12px;
+          }
+        }
+      }
+
+      .closeBtn {
+        flex-shrink: 0;
+        width: 36px;
+        border-left: 1px solid $color_lines;
+
+        svg {
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
+      }
+    }
+
+    .avatarSection {
+      padding: 12px;
+      display: flex;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        padding: $k * 12px;
+      }
+
+      input {
+        display: none;
+      }
+
+      .imgWrapper {
+        position: relative;
+        flex-shrink: 0;
+        width: 98px;
+        height: 98px;
+        background-color: $color_lines;
+
+        @include desktop {
+          width: $k * 98px;
+          height: $k * 98px;
+        }
+
+        svg {
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50%;
+          height: 50%;
+
+          path {
+            fill: $color_bg_and_text;
+          }
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
+
+        img {
+          position: relative;
+          z-index: 2;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .right {
+        flex-grow: 1;
+        margin-left: 12px;
+
+        @include desktop {
+          margin-left: $k * 12px;
+        }
+
+        .label {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_main_100;
+
+          @include desktop {
+            font-size: $k * 12px;
+          }
+        }
+
+        .info {
+          margin-top: 8px;
+          display: flex;
+          justify-content: space-between;
+
+          @include desktop {
+            margin-top: $k * 8px;
+          }
+
+          p {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            text-transform: uppercase;
+            color: $color_body_50;
+
+            @include desktop {
+              font-size: $k * 12px;
+            }
+          }
+        }
+
+        button {
+          @include button;
+          @include centerRow;
+          margin-top: 12px;
+          border: 1px solid $color_lines;
+          width: 100%;
+          height: 32px;
+
+          @include desktop {
+            margin-top: $k * 12px;
+            height: $k * 32px;
+          }
+
+          span {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            text-align: center;
+            color: $color_body_50;
+
+            @include desktop {
+              font-size: $k * 12px;
+            }
+          }
+        }
+
+
+      }
+
+    }
+
+    .checkSection {
+      height: 48px;
+      padding-left: 12px;
+      padding-right: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $color_lines;
+
+      @include desktop {
+        height: 48px;
+        padding-left: 12px;
+        padding-right: 8px;
+      }
+
+      p {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main_100;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
+      }
+
+      & > div {
+        @include centerRow;
+        border: 1px solid $color_lines;
+        width: 32px;
+        height: 32px;
+
+        @include desktop {
+          width: $k * 32px;
+          height: $k * 32px;
+        }
+
+        svg {
+          path {
+            fill: $color_green;
+          }
+
+          @include desktop {
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
+      }
+    }
+
+    .form {
+
+      .field {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        padding: 0 8px;
+        border-bottom: 1px solid $color_lines;
+
+        @include desktop {
+          height: $k * 48px;
+          padding: 0 $k * 8px;
+        }
+
+        .icon {
+          @include centerRow;
+          flex-shrink: 0;
+          border: 1px solid $color_lines;
+          width: 32px;
+          height: 32px;
+
+          @include desktop {
+            width: $k * 32px;
+            height: $k * 32px;
+          }
+
+          svg {
+            width: 16px;
+            height: 16px;
+
+            @include desktop {
+              width: $k * 16px;
+              height: $k * 16px;
+            }
+          }
+        }
+
+        input {
+          flex-grow: 1;
+          margin-left: 12px;
+          background: none;
+          border: none;
+          outline: none;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_main_100;
+
+          @include desktop {
+            margin-left: $k * 12px;
+            font-size: $k * 12px;
+          }
+
+          &::placeholder {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: $color_body_50;
+
+            @include desktop {
+              font-size: $k * 12px;
+            }
+          }
+        }
+      }
+
+      .btns {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-top: 1px solid $color_lines;
+
+        @include desktop {
+          margin-top: $k * 24px;
+        }
+
+        button {
+          height: 48px;
+
+          @include desktop {
+            height: $k * 48px;
+          }
+
+          &:nth-child(1) {
+            border-right: 1px solid $color_lines;
+          }
+        }
+      }
+
+    }
+
+
+  }
+}

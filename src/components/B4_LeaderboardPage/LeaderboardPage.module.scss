@@ -22,43 +22,12 @@
 
   .tabs {
     @include onlyMobile(grid);
-    grid-template-columns: repeat(2, 1fr);
     border-top: 1px solid $color_lines;
     border-bottom: 1px solid $color_lines;
+    height: 36px;
 
-    .btn {
-      @include button;
-      @include centerRow;
-      height: 36px;
-      transition: 0.3s;
-
-      @include desktop {
-        height: $k * 36px;
-      }
-
-      &:not(:first-child) {
-        border-left: 1px solid $color_lines;
-      }
-
-      span {
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 140%;
-        text-transform: uppercase;
-        text-align: center;
-        color: $color_body_50;
-        transition: 0.3s;
-
-        @include desktop {
-          font-size: $k * 12px;
-        }
-      }
-
-      &_selected {
-        span {
-          color: $color_main;
-        }
-      }
+    @include desktop {
+      height: $k * 36px;
     }
 
   }

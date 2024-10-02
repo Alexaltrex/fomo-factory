@@ -4,6 +4,7 @@ import {FC, useState} from "react";
 import {clsx} from "clsx";
 import {ViewModeSwitcher} from "../../_common/ViewModeSwitcher/ViewModeSwitcher";
 import {Filter} from "../../_common/Filter/Filter";
+import {Tabs} from "../../_common/Tabs/Tabs";
 
 interface IControlPanel {
     tab: number
@@ -27,32 +28,24 @@ export const ControlPanel: FC<IControlPanel> = ({
                 {(tab === 1 || tab === 2) && (
                     <>
                         <Filter className={style.filter}/>
-                        <ViewModeSwitcher/>
+                        <div className={style.viewModeSwitcherWrapper}>
+                            <ViewModeSwitcher/>
+                        </div>
+
                     </>
 
                 )}
             </div>
 
-            <div className={style.tabs}>
-                {
-                    [
-                        "Rewards",
-                        "Confirmed",
-                        "Unconfirmed",
-                        "my trades",
-                    ].map((label, key) => (
-                        <button key={key}
-                                className={clsx({
-                                    [style.tab]: true,
-                                    [style.tab_selected]: key === tab,
-                                })}
-                                onClick={() => onTab(key)}
-                        >
-                            <span>{label}</span>
-                        </button>
-                    ))
-                }
-            </div>
+            <Tabs tabs={[
+                "Rewards",
+                "tokens",
+                "trades",
+            ]}
+                  tab={tab}
+                  className={style.tabs}
+                  onClick={tab => onTab(tab)}
+            />
 
             {
                 tab === 3 && (

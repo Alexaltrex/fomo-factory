@@ -48,56 +48,22 @@
         right: 0;
       }
     }
+
+    .viewModeSwitcherWrapper {
+      @include onlyDesktop(flex);
+    }
   }
 
   .tabs {
-    display: flex;
 
     @include desktop {
       order: 1;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      flex-shrink: 0;
+      width: $k * 496px;
       border-right: 1px solid $color_lines;
     }
 
-    .tab {
-      @include button;
-      @include centerRow;
-      max-width: 154px;
-      width: 100%;
 
-      &:not(:first-child) {
-        border-left: 1px solid $color_lines;
-      }
-
-      @include desktop {
-        width: $k * 165px;
-      }
-
-      span {
-        font-weight: 700;
-        font-size: 10px;
-        line-height: 140%;
-        text-transform: uppercase;
-        color: $color_body_50;
-        transition: 0.3s;
-
-        @include desktop {
-          font-size: $k * 12px;
-        }
-      }
-
-      &_selected {
-        span {
-          color: $color_main;
-        }
-      }
-    }
-
-
-    @include desktop {
-      flex-shrink: 0;
-    }
 
   }
 

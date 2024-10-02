@@ -1,31 +1,37 @@
 import style from "./Points.module.scss"
 import {points} from "../data";
 import {ButtonCustom, VariantEnum} from "../../_common/ButtonCustom/ButtonCustom";
+import {Tabs} from "../../_common/Tabs/Tabs";
 
 export const Points = () => {
     return (
         <div className={style.points}>
+
             <div className={style.header}>
-                <p>
-                    Points
-                </p>
-                <p>
-                    PTS
-                </p>
+                {
+                    ["Points", "PTS", "Referred"].map((label, key) => (
+                        <p key={key}>
+                            {label}
+                        </p>
+                    ))
+                }
             </div>
 
             <div className={style.list}>
                 {
-                    points.map(({src, value, pts}, key) => (
+                    points.map(({src, value, pts, referred}, key) => (
                         <div key={key}
                              className={style.item}
                         >
-                            <div className={style.left}>
+                            <div>
                                 <img src={src} alt=""/>
                                 <p>{value}</p>
                             </div>
-                            <div className={style.right}>
+                            <div>
                                 <p>{`${pts} PTS`}</p>
+                            </div>
+                            <div>
+                                <p>{referred}</p>
                             </div>
                         </div>
                     ))

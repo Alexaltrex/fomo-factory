@@ -1,0 +1,28 @@
+@import "../../../assets/styles/app";
+
+.tokens {
+
+  .tabs {
+    border-bottom: 1px solid $color_lines;
+    height: 36px;
+
+    @include desktop {
+      height: $k * 36px;
+      width: $k * 220px;
+    }
+  }
+
+  .addNewLinkBtn {
+    height: 48px;
+    width: 100%;
+
+    @include desktop {
+      height: $k * 48px;
+      width: $k * 318px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: $k * 12px;
+    }
+  }
+
+}

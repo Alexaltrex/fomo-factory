@@ -312,9 +312,12 @@
 
         .followers {
           width: 103px;
+          justify-content: flex-start;
+          padding-left: 12px;
 
           @include desktop {
             width: calc((95 / 814) * 100%);
+            padding-left: $k * 12px;
           }
 
           svg {

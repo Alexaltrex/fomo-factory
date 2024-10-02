@@ -1,0 +1,405 @@
+@import "../../../../assets/styles/app";
+
+.lottery {
+  padding-top: 24px;
+  max-height: calc(100vh - 48px - 48px - 72px - 62px - 36px - 36px - 36px);
+  overflow-y: auto;
+
+  @include desktop {
+    padding-top: $k * 24px;
+    max-height: unset;
+    overflow-y: unset;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_main_100;
+
+      @include desktop {
+        font-size: $k * 12px;
+      }
+
+      &:nth-child(2) {
+        margin-left: 12px;
+        color: $color_main;
+
+        @include desktop {
+          margin-left: $k * 12px;
+        }
+      }
+    }
+  }
+
+  .timerWrapperMobile {
+    @include onlyMobile(flex);
+    justify-content: center;
+    margin-top: 24px;
+  }
+
+  .timerWrapperDesktop {
+    @include onlyDesktop(flex);
+    justify-content: center;
+    margin-top: $k * 24px;
+  }
+
+  .form {
+    margin-top: 24px;
+    width: 100%;
+    height: 48px;
+    border-top: 1px solid $color_lines;
+    border-bottom: 1px solid $color_lines;
+    display: flex;
+
+    @include desktop {
+      margin-top: $k * 24px;
+      width: $k * 440px;
+      height: $k * 48px;
+      margin-left: auto;
+      margin-right: auto;
+      border-left: 1px solid $color_lines;
+      border-right: 1px solid $color_lines;
+    }
+
+    .inputWrapper {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 12px;
+      padding-right: 24px;
+
+      @include desktop {
+        padding-left: $k * 12px;
+        padding-right: $k * 24px;
+      }
+
+      input {
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 12px;
+        line-height: 140%;
+        color: #FFF;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
+
+        &::placeholder {
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_body_50;
+
+          @include desktop {
+            font-size: $k * 12px;
+          }
+        }
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_body_50;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
+      }
+
+
+    }
+
+    .btn {
+      flex-shrink: 0;
+      width: 85px;
+
+      @include desktop {
+        width: $k * 85px;
+      }
+    }
+  }
+
+  .ticketsAlreadyEntered {
+    margin-top: 12px;
+    padding-left: 12px;
+    font-size: 12px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $color_body_50;
+
+    @include desktop {
+      margin-top: $k * 12px;
+      padding-left: 0;
+      font-size: $k * 12px;
+      width: $k * 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .buyBtn {
+    @include button;
+    @include centerRow;
+    height: 48px;
+    border-top: 1px solid $color_lines;
+    border-bottom: 1px solid $color_lines;
+    background: $color_main_10;
+    transition: 0.3s;
+    width: 100%;
+    margin-top: 24px;
+
+    @include desktop {
+      height: $k * 48px;
+      border-left: 1px solid $color_lines;
+      border-right: 1px solid $color_lines;
+      width: $k * 318px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: $k * 24px;
+
+    }
+
+    &:hover {
+      @include desktop {
+        background: rgba(211, 249, 50, 0.2);
+      }
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color_main;
+
+      @include desktop {
+        font-size: $k * 12px;
+      }
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-left: 8px;
+      margin-right: 4px;
+
+      @include desktop {
+        width: $k * 16px;
+        height: $k * 16px;
+        margin-left: $k * 8px;
+        margin-right: $k * 4px;
+      }
+
+      path {
+        fill-opacity: 1;
+        fill: $color_main;
+      }
+    }
+  }
+
+  .table {
+    margin-top: 24px;
+    border-top: 1px solid $color_lines;
+    border-bottom: 1px solid $color_lines;
+
+    @include desktop {
+      margin-top: $k * 24px;
+      width: $k * 485px;
+      margin-left: auto;
+      margin-right: auto;
+      border-left: 1px solid $color_lines;
+      border-right: 1px solid $color_lines;
+    }
+
+    .tableHeader {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $color_lines;
+      height: 36px;
+      padding-left: 12px;
+
+      @include desktop {
+        height: $k * 36px;
+        padding-left: $k * 12px;
+      }
+
+      p {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main_100;
+
+        @include desktop {
+          font-size: $k * 12px;
+        }
+      }
+    }
+
+    .lotteryTicketLeft {
+      display: flex;
+      border-bottom: 1px solid $color_lines;
+      height: 48px;
+
+      @include desktop {
+        height: $k * 48px;
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_body_50;
+        padding-left: 12px;
+
+        @include desktop {
+          font-size: $k * 12px;
+          padding-left: $k * 12px;
+        }
+
+        &:nth-child(1) {
+          width: (220 / 360) * 100%;
+
+          @include desktop {
+            width: (470 / 683) * 100%;
+          }
+        }
+
+        &:nth-child(2) {
+          position: relative;
+          width: (140 / 360) * 100%;
+
+          @include desktop {
+            width: (213 / 683) * 100%;
+            padding-left: 0;
+            justify-content: center;
+          }
+
+          &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 1px;
+            height: 24px;
+            background: $color_lines;
+
+            @include desktop {
+              height: $k * 24px;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom {
+      display: flex;
+      height: 48px;
+
+      @include desktop {
+        height: $k * 48px;
+      }
+
+      & > div {
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+        width: (290 / 360) *  100%;
+
+        @include desktop {
+          padding-left: $k * 12px;
+          width: ((683 - 129 - 85) / 683) *  100%;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: $color_body_50;
+
+          @include desktop {
+            font-size: $k * 12px;
+          }
+        }
+
+        svg {
+          margin-left: 8px;
+          width: 16px;
+          height: 16px;
+
+          @include desktop {
+            margin-left: $k * 8px;
+            width: $k * 16px;
+            height: $k * 16px;
+          }
+        }
+      }
+
+      p:nth-child(2) {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+        position: relative;
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_main_100;
+        width: (70 / 360) * 100%;
+
+        @include desktop {
+          padding-left: $k * 12px;
+          font-size: $k * 12px;
+          width: (129 / 683) * 100%;
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          display: block;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 24px;
+          background: $color_lines;
+
+          @include desktop {
+            height: $k * 24px;
+          }
+        }
+      }
+
+      p:nth-child(3) {
+        flex-shrink: 0;
+        @include centerRow;
+        border-left: 1px solid $color_lines;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color_main;
+        width: (70 / 360) * 100%;
+
+        @include desktop {
+          font-size: $k * 12px;
+          width: (85 / 683) * 100%;
+        }
+
+      }
+    }
+  }
+
+}

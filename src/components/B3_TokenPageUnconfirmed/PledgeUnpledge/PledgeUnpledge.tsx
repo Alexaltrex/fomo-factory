@@ -6,6 +6,8 @@ import {svgIcons} from "../../../assets/svgIcons";
 import {ButtonCustom, VariantEnum} from "../../_common/ButtonCustom/ButtonCustom";
 import {AdvancedSettings} from "../../C_Modals/AdvancedSettings/AdvancedSettings";
 import {GetTweet} from "../../C_Modals/GetTweet/GetTweet";
+import {Tabs} from "../../_common/Tabs/Tabs";
+import {IconButton} from "../../_common/IconButton/IconButton";
 
 export const PledgeUnpledge = () => {
     const [tab, setTab] = useState(0)
@@ -23,6 +25,9 @@ export const PledgeUnpledge = () => {
         }
     }
 
+
+    const link = "https://referal fomofacttttttttttttttttttttttttttttttttttttt";
+
     return (
         <div className={style.pledgeUnpledge}>
 
@@ -36,7 +41,8 @@ export const PledgeUnpledge = () => {
 
             <AdvancedSettings showModal={advancedSettingsModal}
                               onClose={() => setAdvancedSettings(false)}
-                              onSave={() => {}}
+                              onSave={() => {
+                              }}
             />
 
             <GetTweet showModal={getTweetModal}
@@ -47,24 +53,14 @@ export const PledgeUnpledge = () => {
                 pledge / unpledge
             </div>
 
-            <div className={style.tabs}>
-                {
-                    [
-                        "pledge",
-                        "unpledge",
-                    ].map((label, key) => (
-                        <button key={key}
-                                onClick={() => setTab(key)}
-                                className={clsx({
-                                    [style.tab]: true,
-                                    [style.tab_selected]: key === tab,
-                                })}
-                        >
-                            <span>{label}</span>
-                        </button>
-                    ))
-                }
-            </div>
+            <Tabs tabs={[
+                "pledge",
+                "unpledge",
+            ]}
+                  tab={tab}
+                  className={style.tabs}
+                  onClick={tab => setTab(tab)}
+            />
 
             <button className={clsx({
                 [style.toggleWrapper]: true,
@@ -113,7 +109,7 @@ export const PledgeUnpledge = () => {
             </div>
 
             <p className={style.tokenPrice}>
-               <span>1 Billie Eilisht = </span><span>0.03SOL</span>
+                <span>1 Billie Eilisht = </span><span>0.03SOL</span>
             </p>
 
             <button className={style.quickBuyBtn}>
@@ -125,8 +121,8 @@ export const PledgeUnpledge = () => {
             <p className={style.description}>
                 {
                     tab === 0
-                        ? "Once you click on Quick Pledge, your transaction is sent immediately"
-                        : "Once you click on Quick Unpledge, your transaction is sent immediately"
+                        ? "I pledged this amount to celeb"
+                        : "I unpledged this amount to celeb"
                 }
             </p>
 
@@ -135,19 +131,45 @@ export const PledgeUnpledge = () => {
                           onClick={() => setAdvancedSettings(true)}
             />
 
-            <div className={style.giftSection}>
-                <div className={style.top}>
-                    <div className={style.topLeft}>
-                        <p>GIFT</p>
-                        {svgIcons.boxUsd}
-                    </div>
-                    <div className={style.topRight}>
-                        <span>BONUS </span><span>SOL 0.02</span>
-                    </div>
-                </div>
-                <p className={style.description}>
-                    Just have a tweet for points button
+            {/*<div className={style.giftSection}>*/}
+            {/*    <div className={style.top}>*/}
+            {/*        <div className={style.topLeft}>*/}
+            {/*            <p>GIFT</p>*/}
+            {/*            {svgIcons.boxUsd}*/}
+            {/*        </div>*/}
+            {/*        <div className={style.topRight}>*/}
+            {/*            <span>BONUS </span><span>SOL 0.02</span>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    <p className={style.description}>*/}
+            {/*        Just have a tweet for points button*/}
+            {/*    </p>*/}
+            {/*</div>*/}
+
+            <div className={style.claimSection}>
+                <p>
+                    Use this referral link to onboard celebrity
                 </p>
+                <button>
+                    <p>CLAIM</p>
+                    <div>
+                        {svgIcons.solana}
+                        <p>
+                            0.25<span>/$3,500</span>
+                        </p>
+                    </div>
+                </button>
+            </div>
+
+            <div className={style.referalSection}>
+                <div className={style.linkWrapper}>
+                    <div>{svgIcons.link}</div>
+                    <p>{link}</p>
+                </div>
+                <IconButton icon={svgIcons.copy2}
+                            className={style.btn}
+                            onClick={() => navigator.clipboard.writeText(link)}
+                />
             </div>
 
             <ButtonCustom label="GET TWEET"

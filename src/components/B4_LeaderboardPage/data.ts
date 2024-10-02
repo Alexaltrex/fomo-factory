@@ -4,12 +4,14 @@ export interface IPoint {
     src: string
     value: string
     pts: string
+    referred: string
 }
 
 const point: IPoint = {
     src,
     value: "Z7Xy9Qp4MvB2Lk6H",
     pts: '100,00',
+    referred: '124K',
 }
 
 export const points: IPoint[] = Array

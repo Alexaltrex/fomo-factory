@@ -34,10 +34,6 @@
       height: $k * 36px;
     }
 
-    .tabs {
-
-    }
-
     .headerRight {
       display: flex;
       align-items: center;
@@ -138,7 +134,7 @@
     overflow-y: auto;
 
     @include desktop {
-      height: calc(100vh - $k * (48px + 486px + 36px + 36px - 4px));
+      height: calc(100vh - $k * (48px + 486px + 36px + 36px - 4px + 12px));
       transition: 0.3s;
     }
 
@@ -457,7 +453,7 @@
 
     .comments {
       @include desktop {
-        height: calc(100vh - $k * (48px + 36px + 36px));
+        height: calc(100vh - $k * (48px + 36px + 36px - 4px));
       }
     }
   }

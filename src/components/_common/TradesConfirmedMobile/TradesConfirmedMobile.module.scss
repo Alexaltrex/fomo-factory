@@ -68,7 +68,8 @@
       overflow-x: auto;
 
       .rightInner {
-        width: 858px;
+        //width: 858px;
+        width: 524px + 122px;
 
         .header {
           height: 40px;
@@ -83,23 +84,23 @@
             color: $color_body_50;
 
             &:nth-child(1) {
-              width: 168px;
+              width: 123px;
             }
 
             &:nth-child(2) {
-              width: 190px;
+              width: 142px;
             }
 
             &:nth-child(3) {
-              width: 127px;
+              width: 122px;
             }
 
             &:nth-child(4) {
-              width: 148px;
+              width: 122px;
             }
 
             &:nth-child(5) {
-              width: 219px;
+              width: 132px;
             }
           }
 
@@ -135,23 +136,23 @@
               }
 
               &:nth-child(1) {
-                width: 168px;
+                width: 123px;
               }
 
               &:nth-child(2) {
-                width: 190px;
+                width: 142px;
               }
 
               &:nth-child(3) {
-                width: 127px;
+                width: 122px;
               }
 
               &:nth-child(4) {
-                width: 148px;
+                width: 122px;
               }
 
               &:nth-child(5) {
-                width: 219px;
+                width: 132px;
               }
             }
 

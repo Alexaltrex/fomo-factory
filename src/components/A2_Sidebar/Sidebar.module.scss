@@ -10,11 +10,28 @@
   border-right: 1px solid $color_lines;
 
   .favorites {
+    align-self: stretch;
     padding-top: $k * 8px;
     padding-bottom: $k * 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: calc(100vh - $k * (48px + 92px + 212px + 12px));
+    overflow-y: auto;
+    //scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+      background-color: #363636;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #3a3a3a;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #FFF;
+    }
 
     .singles {
       display: flex;
@@ -54,6 +71,9 @@
       }
 
       svg {
+        width: $k * 16px;
+        height: $k * 16px;
+
         path {
           transition: 0.3s;
         }

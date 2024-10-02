@@ -24,7 +24,6 @@ export const BuySell = observer(() => {
         }
     } = useStore()
 
-
     const [tab, setTab] = useState(0);
     const [instaBuy, setInstaBuy] = useState(false);
     const [instaSell, setInstaSell] = useState(false);

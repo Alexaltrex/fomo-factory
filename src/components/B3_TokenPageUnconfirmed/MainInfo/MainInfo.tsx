@@ -6,7 +6,6 @@ import {observer} from "mobx-react-lite";
 import {useStore} from "../../../store/rootStore";
 import {clsx} from "clsx";
 import graph from "../../../assets/png/graph.png";
-import {Trades} from "../Trades/Trades";
 
 export const MainInfo = observer(() => {
     const {
@@ -74,32 +73,25 @@ export const MainInfo = observer(() => {
                 <div className={style.contentOther}>
                     <div className={style.inner}>
 
-                        <div className={style.followers}>
-                            {
-                                [
-                                    {
-                                        icon: svgIcons.x_outlined,
-                                        value: "2.4m",
-                                    },
-                                    {
-                                        icon: svgIcons.instagram,
-                                        value: "2.4m",
-                                    },
-                                    {
-                                        icon: svgIcons.tiktok,
-                                        value: "2.4m",
-                                    },
-
-                                ].map(({value, icon}, key) => (
-                                    <div key={key}
-                                         className={style.followerItem}
-                                    >
-                                        {icon}
-                                        <span>{value}</span>
-                                    </div>
-                                ))
-                            }
+                        <div className={clsx(style.columnCell, style.followers)}>
+                            <div>
+                                <p>Followers</p>
+                                <div>
+                                    {svgIcons.x_outlined}
+                                    <p>2.4m</p>
+                                </div>
+                            </div>
                         </div>
+
+                        <div className={clsx(style.columnCell, style.twitterJoined)}>
+                            <div>
+                                <p>Twitter joined</p>
+                                <div>
+                                   <p>12.09.21</p>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div className={clsx(style.columnCell, style.totalPledged)}>
                             <div>
@@ -146,9 +138,11 @@ export const MainInfo = observer(() => {
 
             </div>
 
-            <img src={graph} alt="" className={style.graph}/>
+            <div className={style.connectAccount}>
+                <p>Connect account</p>
+            </div>
 
-            <Trades/>
+            <img src={graph} alt="" className={style.graph}/>
 
         </div>
     )

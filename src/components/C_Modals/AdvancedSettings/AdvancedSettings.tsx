@@ -9,6 +9,7 @@ import {SmartMEVProtection} from "./SmartMEVProtection/SmartMEVProtection";
 import {PriorityFee} from "./PriorityFee/PriorityFee";
 import {Customize} from "./Customize/Customize";
 import {ButtonCustom, VariantEnum} from "../../_common/ButtonCustom/ButtonCustom";
+import {Tabs} from "../../_common/Tabs/Tabs";
 
 interface IAdvancedSettings {
     showModal: boolean
@@ -60,24 +61,11 @@ export const AdvancedSettings: FC<IAdvancedSettings> = ({
                                 />
                             </div>
 
-                            <div className={style.tabs}>
-                                {
-                                    [
-                                        "QUICK BUY",
-                                        "QUICK SELL",
-                                    ].map((label, key) => (
-                                        <button key={key}
-                                                onClick={() => setTab(key)}
-                                                className={clsx({
-                                                    [style.tab]: true,
-                                                    [style.tab_selected]: key === tab,
-                                                })}
-                                        >
-                                            <span>{label}</span>
-                                        </button>
-                                    ))
-                                }
-                            </div>
+                            <Tabs tabs={["QUICK BUY", "QUICK SELL"]}
+                                  tab={tab}
+                                  onClick={tab => setTab(tab)}
+                                  className={style.tabs}
+                            />
 
                             <div className={style.addressSection}>
                                 <div className={style.left}>

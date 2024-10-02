@@ -10,6 +10,7 @@ import {IconButton} from "../../../_common/IconButton/IconButton";
 import {ButtonCustom, VariantEnum} from "../../../_common/ButtonCustom/ButtonCustom";
 import {StarButton} from "../StarButton/StarButton";
 
+
 export const ConfirmedRow: FC<IConfirmedToken> = observer(({
                                                                src,
                                                                name,

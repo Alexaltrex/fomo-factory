@@ -74,6 +74,11 @@ export const Sidebar = observer(() => {
                                 onClick: () => navigate("/docs"),
                                 to: "",
                             },
+                            {
+                                icon: svgIcons.user,
+                                onClick: () => navigate("/profile"),
+                                to: "/profile",
+                            },
                         ].map(({icon, onClick, to}, key) => (
                             <IconButton key={key}
                                         icon={icon}

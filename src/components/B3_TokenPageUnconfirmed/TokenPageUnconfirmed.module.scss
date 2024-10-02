@@ -7,45 +7,7 @@
 
     .mobileTabs {
       height: 48px;
-      display: grid;
-      grid-template-columns: 1fr 1.5fr 1fr;
       border-bottom: 1px solid $color_lines;
-
-      .tab {
-        @include button;
-        @include centerRow;
-        position: relative;
-
-        &:not(:first-child) {
-          &::before {
-            position: absolute;
-            content: "";
-            display: block;
-            width: 1px;
-            height: 24px;
-            background-color: $color_lines;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-          }
-        }
-
-        span {
-          font-weight: 700;
-          font-size: 12px;
-          line-height: 140%;
-          text-transform: uppercase;
-          color: $color_body_50;
-          transition: 0.3s;
-        }
-
-        &_selected {
-          span {
-            color: $color_main;
-          }
-
-        }
-      }
     }
   }
 

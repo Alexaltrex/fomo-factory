@@ -22,6 +22,8 @@ import {TransactionAlerts} from "../C_Modals/TransactionAlerts/TransactionAlerts
 import {CreateFolder} from "../C_Modals/CreateFolder/CreateFolder";
 import {RenameFolder} from "../C_Modals/RenameFolder/RenameFolder";
 import {DeleteFolder} from "../C_Modals/DeleteFolder/DeleteFolder";
+import {OwnerPanel} from "../B6_OwnerPanel/OwnerPanel";
+import {OwnerPanelAfterLaunch} from "../B7_OwnerPanelAfterLaunch/OwnerPanelAfterLaunch";
 
 export const App = observer(() => {
     const {
@@ -61,6 +63,8 @@ export const App = observer(() => {
                         <Route path='/tokenConfirmed/:tokenId' element={<TokenPageConfirmed/>}/>
                         <Route path='/tokenUnconfirmed/:tokenId' element={<TokenPageUnconfirmed/>}/>
                         <Route path='/editor' element={<EditorPage/>}/>
+                        <Route path='/owner' element={<OwnerPanel/>}/>
+                        <Route path='/ownerAfterLaunch' element={<OwnerPanelAfterLaunch/>}/>
                     </Routes>
                 </div>
             </main>

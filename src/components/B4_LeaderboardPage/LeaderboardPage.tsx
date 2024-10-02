@@ -6,6 +6,7 @@ import {ColorThemeEnum} from "../../store/appStore";
 import {useState} from "react";
 import {Points} from "./Points/Points";
 import {Referals} from "./Referals/Referals";
+import {Tabs} from "../_common/Tabs/Tabs";
 
 export const LeaderboardPage = observer(() => {
     const {
@@ -22,34 +23,15 @@ export const LeaderboardPage = observer(() => {
             [style.leaderboardPage_light]: colorTheme === ColorThemeEnum.light,
         })}>
 
-           <h2 className={style.title}>
-               Leaderboard
-           </h2>
+            <h2 className={style.title}>
+                Leaderboard
+            </h2>
 
-            <div className={style.tabs}>
-                {
-                    [
-                        {
-                            _tab: 0,
-                            label: "Points"
-                        },
-                        {
-                            _tab: 1,
-                            label: "Referals"
-                        },
-                    ].map(({_tab, label}, key) => (
-                        <button key={key}
-                                className={clsx({
-                                    [style.btn]: true,
-                                    [style.btn_selected]: _tab === tab,
-                                })}
-                                onClick={() => setTab(_tab)}
-                        >
-                            <span>{label}</span>
-                        </button>
-                    ))
-                }
-            </div>
+            <Tabs tabs={["Points", "Referred"]}
+                  tab={tab}
+                  onClick={_tab => setTab(_tab)}
+                  className={style.tabs}
+            />
 
             <div className={style.mobileContent}>
                 {

@@ -2,6 +2,8 @@
 
 .holdersMobile {
   @include onlyMobile();
+  height: calc(100vh - (40px + 36px + 48px + 48px));
+  overflow-y: auto;
 
   .table {
     display: flex;

@@ -1,0 +1,307 @@
+@import "../../../../assets/styles/app";
+
+.tradesList {
+  @include onlyDesktop();
+  border-top: 1px solid $color_lines;
+  margin-top: 24px;
+
+  .listHeader {
+    display: flex;
+    border-bottom: 1px solid $color_lines;
+    height: $k * 40px;
+
+    p {
+      font-weight: 400;
+      font-size: $k * 12px;
+      line-height: 140%;
+      color: $color_body_50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:nth-child(1) {
+        justify-content: flex-start;
+        padding-left: $k * 12px;
+      }
+
+      &:nth-child(1) {
+        width: (259 / 1390) * 100%;
+      }
+
+      &:nth-child(2) {
+        width: (163 / 1390) * 100%;
+      }
+
+      &:nth-child(3) {
+        width: (227 / 1390) * 100%;
+      }
+
+      &:nth-child(4) {
+        width: (192 / 1390) * 100%;
+      }
+
+      &:nth-child(5) {
+        width: (237 / 1390) * 100%;
+      }
+
+      &:nth-child(6) {
+        width: (133 / 1390) * 100%;
+      }
+
+      &:nth-child(7) {
+        width: (173 / 1390) * 100%;
+      }
+
+    }
+  }
+
+  .listBody {
+    overflow-y: auto;
+    max-height: calc(100vh - $k * (48px + 40px + 74px + 38px + 36px + 40px + 24px + 24px + 48px));
+
+    .listItem {
+      height: $k * 56px;
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color_lines;
+      }
+
+      & > div {
+        @include centerRow;
+
+        &:not(:last-child) {
+          position: relative;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            width: 1px;
+            height: $k * 20px;
+            background-color: $color_lines;
+          }
+        }
+
+        &:nth-child(1) {
+          width: (259 / 1390) * 100%;
+        }
+
+        &:nth-child(2) {
+          width: (163 / 1390) * 100%;
+        }
+
+        &:nth-child(3) {
+          width: (227 / 1390) * 100%;
+        }
+
+        &:nth-child(4) {
+          width: (192 / 1390) * 100%;
+        }
+
+        &:nth-child(5) {
+          width: (237 / 1390) * 100%;
+        }
+
+        &:nth-child(6) {
+          width: (133 / 1390) * 100%;
+        }
+
+        &:nth-child(7) {
+          width: (173 / 1390) * 100%;
+        }
+
+      }
+
+      .infoCell {
+        justify-content: flex-start;
+        padding-left: $k * 12px;
+
+        .addToFavoriteBtn {
+          @include button;
+          @include centerRow;
+          width: $k * 12px;
+          height: $k * 12px;
+
+          svg {
+            width: $k * 12px;
+            height: $k * 12px;
+          }
+        }
+
+        img {
+          display: block;
+          width: $k * 32px;
+          height: $k * 32px;
+          margin-left: $k * 12px;
+        }
+
+        .info {
+          margin-left: $k * 8px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .infoTop {
+            display: flex;
+            align-items: center;
+
+            p {
+              font-weight: 400;
+              font-size: $k * 12px;
+              line-height: 140%;
+              color: $color_main_100;
+            }
+
+            & > svg {
+              width: $k * 12px;
+              height: $k * 12px;
+              margin-left: $k * 4px;
+            }
+
+            a {
+              @include centerRow;
+              width: $k * 12px;
+              height: $k * 12px;
+              margin-left: $k * 4px;
+            }
+          }
+
+          & > p {
+            font-weight: 400;
+            font-size: $k * 12px;
+            line-height: 140%;
+            color: $color_body_50;
+          }
+        }
+
+      }
+
+      .followers {
+        .followerItem {
+          padding: $k * 4px $k * 8px;
+          border: 1px solid $color_lines;
+          display: flex;
+          align-items: center;
+
+          &:not(:first-child) {
+            margin-left: $k * 4px;
+          }
+
+          svg {
+            width: $k * 12px;
+            height: $k * 12px;
+          }
+
+          span {
+            margin-left: $k * 4px;
+            font-weight: 400;
+            font-size: $k * 12px;
+            line-height: 140%;
+            text-align: center;
+            color: $color_main_100;
+          }
+        }
+      }
+
+      .twitterJoinedDate {
+
+        p {
+          font-size: $k * 12px;
+          line-height: 140%;
+          color: $color_body_50;
+        }
+      }
+
+      .pledgeAmount {
+        svg {
+          width: $k * 16px;
+          height: $k * 16px;
+
+          path {
+            fill: #FFF;
+            fill-opacity: 0.5;
+          }
+        }
+
+        p {
+          margin-left: $k * 4px;
+        }
+
+        span {
+          font-weight: 400;
+          font-size: $k * 12px;
+          line-height: 140%;
+          color: $color_main_100;
+
+          &:nth-child(2) {
+            color: $color_body_50;
+          }
+        }
+      }
+
+      .statistics {
+
+        .statisticsItem {
+          display: flex;
+          align-items: center;
+
+          &:not(:first-child) {
+            margin-left: $k * 24px;
+          }
+
+          svg {
+            width: $k * 12px;
+            height: $k * 12px;
+
+            path {
+              fill: #FFF;
+              fill-opacity: 0.5;
+            }
+          }
+
+          span {
+            margin-left: $k * 4px;
+            font-weight: 400;
+            font-size: $k * 12px;
+            line-height: 140%;
+            color: $color_body_50;
+          }
+        }
+      }
+
+      .share {
+
+        .shareBtn {
+          width: $k * 32px;
+          height: $k * 32px;
+          border: 1px solid $color_lines;
+
+          svg {
+            width: $k * 16px;
+            height: $k * 16px;
+
+            path {
+              fill-opacity: 1;
+            }
+          }
+        }
+
+      }
+
+      .pledge {
+
+        .pledgeBtn {
+          border: 1px solid $color_lines;
+          width: $k * 113px;
+          height: $k * 32px;
+        }
+
+      }
+    }
+  }
+}

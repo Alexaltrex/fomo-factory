@@ -5,6 +5,8 @@ import {svgIcons} from "../../assets/svgIcons";
 import {MainInfo} from "./MainInfo/MainInfo";
 import {PledgeUnpledge} from "./PledgeUnpledge/PledgeUnpledge";
 import {Chat} from "../B2_TokenPageConfirmed/Chat/Chat";
+import {Tabs} from "../_common/Tabs/Tabs";
+import {Trades} from "./Trades/Trades";
 
 export const TokenPageUnconfirmed = () => {
     const [mobileTab, setMobileTab] = useState(0)
@@ -15,37 +17,21 @@ export const TokenPageUnconfirmed = () => {
 
             <div className={style.mobileContent}>
 
-                <div className={style.mobileTabs}>
-                    {
-                        [
-                            "Main info",
-                            "pledge / unpledge",
-                            "Chat",
-                        ].map((label, key) => (
-                            <button key={key}
-                                    onClick={() => setMobileTab(key)}
-                                    className={clsx({
-                                        [style.tab]: true,
-                                        [style.tab_selected]: key === mobileTab,
-                                    })}
-                            >
-                                <span>{label}</span>
-                            </button>
-                        ))
-                    }
-                </div>
+                <Tabs tabs={[
+                    "Main info",
+                    "pledge",
+                    "trades",
+                    "Chat",
+                ]}
+                      tab={mobileTab}
+                      onClick={tab => setMobileTab(tab)}
+                      className={style.mobileTabs}
+                />
 
-                {
-                    mobileTab === 0 && <MainInfo/>
-                }
-
-                {
-                    mobileTab === 1 && <PledgeUnpledge/>
-                }
-
-                {
-                    mobileTab === 2 && <Chat/>
-                }
+                { mobileTab === 0 && <MainInfo/> }
+                { mobileTab === 1 && <PledgeUnpledge/> }
+                { mobileTab === 2 && <Trades/>}
+                { mobileTab === 3 && <Chat/> }
 
             </div>
 
@@ -56,6 +42,7 @@ export const TokenPageUnconfirmed = () => {
 
                 <div className={style.desktopContentLeft}>
                     <MainInfo/>
+                    <Trades/>
                     <button className={style.hideBtn}
                             onClick={() => setHideSidebar(!hideSidebar)}
                     >

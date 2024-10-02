@@ -18,7 +18,6 @@ const labels = [
     "$50",
     "$300"
 ]
-
 export const SpinAndWin = observer(() => {
     const {
         appStore: {

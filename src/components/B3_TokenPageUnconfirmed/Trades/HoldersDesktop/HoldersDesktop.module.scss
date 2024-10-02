@@ -27,7 +27,7 @@
   .body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: calc(100vh - $k * (48px + 72px + 376px + 36px + 40px));
+    height: calc(100vh - $k * (48px + 72px + 376px + 36px + 40px + 36px));
     overflow-y: auto;
 
     .table {

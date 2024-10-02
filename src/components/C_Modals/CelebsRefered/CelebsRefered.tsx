@@ -1,18 +1,21 @@
 import style from "./CelebsRefered.module.scss"
 import {observer} from "mobx-react-lite";
 import {useStore} from "../../../store/rootStore";
-import {useRef} from "react";
+import {FC, useRef} from "react";
 import {useOutsideClick} from "../../../hooks/useOutsideClick";
 import {svgIcons} from "../../../assets/svgIcons";
 import {IconButton} from "../../_common/IconButton/IconButton";
 import {ButtonCustom, VariantEnum} from "../../_common/ButtonCustom/ButtonCustom";
 
-export const CelebsRefered = observer(() => {
-    const {
-        appStore: {
-            celebsReferedModal, setCelebsReferedModal
-        }
-    } = useStore();
+interface ICelebsRefered {
+    celebsReferedModal: boolean
+    setCelebsReferedModal: (value: boolean) => void
+}
+
+export const CelebsRefered: FC<ICelebsRefered> = ({
+                                                               celebsReferedModal, setCelebsReferedModal
+                                                           }) => {
+
 
     const ref = useRef<HTMLDivElement>(null!);
     const onClose = () => setCelebsReferedModal(false);
@@ -68,6 +71,5 @@ export const CelebsRefered = observer(() => {
                 )
             }
         </>
-
     )
-})
+}
