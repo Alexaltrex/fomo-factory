@@ -24,6 +24,7 @@ import {RenameFolder} from "../C_Modals/RenameFolder/RenameFolder";
 import {DeleteFolder} from "../C_Modals/DeleteFolder/DeleteFolder";
 import {OwnerPanel} from "../B6_OwnerPanel/OwnerPanel";
 import {OwnerPanelAfterLaunch} from "../B7_OwnerPanelAfterLaunch/OwnerPanelAfterLaunch";
+import {Section} from "../B8_Section/Section";
 
 export const App = observer(() => {
     const {
@@ -65,6 +66,7 @@ export const App = observer(() => {
                         <Route path='/editor' element={<EditorPage/>}/>
                         <Route path='/owner' element={<OwnerPanel/>}/>
                         <Route path='/ownerAfterLaunch' element={<OwnerPanelAfterLaunch/>}/>
+                        <Route path='/section' element={<Section/>}/>
                     </Routes>
                 </div>
             </main>

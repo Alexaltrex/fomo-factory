@@ -1,0 +1,219 @@
+@import "../../assets/styles/app";
+
+.section {
+  padding: 24px;
+
+  @include desktop {
+    padding: $k * 24px;
+  }
+
+  .title {
+    width: 218px;
+    height: 36px;
+    margin: 0 auto;
+
+    @include desktop {
+      width: $k * 218px;
+      height: $k * 36px;
+    }
+
+    svg {
+      width: 218px;
+      height: 36px;
+
+      @include desktop {
+        width: $k * 218px;
+        height: $k * 36px;
+      }
+    }
+  }
+
+  .infoSection {
+    border-radius: 4px;
+    border: 1px solid #222B15;
+    background: #161B10;
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    margin-top: 16px;
+
+    @include desktop {
+      margin-top: $k * 16px;
+      padding: $k * 18px;
+      border-radius: $k * 4px;
+    }
+
+    img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 1px solid #FFF;
+      box-shadow: 0px 4.495px 4.495px 0px rgba(0, 0, 0, 0.25);
+
+      @include desktop {
+        width: $k * 55px;
+        height: $k * 55px;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 12px;
+
+      @include desktop {
+        margin-left: $k * 12px;
+      }
+
+      & > p:nth-child(1) {
+        display: flex;
+        align-items: center;
+
+        span {
+          color: #FFF;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+
+          @include desktop {
+            font-size: $k * 18px;
+          }
+        }
+
+        svg {
+          margin-left: 4px;
+          width: 20px;
+          height: 20px;
+
+          @include desktop {
+            margin-left: $k * 4px;
+            width: $k * 20px;
+            height: $k * 20px;
+          }
+        }
+      }
+
+      & > p:nth-child(2) {
+        margin-top: 4px;
+        color: #FFF;
+        font-size: 18px;
+        font-weight: 700;
+
+        @include desktop {
+          margin-top: $k * 4px;
+          font-size: $k * 18px;
+        }
+      }
+    }
+
+  }
+
+  .genesis {
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 9px;
+
+    @include desktop {
+      font-size: $k * 20px;
+      margin-top: $k * 9px;
+    }
+  }
+
+  .genesisValue {
+    color: $color_main;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 4px;
+
+    @include desktop {
+      font-size: $k * 20px;
+      margin-top: $k * 4px;
+    }
+  }
+
+  .codeLabel {
+    margin-top: 30px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+
+    @include desktop {
+      margin-top: $k * 30px;
+      font-size: $k * 18px;
+    }
+
+  }
+
+  .codeValue {
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+
+    @include desktop {
+      margin-top: $k * 6px;
+    }
+
+    .letter {
+      border-radius: 3px;
+      background: #242714;
+      color: #D3F932;
+      font-size: 32px;
+      font-weight: 700;
+      padding: 3px 6px;
+
+      @include desktop {
+        border-radius: $k * 3px;
+        font-size: $k * 32px;
+        padding: $k * 3px $k * 6px;
+      }
+
+      &:not(:first-child) {
+        margin-left: 3px;
+
+        @include desktop {
+          margin-left: $k * 3px;
+        }
+      }
+
+    }
+  }
+
+  .fomofactory {
+    display: block;
+    margin: 18px auto 0;
+    border: 1px solid #222B15;
+    background: #161B10;
+    padding: 4px 22px;
+    width: 217px;
+
+    @include desktop {
+      margin: $k * 18px auto 0;
+      font-size: $k * 20px;
+      padding: $k * 4px $k * 22px;
+      width: $k * 217px;
+    }
+
+    p {
+      color: #D3F932;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include desktop {
+        font-size: $k * 20px;
+      }
+    }
+
+
+
+
+  }
+
+}
