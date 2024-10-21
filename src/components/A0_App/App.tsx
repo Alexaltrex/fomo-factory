@@ -25,6 +25,7 @@ import {DeleteFolder} from "../C_Modals/DeleteFolder/DeleteFolder";
 import {OwnerPanel} from "../B6_OwnerPanel/OwnerPanel";
 import {OwnerPanelAfterLaunch} from "../B7_OwnerPanelAfterLaunch/OwnerPanelAfterLaunch";
 import {Section} from "../B8_Section/Section";
+import {PageNotFound} from "../B9_PageNotFound/PageNotFound";
 
 export const App = observer(() => {
     const {
@@ -58,6 +59,7 @@ export const App = observer(() => {
                 <Sidebar/>
                 <div className={style.content}>
                     <Routes>
+                        <Route path='*' element={<PageNotFound/>}/>
                         <Route path='/' element={<HomePage/>}/>
                         <Route path='/search' element={<SearchPage/>}/>
                         <Route path='/leaderboard' element={<LeaderboardPage/>}/>
